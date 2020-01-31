@@ -19,19 +19,14 @@ public class SpinningPlatforms : Platforms
         }
 
         gameObject.GetComponent<RotateBehavior>().rotationSpeed = spinSpeed;
-        //SetBehaviorVariables();
     }
 
     private void Update()
     {
         count2-= countDepletionRate;
 
-        Debug.Log("1: " + switchPlatformBehaviors);
-
         if(switchPlatformBehaviors == 1)
         {
-            Debug.Log("2: " + switchPlatformBehaviors);
-
             switchPlatformBehaviors++;
 
             Destroy(GetComponent<RotateBehavior>());
@@ -43,8 +38,6 @@ public class SpinningPlatforms : Platforms
         }
         else if(switchPlatformBehaviors >= 3)
         {
-            Debug.Log("3: " + switchPlatformBehaviors);
-
             Destroy(GetComponent<LinearMovementBehavior>());
 
             SetMovementType(this.gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType);
@@ -52,8 +45,6 @@ public class SpinningPlatforms : Platforms
 
             switchPlatformBehaviors = 0;
         }
-        Debug.Log("4: " + switchPlatformBehaviors);
-
 
         if(count2 <= 0)
         {

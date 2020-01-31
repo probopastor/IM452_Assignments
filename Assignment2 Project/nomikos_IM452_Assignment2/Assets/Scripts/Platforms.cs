@@ -8,7 +8,7 @@ public abstract class Platforms : MonoBehaviour
 
     protected IMovementType objectMovementType;
 
-    protected float spinSpeed = 5f;
+    protected float spinSpeed = -1f;
     protected float moveSpeed = 5f;
     protected float linearDirectionTime = 2f;
 

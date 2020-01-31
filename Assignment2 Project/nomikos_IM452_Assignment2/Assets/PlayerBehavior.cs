@@ -20,19 +20,30 @@ public class PlayerBehavior : MonoBehaviour
 
     private bool canJump;
 
+    private Transform playerTransform;
+
+    private float xScale = 0f;
+    private float yScale = 0f;
+    private float zScale = 0f;
+
+
     // Start is called before the first frame update
     void Start()
     {
-       // SpinningPlatforms.switchPlatformBehaviors = 0;
+        xScale = transform.localScale.x;
+        yScale = transform.localScale.y;
+        zScale = transform.localScale.z;
+        
+        playerTransform = GetComponent<Transform>();
         canJump = true;
         playerRb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if((playerTransform.localScale.x > xScale) || playerTransform.localScale.y > yScale || playerTransform.localScale.z > zScale)
         {
-           // SpinningPlatforms.switchPlatformBehaviors++;
+            playerTransform.localScale = new Vector3(xScale, yScale, zScale);
         }
     }
 
