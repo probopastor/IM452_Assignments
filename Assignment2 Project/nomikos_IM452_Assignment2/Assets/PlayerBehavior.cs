@@ -27,10 +27,14 @@ public class PlayerBehavior : MonoBehaviour
     private float yScale = 0f;
     private float zScale = 0f;
 
+    public GameObject winPanel;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        winPanel.SetActive(false);
+
         xScale = transform.localScale.x;
         yScale = transform.localScale.y;
         zScale = transform.localScale.z;
@@ -85,6 +89,12 @@ public class PlayerBehavior : MonoBehaviour
         if(collision.gameObject.tag.Equals("KillZone"))
         {
             SceneManager.LoadScene("SampleScene");
+        }
+
+        if (collision.gameObject.tag.Equals("WinZone"))
+        {
+            Time.timeScale = 0;
+            winPanel.SetActive(true);
         }
     }
 }
