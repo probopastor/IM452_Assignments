@@ -6,8 +6,8 @@ public class MovingPlatforms : Platforms
 {
     private int switchPlatformBehaviors = 0;
 
-    [SerializeField] private float count1 = 0.5f;
-    [SerializeField] private float countDepletionRate = 1f;
+    private float count1 = 200f;
+    private float countDepletionRate = 0.5f;
     private float count2 = 0;
 
     private void Start()
