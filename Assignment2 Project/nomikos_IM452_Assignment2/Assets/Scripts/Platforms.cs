@@ -30,5 +30,4 @@ public abstract class Platforms : MonoBehaviour
             gameObject.GetComponent<LinearMovementBehavior>().timeInDirection = linearDirectionTime;
         }
     }
-
 }

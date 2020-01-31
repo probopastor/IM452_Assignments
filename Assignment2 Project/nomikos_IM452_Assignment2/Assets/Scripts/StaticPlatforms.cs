@@ -7,7 +7,6 @@ public class StaticPlatforms : Platforms
     // Start is called before the first frame update
     void Start()
     {
-        objectMovementType = gameObject.AddComponent(typeof(NoMovementBehavior)) as IMovementType;
-        SetMovementType(objectMovementType);
+        SetMovementType(gameObject.AddComponent(typeof(NoMovementBehavior)) as IMovementType);
     }
 }
