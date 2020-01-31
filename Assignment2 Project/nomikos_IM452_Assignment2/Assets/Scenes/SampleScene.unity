@@ -173,7 +173,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.564591
+  orthographic size: 11.875626
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 1004551377}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,7 +230,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1004551376}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: c1b285ed846399d4c8e16b17a64f42cd, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -343,14 +343,14 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_LinearDrag: 11.7
+  m_AngularDrag: 0
+  m_GravityScale: 40
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &2038656688
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -442,3 +442,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46f8a1d28800e7047aea58ec28185881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 50
