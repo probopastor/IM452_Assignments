@@ -50,9 +50,20 @@ public class PlayerBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Platform"))
         {
             canJump = true;
+            this.transform.parent = collision.transform;
         }
+    }
+
+    
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Platform"))
+        {
+            this.transform.parent = null;
+        }
+
     }
 }
