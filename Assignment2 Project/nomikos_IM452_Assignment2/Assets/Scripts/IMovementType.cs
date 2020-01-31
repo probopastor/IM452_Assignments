@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonPlatform : Platforms
+public interface IMovementType
 {
-    //Todo
+    void MovePattern();
 }

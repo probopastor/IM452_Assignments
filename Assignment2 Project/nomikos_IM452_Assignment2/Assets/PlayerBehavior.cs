@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PlayerBehavior.cs
+* Assignment 2
+* Script handles player input and movement, allowing the player to walk and jump via velocity manipulation.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +25,14 @@ public class PlayerBehavior : MonoBehaviour
     {
         canJump = true;
         playerRb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Platforms.switchPlatformBehaviors++;
+        }
     }
 
     // Update is called once per frame

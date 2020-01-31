@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class SpinningPlatforms : Platforms
 {
+    public float spinSpeed = 0f;
+
     private void Start()
     {
-        objectRotationDirection = new RotateLeft();
-        SetRotationType(objectRotationDirection);
+        objectMovementType = gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType;
+    }
 
-        Debug.Log("this direction: " + TryToRotate());
+    private void Update()
+    {
+        if(switchPlatformBehaviors == 1)
+        {
+            switchPlatformBehaviors++;
 
-        objectRotationDirection = new RotateRight();
-        SetRotationType(objectRotationDirection);
+            Destroy(GetComponent<RotateBehavior>());
 
-        Debug.Log("this direction 2: " + TryToRotate());
+            objectMovementType = gameObject.AddComponent(typeof(LinearMovementBehavior)) as IMovementType;
+            gameObject.GetComponent<LinearMovementBehavior>().xDirection = spinSpeed;
 
-        objectRotationDirection = new NoRotation();
-        SetRotationType(objectRotationDirection);
+        }
+        else if(switchPlatformBehaviors >= 3)
+        {
+            Destroy(GetComponent<LinearMovementBehavior>());
+            objectMovementType = gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType;
 
-        Debug.Log("this direction 3: " + TryToRotate());
+            switchPlatformBehaviors = 0;
+        }
     }
 
 }

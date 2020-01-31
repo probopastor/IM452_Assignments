@@ -4,16 +4,13 @@ using UnityEngine;
 
 public abstract class Platforms : MonoBehaviour
 {
-    public IRotationDirection objectRotationDirection;
+    protected IMovementType objectMovementType;
 
-    public string TryToRotate()
-    {
-        return objectRotationDirection.RotatePlatform();
-    }
+    public static int switchPlatformBehaviors = 0; 
 
-    public void SetRotationType(IRotationDirection rotatingObject)
+    public void SetMovementType(IMovementType movingObject)
     {
-        objectRotationDirection = rotatingObject;
+        objectMovementType = movingObject;
     }
 
 }
