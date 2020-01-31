@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* CameraMovement.cs
+* Assignment 2
+* Script allows main camera to follow the player.
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

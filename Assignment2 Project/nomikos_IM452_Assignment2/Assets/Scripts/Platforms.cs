@@ -2,7 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Platforms : MonoBehaviour
+public abstract class Platforms : MonoBehaviour
 {
-    //Super class to all platforms
+    public IRotationDirection objectRotationDirection;
+
+    public string TryToRotate()
+    {
+        return objectRotationDirection.RotatePlatform();
+    }
+
+    public void SetRotationType(IRotationDirection rotatingObject)
+    {
+        objectRotationDirection = rotatingObject;
+    }
+
 }
