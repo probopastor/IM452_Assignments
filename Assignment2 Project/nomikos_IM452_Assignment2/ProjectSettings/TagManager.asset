@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Platform
   - PositionSwitchCircle
+  - KillZone
   layers:
   - Default
   - TransparentFX

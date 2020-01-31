@@ -8,6 +8,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -77,5 +78,13 @@ public class PlayerBehavior : MonoBehaviour
             this.transform.parent = null;
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag.Equals("KillZone"))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 }
