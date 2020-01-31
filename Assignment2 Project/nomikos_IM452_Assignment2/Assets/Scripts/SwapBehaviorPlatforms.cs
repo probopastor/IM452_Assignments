@@ -25,8 +25,9 @@ public class SwapBehaviorPlatforms : Platforms
         {
             if (!doOnce)
             {
+                Debug.Log("COLLISION HAPPENED");
                 doOnce = true;
-                Platforms.switchPlatformBehaviors++;
+                switchPlatformBehaviors++;
             }
         }
         

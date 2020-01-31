@@ -11,55 +11,59 @@ public class LinearMovementBehavior : MonoBehaviour, IMovementType
     public float timeRemaining = 0f;
 
     bool doOnce;
+    bool moveRight;
+    bool moveLeft;
 
     private void Update()
     {
-        if (!doOnce)
-        {
-            doOnce = true;
-            MovePattern();
-        }
+        MovePattern();
     }
 
     public void MovePattern()
     {
-        timeRemaining = timeInDirection;
-        StartCoroutine("MovePlatformRight");
-    }
-
-    private IEnumerator MovePlatformRight()
-    {
-        if(timeRemaining > 0)
+        if(!doOnce)
         {
-            transform.position = new Vector2(transform.position.x + xDirection * Time.deltaTime, transform.position.y - yDirection * Time.deltaTime);
-            yield return new WaitForSeconds(0.01f);
-            timeRemaining -= 0.01f;
-            StartCoroutine("MovePlatformRight");
-
-        }
-        else if(timeRemaining <= 0)
-        {
-            yield return new WaitForSeconds(0.01f);
+            moveRight = true;
+            moveLeft = false;
             timeRemaining = timeInDirection;
-            StartCoroutine("MovePlatformLeft");
+            doOnce = true;
         }
+
+
+        if(moveRight)
+        {
+            if (timeRemaining > 0)
+            {
+                transform.position = new Vector2(transform.position.x + xDirection * Time.deltaTime, transform.position.y - yDirection * Time.deltaTime);
+                timeRemaining -= 0.01f;
+            }
+            else if (timeRemaining <= 0)
+            {
+                timeRemaining = timeInDirection;
+                moveRight = false;
+                moveLeft = true;
+            }
+        }
+        else if(moveLeft)
+        {
+            if (timeRemaining > 0)
+            {
+                transform.position = new Vector2(transform.position.x - xDirection * Time.deltaTime, transform.position.y - yDirection * Time.deltaTime);
+                timeRemaining -= 0.01f;
+            }
+            else if (timeRemaining <= 0)
+            {
+                timeRemaining = timeInDirection;
+                moveRight = true;
+                moveLeft = false;
+            }
+        }
+        
+
+
+
+
     }
 
-    private IEnumerator MovePlatformLeft()
-    {
-        if (timeRemaining > 0)
-        {
-            transform.position = new Vector2(transform.position.x - xDirection * Time.deltaTime, transform.position.y - yDirection * Time.deltaTime);
-            yield return new WaitForSeconds(0.01f);
-            timeRemaining -= 0.01f;
-            StartCoroutine("MovePlatformLeft");
-        }
-        else if (timeRemaining <= 0)
-        {
-            yield return new WaitForSeconds(0.01f);
-            timeRemaining = timeInDirection;
-            StartCoroutine("MovePlatformRight");
-        }
-    }
 
 }

@@ -23,6 +23,7 @@ public class PlayerBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       // SpinningPlatforms.switchPlatformBehaviors = 0;
         canJump = true;
         playerRb = GetComponent<Rigidbody2D>();
     }
@@ -31,7 +32,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Platforms.switchPlatformBehaviors++;
+           // SpinningPlatforms.switchPlatformBehaviors++;
         }
     }
 

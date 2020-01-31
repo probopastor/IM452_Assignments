@@ -13,25 +13,27 @@ public class RotateBehavior : MonoBehaviour, IMovementType
 {
     
     public float rotationSpeed = 0f;
-    private IEnumerator rotationCoroutine;
-    private bool doOnce;
+    //private IEnumerator rotationCoroutine;
+    //private bool doOnce;
 
 
     private void Update()
     {
-        if(!doOnce)
-        {
-            doOnce = true;
-            MovePattern();
-        }
+        MovePattern();
     }
 
     public void MovePattern()
     {
+
+        transform.Rotate(0, 0, rotationSpeed);
+       // rotationCoroutine = Rotation(rotationSpeed);
+
+        /*
         rotationCoroutine = Rotation(rotationSpeed);
-        StartCoroutine(rotationCoroutine);
+        StartCoroutine(rotationCoroutine);*/
     }
 
+    /*
     public IEnumerator Rotation(float rotationSpeed)
     {
         transform.Rotate(0, 0, rotationSpeed);
@@ -39,5 +41,5 @@ public class RotateBehavior : MonoBehaviour, IMovementType
 
         rotationCoroutine = Rotation(rotationSpeed);
         StartCoroutine(rotationCoroutine);
-    }
+    }*/
 }

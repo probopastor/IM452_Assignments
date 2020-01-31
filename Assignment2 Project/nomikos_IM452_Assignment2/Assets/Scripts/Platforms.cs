@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class Platforms : MonoBehaviour
 {
-    protected IMovementType objectMovementType;
+    public int switchPlatformBehaviors = 0;
 
-    public static int switchPlatformBehaviors = 0;
+    protected IMovementType objectMovementType;
 
     protected float spinSpeed = 5f;
     protected float moveSpeed = 5f;
@@ -17,6 +17,7 @@ public abstract class Platforms : MonoBehaviour
         objectMovementType = movingObject;
     }
 
+    /*
     public void SetBehaviorVariables()
     {
         if (gameObject.GetComponent<RotateBehavior>() != null)
@@ -29,5 +30,5 @@ public abstract class Platforms : MonoBehaviour
             gameObject.GetComponent<LinearMovementBehavior>().xDirection = moveSpeed;
             gameObject.GetComponent<LinearMovementBehavior>().timeInDirection = linearDirectionTime;
         }
-    }
+    }*/
 }
