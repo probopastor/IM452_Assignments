@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Platforms : MonoBehaviour
 {
-    public int switchPlatformBehaviors = 0;
+    //public int switchPlatformBehaviors = 0;
 
     protected IMovementType objectMovementType;
 

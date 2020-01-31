@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class SpinningPlatforms : Platforms
 {
-   // public int switchPlatformBehaviors = 0;
-
-   // float count1 = 0f;
-    //float count2 = 0;
+    private int switchPlatformBehaviors = 0;
+    [SerializeField] private float count1 = 0.5f;
+    [SerializeField] private float countDepletionRate = 1f;
+    private float count2 = 0;
 
     private void Start()
     {
-        //count1 = 10f;
-       // count2 = count1;
-        //objectMovementType2 = this.gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType;
+        count2 = count1;
+
         if(gameObject.GetComponent(typeof(RotateBehavior)) == null)
         {
             SetMovementType(gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType);
@@ -25,8 +24,7 @@ public class SpinningPlatforms : Platforms
 
     private void Update()
     {
-        //count2-= 0.5f;
-        //Debug.Log("count2 " + count2 + "count1 " + count1);
+        count2-= countDepletionRate;
 
         Debug.Log("1: " + switchPlatformBehaviors);
 
@@ -38,13 +36,9 @@ public class SpinningPlatforms : Platforms
 
             Destroy(GetComponent<RotateBehavior>());
 
-            //objectMovementType2 = this.gameObject.AddComponent(typeof(LinearMovementBehavior)) as IMovementType;
-
             SetMovementType(this.gameObject.AddComponent(typeof(LinearMovementBehavior)) as IMovementType);
             gameObject.GetComponent<LinearMovementBehavior>().xDirection = moveSpeed;
             gameObject.GetComponent<LinearMovementBehavior>().timeInDirection = linearDirectionTime;
-
-            //SetBehaviorVariables();
 
         }
         else if(switchPlatformBehaviors >= 3)
@@ -53,24 +47,22 @@ public class SpinningPlatforms : Platforms
 
             Destroy(GetComponent<LinearMovementBehavior>());
 
-            //objectMovementType2 = gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType;
-
             SetMovementType(this.gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType);
             gameObject.GetComponent<RotateBehavior>().rotationSpeed = spinSpeed;
-
-            // SetBehaviorVariables();
-
 
             switchPlatformBehaviors = 0;
         }
         Debug.Log("4: " + switchPlatformBehaviors);
 
 
-       // if(count2 <= 0)
-       // {
-        //    switchPlatformBehaviors++;
-       //     count2 = count1;
-       // }
+        if(count2 <= 0)
+        {
+            if(Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                switchPlatformBehaviors++;
+                count2 = count1;
+            }
+        }
     }
 
 }
