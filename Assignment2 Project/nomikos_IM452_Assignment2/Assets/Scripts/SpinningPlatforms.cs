@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class SpinningPlatforms : Platforms
 {
-    public float spinSpeed = 0f;
-
     private void Start()
     {
-        objectMovementType = gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType;
+        SetMovementType(gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType);
+        SetBehaviorVariables();
     }
 
     private void Update()
@@ -19,14 +18,18 @@ public class SpinningPlatforms : Platforms
 
             Destroy(GetComponent<RotateBehavior>());
 
-            objectMovementType = gameObject.AddComponent(typeof(LinearMovementBehavior)) as IMovementType;
-            gameObject.GetComponent<LinearMovementBehavior>().xDirection = spinSpeed;
+            SetMovementType(gameObject.AddComponent(typeof(LinearMovementBehavior)) as IMovementType);
+
+            SetBehaviorVariables();
 
         }
         else if(switchPlatformBehaviors >= 3)
         {
             Destroy(GetComponent<LinearMovementBehavior>());
-            objectMovementType = gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType;
+
+            SetMovementType(gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType);
+
+            SetBehaviorVariables();
 
             switchPlatformBehaviors = 0;
         }

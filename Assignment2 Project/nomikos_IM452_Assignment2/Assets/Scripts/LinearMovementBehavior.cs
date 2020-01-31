@@ -7,32 +7,59 @@ public class LinearMovementBehavior : MonoBehaviour, IMovementType
     public float xDirection = 0f;
     public float yDirection = 0f;
 
+    public float timeInDirection = 0f;
+    public float timeRemaining = 0f;
+
+    bool doOnce;
+
+    private void Update()
+    {
+        if (!doOnce)
+        {
+            doOnce = true;
+            MovePattern();
+        }
+    }
 
     public void MovePattern()
     {
-        StartCoroutine("MovePlatform");
+        timeRemaining = timeInDirection;
+        StartCoroutine("MovePlatformRight");
     }
 
-    private IEnumerator MovePlatform()
+    private IEnumerator MovePlatformRight()
     {
-        transform.position = new Vector2(transform.position.x + xDirection, transform.position.y + yDirection);
-        yield return new WaitForSeconds(0.1f);
-        StartCoroutine("MovePlatform");
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.CompareTag("PositionSwitchCircle"))
+        if(timeRemaining > 0)
         {
-            if(xDirection != 0)
-            {
-                xDirection *= -1;
-            }
+            transform.position = new Vector2(transform.position.x + xDirection * Time.deltaTime, transform.position.y - yDirection * Time.deltaTime);
+            yield return new WaitForSeconds(0.01f);
+            timeRemaining -= 0.01f;
+            StartCoroutine("MovePlatformRight");
 
-            if(yDirection != 0)
-            {
-                yDirection *= -1;
-            }
+        }
+        else if(timeRemaining <= 0)
+        {
+            yield return new WaitForSeconds(0.01f);
+            timeRemaining = timeInDirection;
+            StartCoroutine("MovePlatformLeft");
         }
     }
+
+    private IEnumerator MovePlatformLeft()
+    {
+        if (timeRemaining > 0)
+        {
+            transform.position = new Vector2(transform.position.x - xDirection * Time.deltaTime, transform.position.y - yDirection * Time.deltaTime);
+            yield return new WaitForSeconds(0.01f);
+            timeRemaining -= 0.01f;
+            StartCoroutine("MovePlatformLeft");
+        }
+        else if (timeRemaining <= 0)
+        {
+            yield return new WaitForSeconds(0.01f);
+            timeRemaining = timeInDirection;
+            StartCoroutine("MovePlatformRight");
+        }
+    }
+
 }

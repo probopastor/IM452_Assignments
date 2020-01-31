@@ -12,8 +12,19 @@ using UnityEngine;
 public class RotateBehavior : MonoBehaviour, IMovementType
 {
     
-    [SerializeField] private float rotationSpeed = 0f;
+    public float rotationSpeed = 0f;
     private IEnumerator rotationCoroutine;
+    private bool doOnce;
+
+
+    private void Update()
+    {
+        if(!doOnce)
+        {
+            doOnce = true;
+            MovePattern();
+        }
+    }
 
     public void MovePattern()
     {
@@ -23,8 +34,10 @@ public class RotateBehavior : MonoBehaviour, IMovementType
 
     public IEnumerator Rotation(float rotationSpeed)
     {
-        transform.Rotate(rotationSpeed, 0, 0);
-        yield return new WaitForSeconds(0.1f);
+        transform.Rotate(0, 0, rotationSpeed);
+        yield return new WaitForSeconds(0.001f);
+
+        rotationCoroutine = Rotation(rotationSpeed);
         StartCoroutine(rotationCoroutine);
     }
 }

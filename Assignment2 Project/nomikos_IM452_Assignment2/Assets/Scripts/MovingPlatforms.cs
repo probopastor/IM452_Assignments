@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class MovingPlatforms : Platforms
 {
+
     private void Start()
     {
-        objectMovementType = gameObject.AddComponent(typeof(LinearMovementBehavior)) as IMovementType;
-        SetMovementType(objectMovementType);
+        SetMovementType(gameObject.AddComponent(typeof(LinearMovementBehavior)) as IMovementType);
+        SetBehaviorVariables();
     }
     
     private void Update()
@@ -15,16 +16,17 @@ public class MovingPlatforms : Platforms
         if (switchPlatformBehaviors == 1)
         {
             switchPlatformBehaviors++;
-            objectMovementType = gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType;
-            SetMovementType(objectMovementType);
+
+            SetMovementType(gameObject.AddComponent(typeof(RotateBehavior)) as IMovementType);
+            SetBehaviorVariables();
 
         }
         else if (switchPlatformBehaviors >= 3)
         {
-            switchPlatformBehaviors = 0;
+            SetMovementType(gameObject.AddComponent(typeof(LinearMovementBehavior)) as IMovementType);
+            SetBehaviorVariables();
 
-            objectMovementType = gameObject.AddComponent(typeof(LinearMovementBehavior)) as IMovementType;
-            SetMovementType(objectMovementType);
+            switchPlatformBehaviors = 0;
         }
     }
 }
