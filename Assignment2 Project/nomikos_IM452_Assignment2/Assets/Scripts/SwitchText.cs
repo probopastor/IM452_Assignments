@@ -14,6 +14,9 @@ public class SwitchText : MonoBehaviour
     public Color incompleteColor;
     public Color completeColor;
 
+    public AudioSource SwitchSource;
+    public AudioClip switchSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,9 @@ public class SwitchText : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                SwitchSource.clip = switchSound;
+                SwitchSource.Play();
+
                 count2 = count1;
                 switchText.text = "Switch Timer: Not Ready";
                 switchText.color = incompleteColor;

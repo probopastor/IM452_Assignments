@@ -29,6 +29,9 @@ public class PlayerBehavior : MonoBehaviour
 
     public GameObject winPanel;
 
+    public AudioSource SoundSource;
+    public AudioClip jumpSound;
+
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +62,9 @@ public class PlayerBehavior : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && canJump)
         {
+            SoundSource.clip = jumpSound;
+            SoundSource.Play();
+
             playerRb.velocity = new Vector2(playerRb.velocity.x, jumpHeight);
             canJump = false;
         }
