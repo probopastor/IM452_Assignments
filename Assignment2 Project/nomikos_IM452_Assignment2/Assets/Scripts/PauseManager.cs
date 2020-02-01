@@ -10,12 +10,17 @@ public class PauseManager : MonoBehaviour
 
     public GameObject PauseCanvas;
 
+    public AudioSource GameSource;
+    public AudioClip gameMusic;
 
     // Start is called before the first frame update
     void Start()
     {
         paused = false;
         PauseCanvas.SetActive(false);
+
+        GameSource.clip = gameMusic;
+        GameSource.Play();
     }
 
     // Update is called once per frame
