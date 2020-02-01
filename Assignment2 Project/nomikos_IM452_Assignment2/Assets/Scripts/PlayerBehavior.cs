@@ -99,7 +99,6 @@ public class PlayerBehavior : MonoBehaviour
 
         if (collision.gameObject.tag.Equals("WinZone"))
         {
-            Time.timeScale = 0;
             winPanel.SetActive(true);
         }
     }
