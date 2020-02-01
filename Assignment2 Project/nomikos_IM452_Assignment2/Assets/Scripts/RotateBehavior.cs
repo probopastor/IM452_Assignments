@@ -1,8 +1,9 @@
 ﻿/*
 * William Nomikos
-* RotateRight.cs
+* RotateBehavior.cs
 * Assignment 2
-* Script is the "has a" component for platforms that rotate in the right direction. 
+* Script handles the behavior for any object with RotateBehavior movement type.
+* Rotates platforms at a given rotation speed. 
 */
 
 using System.Collections;

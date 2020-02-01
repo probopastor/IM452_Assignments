@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* Platforms.cs
+* Assignment2
+* The superclass that handles all platform objects. Uses IMovementType interface
+* to set the movement type (object behavior) for platforms.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

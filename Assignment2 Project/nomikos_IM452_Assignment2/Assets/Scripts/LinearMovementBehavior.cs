@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* LinearMovementBehavior.cs
+* Assignment 2
+* Script handles the behavior for any object with LinearMovemnent movement type.
+* Moves platforms from one point to another point over a period of time.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

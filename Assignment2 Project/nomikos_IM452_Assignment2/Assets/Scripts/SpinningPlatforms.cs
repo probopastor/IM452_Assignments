@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* SpinningPlatforms.cs
+* Assignment2
+* Handles switching the behavior of the spinning platforms at runtime 
+* when the player left clicks when timer count1 is at 0.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

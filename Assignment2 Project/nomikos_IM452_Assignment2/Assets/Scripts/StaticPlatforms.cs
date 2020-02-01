@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* StaticPlatforms.cs
+* Assignment2
+* Adds NoMovementBehavior to all static platforms.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

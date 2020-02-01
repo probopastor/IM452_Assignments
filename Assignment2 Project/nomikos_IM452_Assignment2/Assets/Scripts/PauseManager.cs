@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PauseManager.cs
+* Assignment 2
+* Script handles the functionality of the pause menu and button presses
+* within the game scene. Handles main game UI.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

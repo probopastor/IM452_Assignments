@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* SwitchText.cs
+* Assignment 2
+* Script alters the UI text to show the player when they can switch
+* platform functionality. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,14 +33,12 @@ public class SwitchText : MonoBehaviour
         switchText.color = incompleteColor;
 
         count2 = count1;
-
     }
 
     // Update is called once per frame
     void Update()
     {
         count2 -= countDepletionRate;
-
 
         if (count2 <= 0)
         {

@@ -213,8 +213,8 @@ MonoBehaviour:
   switchText: {fileID: 93355288}
   incompleteColor: {r: 1, g: 0, b: 0, a: 1}
   completeColor: {r: 0.0627451, g: 0.3882353, b: 0.13333334, a: 1}
-  SwitchSource: {fileID: 0}
-  switchSound: {fileID: 0}
+  SwitchSource: {fileID: 821716648}
+  switchSound: {fileID: 8300000, guid: 1d3bfcfe4bcf67745b42e5bad50b36c2, type: 3}
 --- !u!1 &206640914
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,7 +4058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2136727803
 RectTransform:
   m_ObjectHideFlags: 0
