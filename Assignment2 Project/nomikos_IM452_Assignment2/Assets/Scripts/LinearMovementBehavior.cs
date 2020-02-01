@@ -58,12 +58,6 @@ public class LinearMovementBehavior : MonoBehaviour, IMovementType
                 moveLeft = false;
             }
         }
-        
-
-
-
 
     }
-
-
 }
