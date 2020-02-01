@@ -8,6 +8,9 @@ public class StartGame : MonoBehaviour
     public AudioSource MainMenuSource;
     public AudioClip menuMusic;
 
+    public AudioSource SoundEffectSource;
+    public AudioClip buttonClick;
+
     private void Start()
     {
         MainMenuSource.clip = menuMusic;
@@ -17,5 +20,11 @@ public class StartGame : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void ButtonClick()
+    {
+        SoundEffectSource.clip = buttonClick;
+        SoundEffectSource.Play();
     }
 }

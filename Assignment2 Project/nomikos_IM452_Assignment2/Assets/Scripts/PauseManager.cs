@@ -13,6 +13,9 @@ public class PauseManager : MonoBehaviour
     public AudioSource GameSource;
     public AudioClip gameMusic;
 
+    public AudioSource SoundEffectSource;
+    public AudioClip buttonClick;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,5 +63,9 @@ public class PauseManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
-
+    public void ButtonClick()
+    {
+        SoundEffectSource.clip = buttonClick;
+        SoundEffectSource.Play();
+    }
 }
