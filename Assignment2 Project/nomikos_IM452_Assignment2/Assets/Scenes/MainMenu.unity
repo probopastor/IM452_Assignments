@@ -2018,7 +2018,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Game created by William Nomikos\n\n\nMusic: \n\nVictory - BoxCat Games\nMap
-    Theme - Box Cat Games"
+    Theme - Box Cat Games\n\nSound Effects: \n\nClick - complex_waveform: https://freesound.org/people/complex_waveform/sounds/213148/\nJump_C_02
+    - cabled_mess: https://freesound.org/people/cabled_mess/sounds/350904/\nBlip Wave
+    - Breviceps: https://freesound.org/people/Breviceps/sounds/452998/\nLose_C_04
+    - cabled_mess: https://freesound.org/people/cabled_mess/sounds/350988/\n\n\n\n\n"
 --- !u!222 &1383040867
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4055,7 +4058,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2136727803
 RectTransform:
   m_ObjectHideFlags: 0
