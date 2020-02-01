@@ -2531,7 +2531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Left Click to turn all linear movement platforms into spinning platforms
+  m_Text: Left Mouse Click to turn all linear movement platforms into spinning platforms
     and vice versa. However, this ability has a short cooldown. Use this ability to
     your advantage.
 --- !u!222 &1840704184
