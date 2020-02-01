@@ -31,7 +31,7 @@ public class PlayerBehavior : MonoBehaviour
 
     public AudioSource SoundSource;
     public AudioClip jumpSound;
-
+    public AudioClip deathSound;
 
     // Start is called before the first frame update
     void Start()
@@ -94,7 +94,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("KillZone"))
         {
-            SceneManager.LoadScene("SampleScene");
+            StartCoroutine("ReloadScene");
         }
 
         if (collision.gameObject.tag.Equals("WinZone"))
@@ -102,5 +102,13 @@ public class PlayerBehavior : MonoBehaviour
             Time.timeScale = 0;
             winPanel.SetActive(true);
         }
+    }
+
+    public IEnumerator ReloadScene()
+    {
+        SoundSource.clip = deathSound;
+        SoundSource.Play();
+        yield return new WaitForSeconds(0.9f);
+        SceneManager.LoadScene("SampleScene");
     }
 }

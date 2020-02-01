@@ -10005,6 +10005,7 @@ MonoBehaviour:
   winPanel: {fileID: 364512562}
   SoundSource: {fileID: 2006739016}
   jumpSound: {fileID: 8300000, guid: 8d340d4dbfb0cca47969ff9e639fe128, type: 3}
+  deathSound: {fileID: 8300000, guid: 8b11603dfb487d143805908b7017fc08, type: 3}
 --- !u!96 &2038656692
 TrailRenderer:
   serializedVersion: 2
