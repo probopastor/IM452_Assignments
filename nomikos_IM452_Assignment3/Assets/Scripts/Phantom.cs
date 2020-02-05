@@ -32,20 +32,12 @@ public class Phantom : MonoBehaviour, IObserver
 
         if (chasePlayer)
         {
-            if(moveAwayCoroutine != null)
-            {
-                StopCoroutine(moveAwayCoroutine);
-            }
             moveTowardsPlayer = true;
             moveTowardsCoroutine = MovePhantomToPlayer(chaseSpeed);
             StartCoroutine(moveTowardsCoroutine);
         }
         else if (!chasePlayer)
         {
-            if(moveTowardsCoroutine != null)
-            {
-                StopCoroutine(moveTowardsCoroutine);
-            }
             moveTowardsPlayer = false;
             moveAwayCoroutine = MovePhantomAwayFromPlayer(chaseSpeed);
             StartCoroutine(moveAwayCoroutine);
@@ -56,33 +48,49 @@ public class Phantom : MonoBehaviour, IObserver
     private IEnumerator MovePhantomToPlayer(float chaseSpeed)
     {
         yield return new WaitForSeconds(0.1f);
-        if (moveTowardsPlayer)
+        if (gameObject != null)
         {
-            moveTowardsCoroutine = MovePhantomToPlayer(chaseSpeed);
+            if (moveTowardsPlayer)
+            {
+                moveTowardsCoroutine = MovePhantomToPlayer(chaseSpeed);
 
-            Debug.Log("Moving Towards");
+                Debug.Log("Moving Towards");
 
 
-            //move to code here
+                //move to code here
 
-            StartCoroutine(moveTowardsCoroutine);
+                StartCoroutine(moveTowardsCoroutine);
+            }
         }
-        
+        else
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+
     }
     private IEnumerator MovePhantomAwayFromPlayer(float chaseSpeed)
     {
         yield return new WaitForSeconds(0.1f);
 
-        if (!moveTowardsPlayer)
+        if(gameObject != null)
         {
-            moveAwayCoroutine = MovePhantomAwayFromPlayer(chaseSpeed);
+            if (!moveTowardsPlayer)
+            {
+                moveAwayCoroutine = MovePhantomAwayFromPlayer(chaseSpeed);
 
-            Debug.Log("Moving Away");
+                Debug.Log("Moving Away");
 
-            //move away code here
+                //move away code here
 
-            StartCoroutine(moveAwayCoroutine);
+                StartCoroutine(moveAwayCoroutine);
+            }
         }
+        else
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+       
     }
 
 
@@ -92,6 +100,7 @@ public class Phantom : MonoBehaviour, IObserver
         {
             if (!tankDamage)
             {
+                phantomBehavior.RemoveObserver(this);
                 Destroy(this.gameObject);
             }
             else if(tankDamage)
