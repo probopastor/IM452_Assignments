@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 181439533}
   m_Layer: 0
   m_Name: Phantom (3)
-  m_TagString: AttackGhost
+  m_TagString: Phantom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phantomBehavior: {fileID: 611236062}
-  player: {fileID: 0}
 --- !u!65 &181439534
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -242,7 +241,7 @@ GameObject:
   - component: {fileID: 550832037}
   m_Layer: 0
   m_Name: Phantom
-  m_TagString: AttackGhost
+  m_TagString: Phantom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,7 +259,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phantomBehavior: {fileID: 611236062}
-  player: {fileID: 581505311}
 --- !u!65 &550832038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -377,7 +375,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581505311}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.8267861, z: -0, w: 0.56251645}
   m_LocalPosition: {x: -9.278181, y: 4.13, z: 4.505207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -385,8 +383,8 @@ Transform:
   - {fileID: 963194228}
   - {fileID: 1423620918}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -111.54, z: 0}
 --- !u!114 &581505314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,7 +421,7 @@ GameObject:
   - component: {fileID: 609591392}
   m_Layer: 8
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -512,7 +510,7 @@ Transform:
   m_LocalScale: {x: 46.655, y: 1, z: 34.720802}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &611236061
 GameObject:
@@ -543,16 +541,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712f2244cfc017a44928fe6ca3b003bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackColor: {r: 0, g: 0.8392157, b: 0, a: 0.9019608}
+  runColor: {r: 1, g: 0, b: 0, a: 1}
   runSpeed: 0.05
   walkSpeed: 0.005
-  chasingPlayer: 0
-  switchEnemyMode: 0
-  canBeSwitched: 0
-  movementSpeed: 0
-  attackPhaseTimer: 400
-  defensePhaseTimer: 800
-  attackTimer: 0
-  defenseTimer: 0
+  attackPhaseTimer: 500
+  defensePhaseTimer: 200
 --- !u!4 &611236063
 Transform:
   m_ObjectHideFlags: 0
@@ -582,7 +576,7 @@ GameObject:
   - component: {fileID: 623669725}
   m_Layer: 0
   m_Name: Phantom (2)
-  m_TagString: AttackGhost
+  m_TagString: Phantom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -600,7 +594,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phantomBehavior: {fileID: 611236062}
-  player: {fileID: 0}
 --- !u!65 &623669726
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -779,6 +772,10 @@ PrefabInstance:
     - target: {fileID: 100022, guid: b592d2faa93e6ad46a6d520adf8f123e, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: b592d2faa93e6ad46a6d520adf8f123e, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 400022, guid: b592d2faa93e6ad46a6d520adf8f123e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -964,6 +961,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1050,6 +1048,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   playerBody: {fileID: 581505313}
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb85bd2a7a47e5042b677b1f82adfa78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 3931500725639860791, guid: 7ffe6f9627450a04b8067eeeefbcd740, type: 3}
+  shootCooldown: 5
+  bulletSpeed: 10
 --- !u!1 &1423620917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,7 +1108,7 @@ GameObject:
   - component: {fileID: 1482794192}
   m_Layer: 0
   m_Name: Phantom (1)
-  m_TagString: AttackGhost
+  m_TagString: Phantom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1113,7 +1126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phantomBehavior: {fileID: 611236062}
-  player: {fileID: 0}
 --- !u!65 &1482794193
 BoxCollider:
   m_ObjectHideFlags: 0

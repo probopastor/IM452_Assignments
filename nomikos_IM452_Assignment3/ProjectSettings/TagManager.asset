@@ -7,6 +7,10 @@ TagManager:
   - Fire
   - AttackGhost
   - DefenseGhost
+  - Sword
+  - Ground
+  - Phantom
+  - Bullet
   layers:
   - Default
   - TransparentFX

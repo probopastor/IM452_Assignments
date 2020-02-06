@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class Phantom : MonoBehaviour, IObserver
 {
-    private bool tankDamage;
-
     public PhantomBehaviorData phantomBehavior;
-    public GameObject player;
+
+    private bool tankDamage;
+    private Renderer phantomRend;
+
+    private GameObject player;
     private Transform playerTransform;
 
     private IEnumerator moveTowardsCoroutine;
     private IEnumerator moveAwayCoroutine;
 
-    bool moveTowardsPlayer;
+    private bool moveTowardsPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         phantomBehavior.RegisterObserver(this);
+        phantomRend = gameObject.GetComponent<Renderer>();
         player = GameObject.Find("Player");
         playerTransform = player.transform;
         moveTowardsPlayer = false;
@@ -26,9 +29,11 @@ public class Phantom : MonoBehaviour, IObserver
 
     }
 
-    public void UpdateData(bool chasePlayer, float chaseSpeed, bool immuneToDamage)
+    public void UpdateData(bool chasePlayer, float chaseSpeed, bool immuneToDamage, Color currentColor)
     {
         tankDamage = immuneToDamage;
+
+        //phantomRend.material.SetColor("_Color", currentColor);
 
         if (chasePlayer)
         {
@@ -97,14 +102,18 @@ public class Phantom : MonoBehaviour, IObserver
     {
         if(other.CompareTag("Player"))
         {
+            if(tankDamage)
+            {
+                Time.timeScale = 0;
+            }
+        }
+
+        if(other.CompareTag("Bullet"))
+        {
             if (!tankDamage)
             {
                 phantomBehavior.RemoveObserver(this);
                 Destroy(this.gameObject);
-            }
-            else if(tankDamage)
-            {
-                Time.timeScale = 0;
             }
         }
     }

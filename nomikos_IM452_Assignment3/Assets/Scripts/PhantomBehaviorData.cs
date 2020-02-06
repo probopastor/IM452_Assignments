@@ -6,26 +6,33 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
 {
     private List<IObserver> observerList = new List<IObserver>();
 
+    private Color phantomColor;
+
+    public Color attackColor;
+    public Color runColor;
+
     public float runSpeed = 10f;
     public float walkSpeed = 5f;
 
-    public bool chasingPlayer;
-    public bool switchEnemyMode;
-    public bool canBeSwitched;
+    private bool chasingPlayer;
+    private bool switchEnemyMode;
+    private bool canBeSwitched;
 
-    public float movementSpeed = 0f;
+    private float movementSpeed = 0f;
 
     public float attackPhaseTimer = 100f;
     public float defensePhaseTimer = 100f;
 
-    public float attackTimer;
-    public float defenseTimer;
+    private float attackTimer = 0f;
+    private float defenseTimer = 0f;
 
     private bool immuneToDamage;
 
     // Start is called before the first frame update
     void Start()
     {
+        phantomColor = attackColor;
+
         immuneToDamage = true;
 
         chasingPlayer = true;
@@ -65,6 +72,7 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
                 canBeSwitched = false;
                 chasingPlayer = false;
                 switchEnemyMode = false;
+                phantomColor = runColor;
                 attackTimer = attackPhaseTimer;
             }
         }
@@ -80,6 +88,7 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
         else if(!chasingPlayer && defenseTimer <= 0)
         {
             chasingPlayer = true;
+            phantomColor = attackColor;
             defenseTimer = defensePhaseTimer;
         }
     }
@@ -88,14 +97,14 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
     {
         foreach (IObserver observer in observerList)
         {
-            observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage);
+            observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage, phantomColor);
         }
     }
 
     public void RegisterObserver(IObserver observer)
     {
         observerList.Add(observer);
-        observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage);
+        observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage, phantomColor);
     }
 
     public void RemoveObserver(IObserver observer)
