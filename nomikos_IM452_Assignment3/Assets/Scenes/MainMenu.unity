@@ -317,8 +317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -2.8, y: -231}
-  m_SizeDelta: {x: 696.4, y: 178.9}
+  m_AnchoredPosition: {x: -2.8, y: -245.2}
+  m_SizeDelta: {x: 696.4, y: 275.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298221466
 MonoBehaviour:
@@ -345,16 +345,15 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 42
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Game created by William Nomikos
-
-
-    Sound Effect: '
+  m_Text: "Game created by William Nomikos\n\nMusic: \n\nSound Effects: \n\nClick
+    - complex_waveform: https://freesound.org/people/complex_waveform/sounds/213148/\n\nShooting_Sounds_006:
+    https://freesound.org/people/jalastram/sounds/362460/"
 --- !u!222 &298221467
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -6,6 +6,9 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
 {
     private List<IObserver> observerList = new List<IObserver>();
 
+    public AudioSource SoundEffectSource;
+    public AudioClip damagePlayerSound;
+
     private Color phantomColor = new Color(0,0,0);
 
     public float damageRate = 0f;
@@ -101,14 +104,14 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
     {
         foreach (IObserver observer in observerList)
         {
-            observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage, phantomColor, damageRate);
+            observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage, phantomColor, damageRate, SoundEffectSource, damagePlayerSound);
         }
     }
 
     public void RegisterObserver(IObserver observer)
     {
         observerList.Add(observer);
-        observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage, phantomColor, damageRate);
+        observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage, phantomColor, damageRate, SoundEffectSource, damagePlayerSound);
     }
 
     public void RemoveObserver(IObserver observer)

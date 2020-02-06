@@ -6,6 +6,9 @@ public class Phantom : MonoBehaviour, IObserver
 {
     public PhantomBehaviorData phantomBehavior;
 
+    private AudioSource SoundSource;
+    private AudioClip playerDamageClip;
+
     private bool tankDamage;
 
     private float dealDamageRate = 0f;
@@ -46,12 +49,15 @@ public class Phantom : MonoBehaviour, IObserver
         rend.material.SetColor("_Color", currentColor);
     }
 
-    public void UpdateData(bool chasePlayer, float chaseSpeed, bool immuneToDamage, Color currentColor, float damageRate)
+    public void UpdateData(bool chasePlayer, float chaseSpeed, bool immuneToDamage, Color currentColor, float damageRate, AudioSource SoundEffectSource, AudioClip damageNoise)
     {
         tankDamage = immuneToDamage;
 
         phantomColor = currentColor;
         dealDamageRate = damageRate;
+
+        SoundSource = SoundEffectSource;
+        playerDamageClip = damageNoise;
 
         if (chasePlayer)
         {
@@ -125,7 +131,10 @@ public class Phantom : MonoBehaviour, IObserver
                 if(damageTimer <= 0)
                 {
                     PlayerMovement.currentPlayerHealth--;
-                    Debug.Log("health: " + PlayerMovement.currentPlayerHealth);
+
+                    SoundSource.clip = playerDamageClip;
+                    SoundSource.Play();
+
                     damageTimer = dealDamageRate;
                 }
                 else
@@ -155,7 +164,10 @@ public class Phantom : MonoBehaviour, IObserver
                 if (damageTimer <= 0)
                 {
                     PlayerMovement.currentPlayerHealth--;
-                    Debug.Log("health: " + PlayerMovement.currentPlayerHealth);
+
+                    SoundSource.clip = playerDamageClip;
+                    SoundSource.Play();
+
                     damageTimer = dealDamageRate;
                 }
                 else

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ShootBullet : MonoBehaviour
 {
+    public AudioSource soundEffectSource;
+    public AudioClip shootingSound;
+
     public GameObject bullet;
     public float shootCooldown = 1f;
     public float bulletSpeed = 0f;
@@ -23,6 +26,9 @@ public class ShootBullet : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                soundEffectSource.clip = shootingSound;
+                soundEffectSource.Play();
+
                 GameObject bulletClone = Instantiate(bullet, gameObject.transform.position, Quaternion.identity);
                 bulletClone.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
             }

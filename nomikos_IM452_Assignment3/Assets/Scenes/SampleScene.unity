@@ -181,7 +181,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.73
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -300,7 +300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -121.4, y: -8}
+  m_AnchoredPosition: {x: -163, y: -8}
   m_SizeDelta: {x: 238, y: 123.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &48192610
@@ -1781,6 +1781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712f2244cfc017a44928fe6ca3b003bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundEffectSource: {fileID: 15484246}
+  damagePlayerSound: {fileID: 8300000, guid: 53623e3f5c0a77c418b9610729e6e43c, type: 3}
   damageRate: 100
   attackColor: {r: 1, g: 0.04241266, b: 0, a: 1}
   runColor: {r: 0, g: 0.46160936, b: 1, a: 1}
@@ -3485,6 +3487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb85bd2a7a47e5042b677b1f82adfa78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffectSource: {fileID: 15484246}
+  shootingSound: {fileID: 8300000, guid: 7ed6f82099265204ba679d26be5311bc, type: 3}
   bullet: {fileID: 3931500725639860791, guid: 7ffe6f9627450a04b8067eeeefbcd740, type: 3}
   shootCooldown: 25
   bulletSpeed: 50
