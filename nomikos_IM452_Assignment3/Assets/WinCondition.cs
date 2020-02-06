@@ -24,9 +24,9 @@ public class WinCondition : MonoBehaviour
     {
         if(EnemiesRemaining <= 0)
         {
+            EnemiesRemaining = 0;
             WinPanel.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
-            Time.timeScale = 0;
         }
     }
 }
