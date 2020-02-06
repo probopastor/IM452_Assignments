@@ -317,8 +317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -2.8, y: -245.2}
-  m_SizeDelta: {x: 696.4, y: 275.8}
+  m_AnchoredPosition: {x: -2.8, y: -284}
+  m_SizeDelta: {x: 696.4, y: 332.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298221466
 MonoBehaviour:
@@ -340,7 +340,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 16
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -351,8 +351,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Game created by William Nomikos\n\nMusic: \n\nSound Effects: \n\nClick
-    - complex_waveform: https://freesound.org/people/complex_waveform/sounds/213148/\n\nShooting_Sounds_006:
+  m_Text: "Game created by William Nomikos\n\nMusic: \n\nElectronic Fantasy\r- Patrick
+    De Arteaga\nResilience - Patrick De Arteaga\n\nSound Effects: \n\nClick - complex_waveform:
+    https://freesound.org/people/complex_waveform/sounds/213148/\n\nShooting_Sounds_006:
     https://freesound.org/people/jalastram/sounds/362460/"
 --- !u!222 &298221467
 CanvasRenderer:
@@ -643,7 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameSource: {fileID: 701056664}
-  gameMusic: {fileID: 0}
+  gameMusic: {fileID: 8300000, guid: efe585b8b76c21146ac4873c64c833ed, type: 3}
   SoundEffectSource: {fileID: 368291589}
   buttonClick: {fileID: 8300000, guid: b113ee6eac8bded4fa04f0c86e9a5f78, type: 3}
 --- !u!4 &368291591
@@ -1213,7 +1214,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0.53
   m_Pitch: 1
   Loop: 1
@@ -2164,7 +2165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1090441989
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3314,7 +3315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1866017481
 RectTransform:
   m_ObjectHideFlags: 0
