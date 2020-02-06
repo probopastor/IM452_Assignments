@@ -48,7 +48,7 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && canBeSwitched)
+        if(Input.GetKeyDown(KeyCode.Mouse1) && canBeSwitched)
         {
             switchEnemyMode = true;
         }
