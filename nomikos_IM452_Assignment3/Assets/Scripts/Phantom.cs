@@ -139,6 +139,7 @@ public class Phantom : MonoBehaviour, IObserver
         {
             if (!tankDamage)
             {
+                WinCondition.EnemiesRemaining--;
                 phantomBehavior.RemoveObserver(this);
                 Destroy(this.gameObject);
             }
