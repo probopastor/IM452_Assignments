@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PhantomsRemaining : MonoBehaviour
+public class TimeUntilBehaviorSwitch : MonoBehaviour
 {
     public Text thisText;
+
+    public static float timeRemaining = 0f;
 
     // Update is called once per frame
     void Update()
     {
-        thisText.text = "Enemies Remaining " + WinCondition.EnemiesRemaining + " / " + WinCondition.WinState;
+        thisText.text = "Ability Cooldown Time: " + timeRemaining;
     }
 }

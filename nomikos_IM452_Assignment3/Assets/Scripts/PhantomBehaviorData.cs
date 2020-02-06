@@ -57,6 +57,8 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
     // Update is called once per frame
     void FixedUpdate()
     {
+        TimeUntilBehaviorSwitch.timeRemaining = attackTimer;
+
         if(chasingPlayer && attackTimer > 0)
         {
             attackTimer--;
