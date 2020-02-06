@@ -6,8 +6,8 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
 {
     private List<IObserver> observerList = new List<IObserver>();
 
-    public float runSpeed = 0f;
-    public float walkSpeed = 0f;
+    public float runSpeed = 10f;
+    public float walkSpeed = 5f;
 
     public bool chasingPlayer;
     public bool switchEnemyMode;
@@ -43,8 +43,6 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
         {
             switchEnemyMode = true;
         }
-
-        Debug.Log("Attack Timer " + attackTimer + " Defense Timer " + defenseTimer);
     }
 
     // Update is called once per frame

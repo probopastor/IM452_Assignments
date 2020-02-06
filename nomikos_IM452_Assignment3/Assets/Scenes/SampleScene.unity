@@ -543,14 +543,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712f2244cfc017a44928fe6ca3b003bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runSpeed: 1
-  walkSpeed: 1
+  runSpeed: 0.05
+  walkSpeed: 0.005
   chasingPlayer: 0
   switchEnemyMode: 0
   canBeSwitched: 0
   movementSpeed: 0
-  attackPhaseTimer: 100
-  defensePhaseTimer: 100
+  attackPhaseTimer: 400
+  defensePhaseTimer: 800
   attackTimer: 0
   defenseTimer: 0
 --- !u!4 &611236063

@@ -52,12 +52,9 @@ public class Phantom : MonoBehaviour, IObserver
         {
             if (moveTowardsPlayer)
             {
+                transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, chaseSpeed * Time.deltaTime);
+
                 moveTowardsCoroutine = MovePhantomToPlayer(chaseSpeed);
-
-                Debug.Log("Moving Towards");
-
-
-                //move to code here
 
                 StartCoroutine(moveTowardsCoroutine);
             }
@@ -77,11 +74,13 @@ public class Phantom : MonoBehaviour, IObserver
         {
             if (!moveTowardsPlayer)
             {
+                transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, -chaseSpeed * Time.deltaTime);
+                if(transform.position.y < 1.060511f)
+                {
+                    transform.position = new Vector3(transform.position.x, 1.060511f, transform.position.z);
+                }
+
                 moveAwayCoroutine = MovePhantomAwayFromPlayer(chaseSpeed);
-
-                Debug.Log("Moving Away");
-
-                //move away code here
 
                 StartCoroutine(moveAwayCoroutine);
             }
