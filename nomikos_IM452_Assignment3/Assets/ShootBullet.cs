@@ -10,6 +10,7 @@ public class ShootBullet : MonoBehaviour
 
     private float currentShootCooldown = 0f;
 
+
     private void Start()
     {
         currentShootCooldown = shootCooldown;

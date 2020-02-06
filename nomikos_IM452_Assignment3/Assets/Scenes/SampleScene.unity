@@ -541,7 +541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712f2244cfc017a44928fe6ca3b003bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackColor: {r: 0, g: 0.8392157, b: 0, a: 0.9019608}
+  attackColor: {r: 0, g: 0.8392157, b: 0, a: 1}
   runColor: {r: 1, g: 0, b: 0, a: 1}
   runSpeed: 0.05
   walkSpeed: 0.005

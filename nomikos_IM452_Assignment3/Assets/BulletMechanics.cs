@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class BulletMechanics : MonoBehaviour
 {
+    private Renderer rend;
 
     private void Start()
     {
+        rend = GetComponent<Renderer>();
+
+        rend.material.SetColor("_Color", Color.red);
+
         Destroy(gameObject, 10f);
     }
 

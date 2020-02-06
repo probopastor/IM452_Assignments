@@ -7,7 +7,8 @@ public class Phantom : MonoBehaviour, IObserver
     public PhantomBehaviorData phantomBehavior;
 
     private bool tankDamage;
-    private Renderer phantomRend;
+
+    private Renderer rend;
 
     private GameObject player;
     private Transform playerTransform;
@@ -17,23 +18,34 @@ public class Phantom : MonoBehaviour, IObserver
 
     private bool moveTowardsPlayer;
 
+    private Color phantomColor;
+
     // Start is called before the first frame update
     void Start()
     {
         phantomBehavior.RegisterObserver(this);
-        phantomRend = gameObject.GetComponent<Renderer>();
+
+        rend = GetComponent<Renderer>();
+
         player = GameObject.Find("Player");
         playerTransform = player.transform;
         moveTowardsPlayer = false;
+    }
 
-
+    private void Update()
+    {
+        ChangeColor(phantomColor);
+    }
+    private void ChangeColor(Color currentColor)
+    {
+        rend.material.SetColor("_Color", currentColor);
     }
 
     public void UpdateData(bool chasePlayer, float chaseSpeed, bool immuneToDamage, Color currentColor)
     {
         tankDamage = immuneToDamage;
 
-        //phantomRend.material.SetColor("_Color", currentColor);
+        phantomColor = currentColor;
 
         if (chasePlayer)
         {

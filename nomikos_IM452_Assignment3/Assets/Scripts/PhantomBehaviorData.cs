@@ -6,7 +6,7 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
 {
     private List<IObserver> observerList = new List<IObserver>();
 
-    private Color phantomColor;
+    private Color phantomColor = new Color(0,0,0);
 
     public Color attackColor;
     public Color runColor;
