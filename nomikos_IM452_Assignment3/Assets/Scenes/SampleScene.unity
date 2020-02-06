@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PauseCanvas: {fileID: 863218889}
   GameSource: {fileID: 705507996}
-  gameMusic: {fileID: 0}
+  gameMusic: {fileID: 8300000, guid: a0f979832a273614b822124f15870126, type: 3}
   SoundEffectSource: {fileID: 15484246}
   buttonClick: {fileID: 8300000, guid: b113ee6eac8bded4fa04f0c86e9a5f78, type: 3}
 --- !u!4 &15484245
@@ -181,7 +181,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.73
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2105,7 +2105,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.56
+  m_Volume: 0.27
   m_Pitch: 1
   Loop: 1
   Mute: 0
