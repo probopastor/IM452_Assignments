@@ -8,6 +8,8 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
 
     private Color phantomColor = new Color(0,0,0);
 
+    public float damageRate = 0f;
+
     public Color attackColor;
     public Color runColor;
 
@@ -97,14 +99,14 @@ public class PhantomBehaviorData : MonoBehaviour, ISubject
     {
         foreach (IObserver observer in observerList)
         {
-            observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage, phantomColor);
+            observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage, phantomColor, damageRate);
         }
     }
 
     public void RegisterObserver(IObserver observer)
     {
         observerList.Add(observer);
-        observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage, phantomColor);
+        observer.UpdateData(chasingPlayer, movementSpeed, immuneToDamage, phantomColor, damageRate);
     }
 
     public void RemoveObserver(IObserver observer)

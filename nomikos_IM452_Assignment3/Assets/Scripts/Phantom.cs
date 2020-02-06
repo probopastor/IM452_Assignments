@@ -8,6 +8,9 @@ public class Phantom : MonoBehaviour, IObserver
 
     private bool tankDamage;
 
+    private float dealDamageRate = 0f;
+    private float damageTimer = 0f;
+
     private Renderer rend;
 
     private GameObject player;
@@ -23,6 +26,8 @@ public class Phantom : MonoBehaviour, IObserver
     // Start is called before the first frame update
     void Start()
     {
+        damageTimer = dealDamageRate;
+
         phantomBehavior.RegisterObserver(this);
 
         rend = GetComponent<Renderer>();
@@ -41,11 +46,12 @@ public class Phantom : MonoBehaviour, IObserver
         rend.material.SetColor("_Color", currentColor);
     }
 
-    public void UpdateData(bool chasePlayer, float chaseSpeed, bool immuneToDamage, Color currentColor)
+    public void UpdateData(bool chasePlayer, float chaseSpeed, bool immuneToDamage, Color currentColor, float damageRate)
     {
         tankDamage = immuneToDamage;
 
         phantomColor = currentColor;
+        dealDamageRate = damageRate;
 
         if (chasePlayer)
         {
@@ -116,7 +122,16 @@ public class Phantom : MonoBehaviour, IObserver
         {
             if(tankDamage)
             {
-                Time.timeScale = 0;
+                if(damageTimer <= 0)
+                {
+                    PlayerMovement.currentPlayerHealth--;
+                    Debug.Log("health: " + PlayerMovement.currentPlayerHealth);
+                    damageTimer = dealDamageRate;
+                }
+                else
+                {
+                    damageTimer--;
+                }
             }
         }
 
@@ -126,6 +141,26 @@ public class Phantom : MonoBehaviour, IObserver
             {
                 phantomBehavior.RemoveObserver(this);
                 Destroy(this.gameObject);
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (tankDamage)
+            {
+                if (damageTimer <= 0)
+                {
+                    PlayerMovement.currentPlayerHealth--;
+                    Debug.Log("health: " + PlayerMovement.currentPlayerHealth);
+                    damageTimer = dealDamageRate;
+                }
+                else
+                {
+                    damageTimer--;
+                }
             }
         }
     }

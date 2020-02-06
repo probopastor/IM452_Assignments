@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+
+    public int playerHealth = 1;
+    public static int currentPlayerHealth = 0;
+
+    public GameObject losePanel;
 
     public float speed = 12f;
     public float jumpHeight = 1f;
@@ -18,6 +24,12 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     private bool isGrounded;
+
+    private void Start()
+    {
+        losePanel.SetActive(false);
+        currentPlayerHealth = playerHealth;
+    }
 
     // Update is called once per frame
     void Update()
@@ -45,5 +57,21 @@ public class PlayerMovement : MonoBehaviour
         }
 
         controller.Move(velocity * Time.deltaTime);
+
+        if(currentPlayerHealth <= 0)
+        {
+            currentPlayerHealth = playerHealth;
+
+            Cursor.lockState = CursorLockMode.None;
+            losePanel.SetActive(true);
+
+            Time.timeScale = 0;
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene("MainMenu");
+            }
+        }
     }
 }

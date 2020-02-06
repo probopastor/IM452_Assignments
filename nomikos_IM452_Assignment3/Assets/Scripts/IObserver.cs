@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IObserver
 {
-    void UpdateData(bool chasePlayer, float chaseSpeed, bool immuneToDamage, Color currentColor);
+    void UpdateData(bool chasePlayer, float chaseSpeed, bool immuneToDamage, Color currentColor, float damageRate);
 }
