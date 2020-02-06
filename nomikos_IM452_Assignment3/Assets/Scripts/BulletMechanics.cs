@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* BulletMechanics.cs
+* Assignment 3
+* This code handles the destruction of bullet prefabs, destroying them after
+* a period of ntime or after triggering specific objects.
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* MainMenuManager.cs
+* Assignment 3
+* Script handles the music and UI sound effects in the Main Menu.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

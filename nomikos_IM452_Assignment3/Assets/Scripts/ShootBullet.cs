@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ShootBullet.cs
+* Assignment 3
+* Script handles bullet instantiation, shooting sound effects, and
+* shooting cooldown.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

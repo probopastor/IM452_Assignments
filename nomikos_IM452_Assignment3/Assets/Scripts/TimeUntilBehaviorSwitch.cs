@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* TimeUntilBehaviorSwitch.cs
+* Assignment 3
+* Script updates UI text to display the amount of time
+* left before the player can change Phantom's behavior.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

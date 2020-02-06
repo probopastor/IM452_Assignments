@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PhantomBehaviorData.cs
+* Assignment 3
+* Script handles the data for all Phantom Objects. This includes the time
+* phantoms are chasing the player, when they can take damage, and phantom sound.
+* 
+* Implements classes to add, remove and update observers.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

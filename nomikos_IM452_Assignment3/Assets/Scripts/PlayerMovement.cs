@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PlayerMovement.cs
+* Assignment 3
+* Script handles player behavior, including first person movement, jumping, 
+* player gravity, and player health.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

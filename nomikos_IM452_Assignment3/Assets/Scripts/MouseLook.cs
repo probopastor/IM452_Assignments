@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* MouseLook.cs
+* Assignment 3
+* Script handles player rotation when the mouse is moved.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

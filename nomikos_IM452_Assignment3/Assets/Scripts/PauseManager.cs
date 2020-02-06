@@ -2,8 +2,9 @@
 * William Nomikos
 * PauseManager.cs
 * Assignment 3
-* Script handles the functionality of the pause menu and button presses
-* within the game scene. Handles main game UI.
+* Script handles the functionality  and sound effects 
+* of the pause menu and button presses within the game scene. 
+* Handles main game UI.
 */
 
 using System.Collections;

@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* WinCondition.cs
+* Assignment 3
+* Script handles the amount of Phantoms that must be killed in order
+* for the player to win. Also handles win state activation.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

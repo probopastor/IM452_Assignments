@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* Phantom.cs
+* Assignment 3
+* Script handles Phantom Behavior. As all Phantoms are observers, some
+* behavior is changed across all Phantom objects. 
+* 
+* Script also registers all Phantom Objects as observers.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
