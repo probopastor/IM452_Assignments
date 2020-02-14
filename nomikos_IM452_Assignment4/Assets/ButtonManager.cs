@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ButtonManager.cs
+* Assignment 4
+* Script handles the functionality  and sound effects 
+* of the pause menu and button presses within the game scene. 
+* Handles main game UI.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
