@@ -36,8 +36,6 @@ public class MeteorController : MonoBehaviour
             transform.Translate(-Vector3.right * Time.deltaTime * movementSpeed, Space.World);
         }
 
-
-        
         Vector3 playerPos = Camera.main.WorldToViewportPoint(transform.position);
         playerPos.x = Mathf.Clamp01(playerPos.x);
         playerPos.y = Mathf.Clamp01(playerPos.y);
