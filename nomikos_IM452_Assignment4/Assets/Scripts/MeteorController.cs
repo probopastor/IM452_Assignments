@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class MeteorController : MonoBehaviour
 {
+    public float playerHealth = 5f;
+    public static float currentPlayerHealth = 0f;
+
+    public GameObject losePanel;
+
     public float movementSpeed = 1f;
 
     private Vector2 screenBounds; 
@@ -11,12 +16,18 @@ public class MeteorController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        currentPlayerHealth = playerHealth;
+        losePanel.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(currentPlayerHealth <= 0)
+        {
+            StartCoroutine("LoseGame");
+        }
+
         //Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         if (Input.GetKey(KeyCode.W))
         {
@@ -40,5 +51,15 @@ public class MeteorController : MonoBehaviour
         playerPos.x = Mathf.Clamp01(playerPos.x);
         playerPos.y = Mathf.Clamp01(playerPos.y);
         transform.position = Camera.main.ViewportToWorldPoint(playerPos);
+    }
+
+
+    private IEnumerator LoseGame()
+    {
+        losePanel.SetActive(true);
+
+        yield return new WaitForSeconds(0.1f);
+
+        Time.timeScale = 0;
     }
 }
