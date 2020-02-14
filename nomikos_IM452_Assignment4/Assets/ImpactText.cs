@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ImpactText : MonoBehaviour
 {
+    public GameObject winPanel;
     public float timeToWin = 0f;
     public Text thisText;
     private bool isWon = false;
@@ -12,7 +13,9 @@ public class ImpactText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        winPanel.SetActive(false);
         isWon = false;
+        thisText.enabled = true;
         thisText.text = "Impact in " + timeToWin;
 
         StartCoroutine("TimeCount");
@@ -46,6 +49,10 @@ public class ImpactText : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Debug.Log("You Won!");
+
+        thisText.enabled = false;
+        winPanel.SetActive(true);
+
         Time.timeScale = 0;
     }
 }
