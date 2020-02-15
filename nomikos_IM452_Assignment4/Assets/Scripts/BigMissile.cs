@@ -8,25 +8,10 @@ public class BigMissile : Missile
     public float bigMissileSpeed = 1f;
     public float bigMissileSize = 1f;
 
-    private void Start()
+    private void Awake()
     {
-        SetDamage();
-        SetSize();
-        SetSpeed();
-    }
-
-    public override void SetDamage()
-    {
-        damageOutput = damage;
-    }
-
-    public override void SetSize()
-    {
-        ChangeMissileScale(new Vector3(bigMissileSize, bigMissileSize));
-    }
-
-    public override void SetSpeed()
-    {
+        missileSize = bigMissileSize;
         missileSpeed = bigMissileSpeed;
+        damageOutput = damage;
     }
 }

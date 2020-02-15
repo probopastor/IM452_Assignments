@@ -6,12 +6,12 @@ public abstract class Missile : MonoBehaviour
 {
     protected float missileSpeed = 1f;
     protected float damageOutput = 1f;
-    protected Vector3 missileSize;
+    protected float missileSize;
 
     private void Start()
     {
-        missileSize = gameObject.transform.localScale;
-        transform.localScale = missileSize;
+        Vector3 thisMissileSize = new Vector3(missileSize, missileSize, 1);
+        transform.localScale = thisMissileSize;
     }
 
     // Update is called once per frame
@@ -25,12 +25,6 @@ public abstract class Missile : MonoBehaviour
         }
     }
 
-    protected void ChangeMissileScale(Vector3 newScale)
-    {
-        missileSize = gameObject.transform.localScale;
-        transform.localScale = newScale;
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player"))
@@ -41,9 +35,23 @@ public abstract class Missile : MonoBehaviour
         }
     }
 
-    public abstract void SetDamage();
-    public abstract void SetSize();
-    public abstract void SetSpeed();
+    protected Vector3 GetMissileSize()
+    {
+        return transform.localScale;
+    }
 
+    protected float GetSpeed()
+    {
+        return missileSpeed;
+    }
 
+    protected virtual void ChangeSize(Vector3 size)
+    {
+        transform.localScale = size;
+    }
+
+    protected virtual void ChangeSpeed(float speed)
+    {
+        missileSpeed = speed;
+    }
 }

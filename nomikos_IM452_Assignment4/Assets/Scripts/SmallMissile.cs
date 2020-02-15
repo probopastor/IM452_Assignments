@@ -8,24 +8,10 @@ public class SmallMissile : Missile
     public float smallMissileSpeed = 1f;
     public float smallMissileSize = 1f;
 
-    private void Start()
+    private void Awake()
     {
-        SetDamage();
-        SetSize();
-        SetSpeed();
-    }
-    public override void SetDamage()
-    {
-        damageOutput = damage;
-    }
-
-    public override void SetSize()
-    {
-        ChangeMissileScale(new Vector3(smallMissileSize, smallMissileSize));
-    }
-
-    public override void SetSpeed()
-    {
+        missileSize = smallMissileSize;
         missileSpeed = smallMissileSpeed;
+        damageOutput = damage;
     }
 }
