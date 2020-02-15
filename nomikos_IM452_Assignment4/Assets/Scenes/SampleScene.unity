@@ -878,9 +878,9 @@ GameObject:
   m_Component:
   - component: {fileID: 325134514}
   - component: {fileID: 325134513}
-  - component: {fileID: 325134512}
   - component: {fileID: 325134511}
   - component: {fileID: 325134515}
+  - component: {fileID: 325134512}
   m_Layer: 0
   m_Name: MeteorBody
   m_TagString: Player
@@ -913,7 +913,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 325134510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b2e92c5ec5670d4296b047321cb5f00, type: 3}
+  m_Script: {fileID: 11500000, guid: 61dc5f150ba81a244bbc1b8e890ef2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 20

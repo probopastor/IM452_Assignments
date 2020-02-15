@@ -12,13 +12,13 @@ public class PlayerHealthText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = MeteorController.currentPlayerHealth;
-        playerHealthText.text = "Health: " + MeteorController.currentPlayerHealth;
+        maxHealth = PlayerMeteor.currentPlayerHealth;
+        playerHealthText.text = "Health: " + PlayerMeteor.currentPlayerHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerHealthText.text = "Health: " + MeteorController.currentPlayerHealth;
+        playerHealthText.text = "Health: " + PlayerMeteor.currentPlayerHealth;
     }
 }

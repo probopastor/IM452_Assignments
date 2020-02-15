@@ -29,7 +29,7 @@ public abstract class Missile : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            MeteorController.currentPlayerHealth -= damageOutput;
+            PlayerMeteor.currentPlayerHealth -= damageOutput;
 
             Destroy(gameObject);
         }
