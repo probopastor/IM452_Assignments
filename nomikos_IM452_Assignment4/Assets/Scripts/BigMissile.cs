@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* BigMissile.cs
+* Assignment 4
+* Concrete Missile Class handles the parameters for large missile varients,
+* including size, speed and damage.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,22 +1,18 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* MeteorAssetCreation.cs
+* Assignment 4
+* Script creates a MeteorController object to add decorators to
+* upon the player colliding with items in game. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MeteorAssetCreation : MonoBehaviour
 {
     public MeteorController myMeteor;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

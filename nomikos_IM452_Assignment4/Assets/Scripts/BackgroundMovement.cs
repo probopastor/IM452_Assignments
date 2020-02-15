@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* BackgroundMovement.cs
+* Assignment 4
+* Script moves backgrounds to the left and repositions them at the right
+* of the screen after background is off screen.
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,12 +15,6 @@ public class BackgroundMovement : MonoBehaviour
 {
     public float backgroundSpeed = 0f;
     public GameObject background;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

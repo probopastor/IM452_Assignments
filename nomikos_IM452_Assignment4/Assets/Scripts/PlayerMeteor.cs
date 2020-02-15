@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PlayerMeteor.cs
+* Assignment 4
+* Subclass of MeteorController than is one meteor that the player may be. Handles
+* player movement and health systems, along with the lose condition for when the player
+* runs out of health.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

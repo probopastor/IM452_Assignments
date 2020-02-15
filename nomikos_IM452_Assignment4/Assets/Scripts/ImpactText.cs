@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ImpactText.cs
+* Assignment 4
+* This script handles the impact timer and win condition 
+* of the game. Decreases impact timer and when it hits 0, 
+* lets the player win the game.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

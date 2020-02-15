@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PlayerHealthText.cs
+* Assignment 4
+* Script updates player health UI text element to
+* match the player's current health.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

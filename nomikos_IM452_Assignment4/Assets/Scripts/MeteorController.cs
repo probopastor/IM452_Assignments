@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* MeteorController.cs
+* Assignment 4
+* Superclass for the player meteor. Handles relevant methods for player
+* speed and size manipulation.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

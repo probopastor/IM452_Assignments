@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ItemPickup.cs
+* Assignment 4
+* Script moves items to the left and lets player pick them up.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

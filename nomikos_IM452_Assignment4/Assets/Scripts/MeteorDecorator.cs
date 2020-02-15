@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* MeteorDecorator.cs
+* Assignment 4
+* Decorator class for meteors, forces subclass 
+* decorator components to implement player size and speed
+* methods.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

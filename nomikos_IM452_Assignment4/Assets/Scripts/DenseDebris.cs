@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* DenseDebris.cs
+* Assignment 4
+* One of the decorators that can decorate the player meteor.
+* This decorator makes the player larger but slowes their speed.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

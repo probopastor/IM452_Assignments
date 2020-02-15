@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* EmissiveAcceleration.cs
+* Assignment 4
+* One of the decorators that can decorate the player meteor.
+* This decorator makes the player faster and slightly increases
+* their size.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

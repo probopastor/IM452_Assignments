@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ObjectSpawner.cs
+* Assignment 4
+* Handles object spawning in game. Spawns objects based on random
+* numbers after a set period of time at the object this script is 
+* attached to.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* MaterialRetraction.cs
+* Assignment 4
+* One of the decorators that can decorate the player meteor.
+* This decorator drastically decreases the player's size.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

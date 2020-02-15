@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* Missile.cs
+* Assignment 4
+* Superclass for Missiles. Handles main missile behavior, including
+* player damage, movement, and size.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

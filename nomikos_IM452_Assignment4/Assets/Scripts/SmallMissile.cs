@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* SmallMissile.cs
+* Assignment 4
+* Subclass of Missile that handles the speed, damage and size parameters
+* of the small missile varient.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
