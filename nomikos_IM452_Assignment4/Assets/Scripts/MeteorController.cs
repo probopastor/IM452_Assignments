@@ -12,6 +12,7 @@ public abstract class MeteorController : MonoBehaviour
         startingSize = transform.localScale;
         SetPlayerSize(startingSize);
     }
+
     protected Vector3 GetPlayerSize()
     {
         return transform.localScale;
@@ -22,13 +23,22 @@ public abstract class MeteorController : MonoBehaviour
         return playerSpeed;
     }
 
-    protected virtual void SetPlayerSize(Vector3 newSize)
+    protected void SetPlayerSize(Vector3 newSize)
     {
         transform.localScale = newSize;
     }
 
-    protected virtual void SetPlayerSpeed(float speed)
+    protected void SetPlayerSpeed(float speed)
     {
         playerSpeed = speed;
+    }
+
+    public virtual void AddSpeed()
+    {
+        //playerSpeed++;
+    }
+    public virtual void AddSize()
+    {
+        //transform.localScale = new Vector3(transform.localScale.x + 1, transform.localScale.y + 1, 1);
     }
 }

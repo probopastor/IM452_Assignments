@@ -4,6 +4,6 @@ using UnityEngine;
 
 public abstract class MeteorDecorator : MeteorController
 {
-    protected override abstract void SetPlayerSize(Vector3 newSize);
-    protected abstract override void SetPlayerSpeed(float speed);
+    public abstract override void AddSize();
+    public abstract override void AddSpeed();
 }

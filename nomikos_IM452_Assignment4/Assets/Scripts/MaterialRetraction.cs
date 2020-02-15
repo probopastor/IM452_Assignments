@@ -2,17 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaterialRetraction : MonoBehaviour
+public class MaterialRetraction : MeteorDecorator
 {
-    // Start is called before the first frame update
-    void Start()
+    MeteorController meteor;
+
+    public MaterialRetraction(MeteorController theMeteor)
     {
-        
+        this.meteor = theMeteor;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void AddSize()
     {
-        
+        if(transform.localScale.x >= 0.5  && transform.localScale.y >= 0.5)
+        {
+            transform.localScale = new Vector3((GetPlayerSize().x - 1f), (GetPlayerSize().y - 1f), 1);
+
+            if(transform.localScale.x < 0.25 || transform.localScale.y < 0.25)
+            {
+                transform.localScale = new Vector3(0.25f, 0.25f, 1);
+            }
+        }
+    }
+
+    public override void AddSpeed()
+    {
+        playerSpeed = GetPlayerSpeed() + 0.05f;
     }
 }

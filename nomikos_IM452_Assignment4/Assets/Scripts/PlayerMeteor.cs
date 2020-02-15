@@ -16,10 +16,10 @@ public class PlayerMeteor : MeteorController
     // Start is called before the first frame update
     void Start()
     {
+        SetPlayerSpeed(movementSpeed);
+
         currentPlayerHealth = playerHealth;
         losePanel.SetActive(false);
-
-        SetPlayerSpeed(movementSpeed);
     }
 
     // Update is called once per frame
@@ -33,20 +33,20 @@ public class PlayerMeteor : MeteorController
         //Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(Vector3.up * Time.deltaTime * movementSpeed, Space.World);
+            transform.Translate(Vector3.up * Time.deltaTime * playerSpeed, Space.World);
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(-Vector3.up * Time.deltaTime * movementSpeed, Space.World);
+            transform.Translate(-Vector3.up * Time.deltaTime * playerSpeed, Space.World);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Translate(Vector3.right * Time.deltaTime * movementSpeed, Space.World);
+            transform.Translate(Vector3.right * Time.deltaTime * playerSpeed, Space.World);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(-Vector3.right * Time.deltaTime * movementSpeed, Space.World);
+            transform.Translate(-Vector3.right * Time.deltaTime * playerSpeed, Space.World);
         }
 
         Vector3 playerPos = Camera.main.WorldToViewportPoint(transform.position);
@@ -62,10 +62,5 @@ public class PlayerMeteor : MeteorController
         yield return new WaitForSeconds(0.1f);
 
         Time.timeScale = 0;
-    }
-
-    protected override void SetPlayerSpeed(float speed)
-    {
-        playerSpeed = speed;
     }
 }

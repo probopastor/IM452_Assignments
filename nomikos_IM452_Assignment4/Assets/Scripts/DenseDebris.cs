@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DenseDebris : MonoBehaviour
+public class DenseDebris : MeteorDecorator
 {
-    // Start is called before the first frame update
-    void Start()
+    MeteorController meteor;
+
+    public DenseDebris(MeteorController theMeteor)
     {
-        
+        this.meteor = theMeteor;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void AddSize()
     {
-        
+        transform.localScale = new Vector3((GetPlayerSize().x + 0.5f), (GetPlayerSize().y + 0.5f), 1);
+    }
+
+    public override void AddSpeed()
+    {
+        playerSpeed = GetPlayerSpeed() - 1;
     }
 }

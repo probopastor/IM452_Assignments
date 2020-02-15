@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmissiveAcceleration : MonoBehaviour
+public class EmissiveAcceleration : MeteorDecorator
 {
-    // Start is called before the first frame update
-    void Start()
+    MeteorController meteor;
+
+    public EmissiveAcceleration(MeteorController theMeteor)
     {
-        
+        this.meteor = theMeteor;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void AddSize()
     {
-        
+        transform.localScale = new Vector3((GetPlayerSize().x + 0.25f), (GetPlayerSize().y + 0.25f), 1);
+    }
+
+    public override void AddSpeed()
+    {
+        playerSpeed = GetPlayerSpeed() + 10;
     }
 }
