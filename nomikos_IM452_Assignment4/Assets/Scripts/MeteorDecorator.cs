@@ -2,17 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeteorDecorator : MeteorController
+public abstract class MeteorDecorator : MeteorController
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected override abstract void SetPlayerSize(Vector3 newSize);
+    protected abstract override void SetPlayerSpeed(float speed);
 }

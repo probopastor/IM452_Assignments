@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMeteor : MonoBehaviour
+public class PlayerMeteor : MeteorController
 {
     public float playerHealth = 5f;
     public static float currentPlayerHealth = 0f;
@@ -18,6 +18,8 @@ public class PlayerMeteor : MonoBehaviour
     {
         currentPlayerHealth = playerHealth;
         losePanel.SetActive(false);
+
+        SetPlayerSpeed(movementSpeed);
     }
 
     // Update is called once per frame
@@ -60,5 +62,10 @@ public class PlayerMeteor : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         Time.timeScale = 0;
+    }
+
+    protected override void SetPlayerSpeed(float speed)
+    {
+        playerSpeed = speed;
     }
 }
