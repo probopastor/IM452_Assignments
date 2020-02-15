@@ -35,10 +35,10 @@ public abstract class MeteorController : MonoBehaviour
 
     public virtual void AddSpeed()
     {
-        //playerSpeed++;
+        playerSpeed++;
     }
     public virtual void AddSize()
     {
-        //transform.localScale = new Vector3(transform.localScale.x + 1, transform.localScale.y + 1, 1);
+        transform.localScale = new Vector3(transform.localScale.x + 1, transform.localScale.y + 1, 1);
     }
 }

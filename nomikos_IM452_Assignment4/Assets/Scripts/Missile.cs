@@ -21,7 +21,7 @@ public abstract class Missile : MonoBehaviour
 
         if (transform.position.x <= -22)
         {
-            Destroy(gameObject, 2f);
+            Destroy(gameObject);
         }
     }
 

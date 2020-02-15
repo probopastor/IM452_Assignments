@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7543346956452514653}
   - component: {fileID: 7543346956452514654}
   - component: {fileID: 7543346956452514655}
+  - component: {fileID: 175881840}
   m_Layer: 0
   m_Name: DenseDebris
   m_TagString: DenseDebris
@@ -130,3 +131,16 @@ PolygonCollider2D:
       - {x: 0.39999998, y: -0.56}
       - {x: 0.41, y: -0.53}
       - {x: 0.45999998, y: -0.41}
+--- !u!114 &175881840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7543346956452514624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197f31291cad7eb45a80d57a996b3d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpeed: 1

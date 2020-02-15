@@ -26,6 +26,6 @@ public class MaterialRetraction : MeteorDecorator
 
     public override void AddSpeed()
     {
-        playerSpeed = GetPlayerSpeed() + 0.05f;
+        SetPlayerSpeed(5f);
     }
 }

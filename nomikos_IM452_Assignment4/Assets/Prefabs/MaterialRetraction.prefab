@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8114015188028375237}
   - component: {fileID: 8114015188028375238}
   - component: {fileID: 8114015188028375239}
+  - component: {fileID: 680321956}
   m_Layer: 0
   m_Name: MaterialRetraction
   m_TagString: MaterialRetraction
@@ -108,3 +109,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.93699265, y: 0.97452736}
   m_EdgeRadius: 0
+--- !u!114 &680321956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114015188028375232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197f31291cad7eb45a80d57a996b3d54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpeed: 1

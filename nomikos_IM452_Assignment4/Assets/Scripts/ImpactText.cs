@@ -28,6 +28,51 @@ public class ImpactText : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
+        if(timeToWin == 110)
+        {
+            ObjectSpawner.firstIt = true;
+        }
+        else if(timeToWin == 100)
+        {
+            ObjectSpawner.firstIt = true;
+        }
+        else if (timeToWin == 90)
+        {
+            ObjectSpawner.firstIt = true;
+        }
+        else if (timeToWin == 80)
+        {
+            ObjectSpawner.firstIt = true;
+        }
+        else if (timeToWin == 70)
+        {
+            ObjectSpawner.firstIt = true;
+        }
+        else if (timeToWin == 60)
+        {
+            ObjectSpawner.firstIt = true;
+        }
+        else if (timeToWin == 50)
+        {
+            ObjectSpawner.firstIt = true;
+        }
+        else if (timeToWin == 40)
+        {
+            ObjectSpawner.firstIt = true;
+        }
+        else if (timeToWin == 30)
+        {
+            ObjectSpawner.firstIt = true;
+        }
+        else if (timeToWin == 20)
+        {
+            ObjectSpawner.firstIt = true;
+        }
+        else if (timeToWin == 10)
+        {
+            ObjectSpawner.firstIt = true;
+        }
+
         if (timeToWin <= 0)
         {
             timeToWin = 0;
@@ -48,7 +93,6 @@ public class ImpactText : MonoBehaviour
     private IEnumerator WinGame()
     {
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("You Won!");
 
         thisText.enabled = false;
         winPanel.SetActive(true);

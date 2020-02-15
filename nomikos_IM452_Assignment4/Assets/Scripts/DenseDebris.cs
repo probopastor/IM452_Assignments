@@ -13,11 +13,12 @@ public class DenseDebris : MeteorDecorator
 
     public override void AddSize()
     {
-        transform.localScale = new Vector3((GetPlayerSize().x + 0.5f), (GetPlayerSize().y + 0.5f), 1);
+        transform.localScale = new Vector3((GetPlayerSize().x + 1f), (GetPlayerSize().y + 1f), 1);
     }
 
     public override void AddSpeed()
     {
-        playerSpeed = GetPlayerSpeed() - 1;
+        SetPlayerSpeed(1);
+
     }
 }

@@ -18,6 +18,6 @@ public class EmissiveAcceleration : MeteorDecorator
 
     public override void AddSpeed()
     {
-        playerSpeed = GetPlayerSpeed() + 10;
+        SetPlayerSpeed(50);
     }
 }
