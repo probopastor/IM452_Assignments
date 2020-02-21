@@ -987,6 +987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickedColor: {r: 1, g: 0, b: 0.020870686, a: 1}
   defaultColor: {r: 0.10201049, g: 1, b: 0, a: 1}
+  timeUntilButtonClick: 5
 --- !u!65 &1028813079
 BoxCollider:
   m_ObjectHideFlags: 0
