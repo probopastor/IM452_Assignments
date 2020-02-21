@@ -58,10 +58,10 @@ public class MouseLook : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                //if (hit.collider.GetComponent<ButtonController>() != null)
-                //{
-                //    hit.collider.GetComponent<ButtonController>().PushButton();
-                //}
+                if (hit.collider.GetComponent<ButtonController>() != null)
+                {
+                    hit.collider.GetComponent<ButtonController>().ClickButton();
+                }
             }
         }
         else if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, shootDistance, enemyLayer))
