@@ -1,7 +1,7 @@
 ﻿/*
 * William Nomikos
 * MouseLook.cs
-* Assignment 3
+* Assignment 5
 * Script handles player rotation when the mouse is moved.
 */
 
@@ -18,7 +18,9 @@ public class MouseLook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     // Update is called once per frame
