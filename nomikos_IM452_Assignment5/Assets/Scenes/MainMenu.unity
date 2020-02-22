@@ -2406,8 +2406,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6, y: 74}
-  m_SizeDelta: {x: 630.9, y: 135.4}
+  m_AnchoredPosition: {x: 6, y: -14.625003}
+  m_SizeDelta: {x: 630.9, y: 312.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1913845328
 MonoBehaviour:
@@ -2440,9 +2440,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'You are Doughnut Kid, and it is time for breakfast. Everybody wants doughnuts.
-    Uh oh! They want doughnuts so much that they are willing to get violent about
-    it! You better throw doughnuts at them so they go away! '
+  m_Text: "Game Created by William Nomikos\n\nSound Effects: \nButton Click - UI Confirmation,
+    Synthesized \xBB UI Confirmation Alert, C1.wav by InspectorJ\nhttps://freesound.org/people/InspectorJ/sounds/403016/\n\nThrow
+    - throw by marchon11\nhttps://freesound.org/people/marchon11/sounds/493224/\n\nDoughnut
+    Splat - Mud Splat by Breviceps\nhttps://freesound.org/people/Breviceps/sounds/445109/\n\nMusic:\nBlues
+    by Patrick De Arteaga\nArex's Beat by Patrick De Arteaga\n\n"
 --- !u!222 &1913845329
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2734,7 +2736,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Controls: \n\nW - Move up\nA - Move Left\nS - Move Down\nD - Move Right"
+  m_Text: "Controls: \n\nW - Move up\nA - Move Left\nS - Move Down\nD - Move Right\nSpace
+    - Jump"
 --- !u!222 &2021574677
 CanvasRenderer:
   m_ObjectHideFlags: 0

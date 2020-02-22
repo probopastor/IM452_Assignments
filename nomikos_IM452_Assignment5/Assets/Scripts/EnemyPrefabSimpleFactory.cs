@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* EnemyPrefabSimpleFactory.cs
+* Assignment 5
+* The simple factory that takes in a string and returns the enemy type
+* from that string. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

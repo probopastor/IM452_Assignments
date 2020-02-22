@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* WaveSpawner.cs
+* Assignment 5
+* Determines which enemy needs to spawn using the
+* EnemyPrefabSimpleFactory.cs script, and handles what times
+* enemies spawn at based.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

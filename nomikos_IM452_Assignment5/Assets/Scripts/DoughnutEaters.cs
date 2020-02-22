@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* DoughnutEaters.cs
+* Assignment 5
+* Superclass for all doughnut eating enemies.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

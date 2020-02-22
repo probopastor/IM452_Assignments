@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ButtonController.cs
+* Assignment 5
+* Handles pressing the main button in the scene, all wave text UI,
+* and the wave timer.
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +15,7 @@ using UnityEngine.UI;
 public class ButtonController : MonoBehaviour
 {
     public Text waveTimeText;
+    public Text waveText;
 
     public GameObject winPanel;
 
@@ -18,6 +28,9 @@ public class ButtonController : MonoBehaviour
     private Renderer buttonRend;
     public bool isClicked;
     public int waveNumber = 0;
+
+    public AudioSource soundEffectSource;
+    public AudioClip buttonSound;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +48,7 @@ public class ButtonController : MonoBehaviour
     void Update()
     {
         waveTimeText.text = "Wave Time Left: " + timeRemaining;
+        waveText.text = "Wave: " + waveNumber;
     }
 
     public void ClickButton()
@@ -43,6 +57,9 @@ public class ButtonController : MonoBehaviour
         {
             isClicked = true;
             buttonRend.material.color = clickedColor;
+
+            soundEffectSource.clip = buttonSound;
+            soundEffectSource.Play();
 
             timeRemaining = timeUntilButtonClick;
             waveNumber++;

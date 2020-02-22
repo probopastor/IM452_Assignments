@@ -1,8 +1,8 @@
 ﻿/*
 * William Nomikos
 * MainMenuManager.cs
-* Assignment 3
-* Script handles the music and UI sound effects in the Main Menu.
+* Assignment 5
+* Handles main menu button functionality and sound effects.
 */
 
 using System.Collections;

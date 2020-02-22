@@ -139,3 +139,5 @@ MonoBehaviour:
   doughnutParticles: {fileID: 5195831926880461733, guid: 1b5d6341b4fcb624ca93615a069e9ccb,
     type: 3}
   yParticleModifier: 0
+  SoundEffectSource: {fileID: 0}
+  doughnutSplat: {fileID: 8300000, guid: eefb4c141c8e3a84ebd7f5d25771b429, type: 3}

@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* OverEater.cs
+* Assignment 5
+* Handles behavior of the Over Eater enemy, including damage output, damage input,
+* movement, and collision
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

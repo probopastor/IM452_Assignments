@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* Kyle.cs
+* Assignment 5
+* Handles behavior of the Kyle enemy, including damage output, damage input,
+* movement, and collision
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

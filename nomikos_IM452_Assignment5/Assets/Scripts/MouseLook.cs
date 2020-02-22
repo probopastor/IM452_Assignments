@@ -2,7 +2,9 @@
 * William Nomikos
 * MouseLook.cs
 * Assignment 5
-* Script handles player rotation when the mouse is moved.
+* Script handles player rotation when the mouse is moved,
+* as well as the raycast shot by the camera to change the 
+* crosshair image and push buttons.
 */
 
 using System.Collections;

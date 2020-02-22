@@ -1,10 +1,9 @@
 ﻿/*
 * William Nomikos
 * PauseManager.cs
-* Assignment 3
-* Script handles the functionality  and sound effects 
-* of the pause menu and button presses within the game scene. 
-* Handles main game UI.
+* Assignment 5
+* Handles pause in-game pause menu functionality and button functionality,
+* along with game music.
 */
 
 using System.Collections;
@@ -20,11 +19,11 @@ public class PauseManager : MonoBehaviour
     public GameObject PauseCanvas;
     public GameObject crosshair;
 
-    //public AudioSource GameSource;
-   // public AudioClip gameMusic;
+    public AudioSource GameSource;
+    public AudioClip gameMusic;
 
-    //public AudioSource SoundEffectSource;
-    //public AudioClip buttonClick;
+    public AudioSource SoundEffectSource;
+    public AudioClip buttonClick;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +32,8 @@ public class PauseManager : MonoBehaviour
         PauseCanvas.SetActive(false);
         crosshair.SetActive(true);
 
-        //GameSource.clip = gameMusic;
-        //GameSource.Play();
+        GameSource.clip = gameMusic;
+        GameSource.Play();
     }
 
     // Update is called once per frame
@@ -82,8 +81,8 @@ public class PauseManager : MonoBehaviour
 
     public void ButtonClick()
     {
-        //SoundEffectSource.clip = buttonClick;
-        //SoundEffectSource.Play();
+        SoundEffectSource.clip = buttonClick;
+        SoundEffectSource.Play();
     }
 
 
