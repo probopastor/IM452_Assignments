@@ -37,6 +37,7 @@ public class EnemyPrefabSimpleFactory : MonoBehaviour
         }
 
         Debug.Log("Factory sending: " + enemy);
+
         return enemy;
     }
 }

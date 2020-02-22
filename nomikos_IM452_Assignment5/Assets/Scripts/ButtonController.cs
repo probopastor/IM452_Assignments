@@ -14,8 +14,8 @@ public class ButtonController : MonoBehaviour
     private int timeRemaining = 0;
 
     private Renderer buttonRend;
-    public static bool isClicked;
-    public static int waveNumber = 0;
+    public bool isClicked;
+    public int waveNumber = 0;
 
     // Start is called before the first frame update
     void Start()
