@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 1028813079}
   - component: {fileID: 1028813078}
   m_Layer: 9
-  m_Name: Cube
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1521,6 +1521,123 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460264819}
   m_CullTransparentMesh: 0
+--- !u!1 &1467243650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1467243652}
+  - component: {fileID: 1467243651}
+  m_Layer: 0
+  m_Name: Simple Enemy Prefab Factory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1467243651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467243650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3c6d782abc7abe47894ed313e02da0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overEater: {fileID: 8852619673044966495, guid: be810a4676f636445888e2727b29ab72,
+    type: 3}
+  hungryPeasant: {fileID: 6965994983998220294, guid: bcb52fd312887d34eaad8978849f03f7,
+    type: 3}
+  doughnutEatingInvoluntaryCelibate: {fileID: 7413196356562049083, guid: bb8aa1f8440c27947a4366eba2f1e134,
+    type: 3}
+  kyle: {fileID: 8852619673044966495, guid: be810a4676f636445888e2727b29ab72, type: 3}
+--- !u!4 &1467243652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467243650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.061043993, y: -13.636316, z: -13.3633175}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1498888773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1498888775}
+  - component: {fileID: 1498888774}
+  m_Layer: 0
+  m_Name: WaveEnemySpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1498888774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498888773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c00d5c2085ad92041b2dbb7549e6a473, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyWave1:
+  - kyle
+  - kyle
+  - doughnutEatingInvoluntaryCelibate
+  - doughnutEatingInvoluntaryCelibate
+  - doughnutEatingInvoluntaryCelibate
+  - hungryPeasant
+  - hungryPeasant
+  - hungryPeasant
+  - overEater
+  - overEater
+  enemyWave2:
+  - doughnutEatingInvoluntaryCelibate
+  - doughnutEatingInvoluntaryCelibate
+  enemyWave3:
+  - kyle
+  - kyle
+  spawnRateWave1: 1
+  spawnRateWave2: 1
+  spawnRateWave3: 1
+  enemyFactory: {fileID: 1467243651}
+  xSpawnMod: 0
+  ySpawnMod: 15
+  zSpawnMod: 0
+--- !u!4 &1498888775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498888773}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.3, y: 5, z: -13.3633175}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1832929733
 GameObject:
   m_ObjectHideFlags: 0

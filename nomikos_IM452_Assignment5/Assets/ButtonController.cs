@@ -11,12 +11,14 @@ public class ButtonController : MonoBehaviour
     private int timeRemaining = 0;
 
     private Renderer buttonRend;
-    private bool isClicked;
+    public static bool isClicked;
+    public static int waveNumber = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         isClicked = false;
+        waveNumber = 0;
         buttonRend = gameObject.GetComponent<Renderer>();
         buttonRend.material.color = defaultColor;
         timeRemaining = timeUntilButtonClick;
@@ -36,7 +38,16 @@ public class ButtonController : MonoBehaviour
             buttonRend.material.color = clickedColor;
 
             timeRemaining = timeUntilButtonClick;
-            StartCoroutine("ButtonTimer");
+            waveNumber++;
+
+            if(waveNumber <= 3)
+            {
+                StartCoroutine("ButtonTimer");
+            }
+            else if(waveNumber > 3)
+            {
+                WinGame();
+            }
         }
     }
 
@@ -55,5 +66,10 @@ public class ButtonController : MonoBehaviour
             buttonRend.material.color = defaultColor;
             isClicked = false;
         }
+    }
+
+    private void WinGame()
+    {
+        Debug.Log("Game Won ");
     }
 }
