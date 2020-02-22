@@ -95,6 +95,8 @@ public class ButtonController : MonoBehaviour
     private void WinGame()
     {
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+
         winPanel.SetActive(true);
         Time.timeScale = 0;
     }

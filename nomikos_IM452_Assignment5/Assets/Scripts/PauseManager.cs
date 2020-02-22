@@ -59,7 +59,7 @@ public class PauseManager : MonoBehaviour
         else if (paused == true)
         {
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Confined;
             Time.timeScale = 1;
             paused = false;
             PauseCanvas.SetActive(false);
@@ -70,12 +70,14 @@ public class PauseManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene("SampleScene");
     }
 
     public void ToMainMenu()
     {
         Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.Confined;
         SceneManager.LoadScene("MainMenu");
     }
 

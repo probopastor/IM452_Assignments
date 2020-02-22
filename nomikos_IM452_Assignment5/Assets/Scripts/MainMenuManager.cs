@@ -36,4 +36,9 @@ public class MainMenuManager : MonoBehaviour
         SoundEffectSource.clip = buttonClick;
         SoundEffectSource.Play();
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
