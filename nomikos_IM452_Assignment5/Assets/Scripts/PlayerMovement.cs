@@ -66,12 +66,20 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        if(currentPlayerHealth <= 0)
+    }
+
+    public void DecreaseHealth(int damageTaken)
+    {
+        currentPlayerHealth -= damageTaken;
+
+        if (currentPlayerHealth <= 0)
         {
             currentPlayerHealth = playerHealth;
 
             Cursor.lockState = CursorLockMode.None;
-           // losePanel.SetActive(true);
+
+            Debug.Log("You Lose ");
+            // losePanel.SetActive(true);
 
             Time.timeScale = 0;
 
