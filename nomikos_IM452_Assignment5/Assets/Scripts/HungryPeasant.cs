@@ -48,14 +48,17 @@ public class HungryPeasant : DoughnutEaters
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Doughnut")
-        {
-            TakeDamage();
-        }
-
         if (collision.gameObject.tag == "Player")
         {
             DealDamage();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Doughnut"))
+        {
+            TakeDamage();
         }
     }
 }

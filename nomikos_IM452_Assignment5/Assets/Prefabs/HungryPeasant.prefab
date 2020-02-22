@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7012508993064303491}
   - component: {fileID: -421505665474460854}
   - component: {fileID: 125380437057017989}
+  - component: {fileID: 3941546715955313862}
   m_Layer: 0
   m_Name: HungryPeasant
   m_TagString: Untagged
@@ -126,3 +127,17 @@ MonoBehaviour:
   speed: 8
   health: 2
   damageRate: 1
+--- !u!136 &3941546715955313862
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7413196356562049083}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

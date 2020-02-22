@@ -58,4 +58,12 @@ public class OverEater : DoughnutEaters
             DealDamage();
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Doughnut"))
+        {
+            TakeDamage();
+        }
+    }
 }
