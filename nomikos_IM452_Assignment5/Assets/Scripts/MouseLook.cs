@@ -49,14 +49,11 @@ public class MouseLook : MonoBehaviour
 
         RaycastHit hit;
 
-        // Does the ray intersect any objects excluding the player layer
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, interactionDistance, buttonLayer))
         {
             crossHair.sprite = crossHairSelected;
 
-            //Debug.DrawRay(ray, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetKeyDown(KeyCode.Mouse1))
             {
                 if (hit.collider.GetComponent<ButtonController>() != null)
                 {
@@ -67,16 +64,6 @@ public class MouseLook : MonoBehaviour
         else if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, shootDistance, enemyLayer))
         {
             crossHair.sprite = crossHairSelected;
-
-            //Debug.DrawRay(ray, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                //if (hit.collider.GetComponent<ButtonController>() != null)
-                //{
-                //    hit.collider.GetComponent<ButtonController>().PushButton();
-                //}
-            }
         }
         else
         {
