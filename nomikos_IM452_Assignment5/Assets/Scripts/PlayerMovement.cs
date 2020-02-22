@@ -10,6 +10,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,8 +18,9 @@ public class PlayerMovement : MonoBehaviour
 
     public int playerHealth = 1;
     public static int currentPlayerHealth = 0;
+    public Text healthText;
 
-    //public GameObject losePanel;
+    public GameObject losePanel;
 
     public float speed = 12f;
     public float jumpHeight = 1f;
@@ -35,8 +37,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-       // losePanel.SetActive(false);
+        losePanel.SetActive(false);
         currentPlayerHealth = playerHealth;
+        healthText.text = "Health: " + currentPlayerHealth;
     }
 
     // Update is called once per frame
@@ -44,7 +47,9 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if(isGrounded && velocity.y < 0)
+        healthText.text = "Health: " + currentPlayerHealth;
+
+        if (isGrounded && velocity.y < 0)
         {
             velocity.y = gravity;
         }
@@ -77,9 +82,9 @@ public class PlayerMovement : MonoBehaviour
             currentPlayerHealth = playerHealth;
 
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
-            Debug.Log("You Lose ");
-            // losePanel.SetActive(true);
+            losePanel.SetActive(true);
 
             Time.timeScale = 0;
 

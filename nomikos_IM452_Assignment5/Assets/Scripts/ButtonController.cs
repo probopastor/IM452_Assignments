@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonController : MonoBehaviour
 {
+    public Text waveTimeText;
+
     public Color clickedColor;
     public Color defaultColor;
 
@@ -22,12 +25,13 @@ public class ButtonController : MonoBehaviour
         buttonRend = gameObject.GetComponent<Renderer>();
         buttonRend.material.color = defaultColor;
         timeRemaining = timeUntilButtonClick;
+        waveTimeText.text = "Wave Time Left: " + timeRemaining;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(timeRemaining);
+        waveTimeText.text = "Wave Time Left: " + timeRemaining;
     }
 
     public void ClickButton()
