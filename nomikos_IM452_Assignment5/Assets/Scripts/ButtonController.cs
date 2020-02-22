@@ -7,6 +7,8 @@ public class ButtonController : MonoBehaviour
 {
     public Text waveTimeText;
 
+    public GameObject winPanel;
+
     public Color clickedColor;
     public Color defaultColor;
 
@@ -20,6 +22,7 @@ public class ButtonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        winPanel.SetActive(false);
         isClicked = false;
         waveNumber = 0;
         buttonRend = gameObject.GetComponent<Renderer>();
@@ -74,6 +77,8 @@ public class ButtonController : MonoBehaviour
 
     private void WinGame()
     {
-        Debug.Log("Game Won ");
+        Cursor.visible = true;
+        winPanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }
