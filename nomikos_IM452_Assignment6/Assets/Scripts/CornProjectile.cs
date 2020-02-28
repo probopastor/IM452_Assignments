@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CornProjectile : MonoBehaviour
+public class CornProjectile : Projectiles
 {
     // Start is called before the first frame update
     void Start()

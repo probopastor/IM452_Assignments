@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 98605723792842512}
   - component: {fileID: 98605723792842519}
   - component: {fileID: 98605723792842518}
+  - component: {fileID: 2740512977968814742}
   m_Layer: 0
-  m_Name: CornSprite
+  m_Name: CornPrefab
   m_TagString: Corn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,3 +178,24 @@ PolygonCollider2D:
       - {x: 0.225, y: -2.945}
       - {x: 0.295, y: -2.935}
       - {x: 0.475, y: -2.895}
+--- !u!50 &2740512977968814742
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98605723792842517}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

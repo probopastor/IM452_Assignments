@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoconutProjectile : MonoBehaviour
+public class CoconutProjectile : Projectiles
 {
     // Start is called before the first frame update
     void Start()

@@ -12,8 +12,8 @@ public class SmallProjectileCreator : ProjectileCreator
     // Start is called before the first frame update
     void Start()
     {
-        CreateProjectilePrefab("Corn");
-        CreateProjectilePrefab("Pea");
+        //CreateProjectilePrefab("Corn");
+        //CreateProjectilePrefab("Pea");
     }
 
     // Update is called once per frame

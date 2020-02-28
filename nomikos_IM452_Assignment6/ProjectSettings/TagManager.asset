@@ -8,6 +8,7 @@ TagManager:
   - Pea
   - Melon
   - Coconut
+  - Enemy
   layers:
   - Default
   - TransparentFX

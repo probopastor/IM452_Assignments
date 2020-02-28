@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 7841346404095932284}
   - component: {fileID: 514946834742258873}
   - component: {fileID: 527069332807779845}
+  - component: {fileID: -2837606746900723708}
   m_Layer: 0
-  m_Name: CoconutSprite
+  m_Name: CoconutPrefab
   m_TagString: Coconut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,3 +190,24 @@ PolygonCollider2D:
       - {x: 0.32, y: -3.355}
       - {x: 0.48999998, y: -3.335}
       - {x: 0.76, y: -3.2849998}
+--- !u!50 &-2837606746900723708
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3092205938836119073}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

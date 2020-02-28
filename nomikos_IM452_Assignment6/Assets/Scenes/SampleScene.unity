@@ -218,9 +218,11 @@ MonoBehaviour:
   ship: {fileID: 443277780}
   force: 5
   rotationAngle: 3
+  projectileCreator: {fileID: 0}
+  startAmmunition: 50
   bullet: {fileID: 0}
   bulletSpeed: 10
-  fireRate: 0
+  fireRate: 1
 --- !u!50 &443277780
 Rigidbody2D:
   serializedVersion: 4
@@ -521,5 +523,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97f228542c4858d40a5be397c170ce62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  melonProjectile: {fileID: 0}
-  coconutProjectile: {fileID: 0}

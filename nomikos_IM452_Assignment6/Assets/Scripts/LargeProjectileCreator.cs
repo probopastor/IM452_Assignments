@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class LargeProjectileCreator : ProjectileCreator
 {
-    public GameObject melonProjectile;
-    public GameObject coconutProjectile;
-
     private GameObject largeProjectile;
     // Start is called before the first frame update
     void Start()
     {
-        CreateProjectilePrefab("Melon");
-        CreateProjectilePrefab("Coconut");
+        //CreateProjectilePrefab("Melon");
+        //CreateProjectilePrefab("Coconut");
     }
 
     // Update is called once per frame

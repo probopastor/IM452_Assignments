@@ -9,6 +9,21 @@ public class ShipController : MonoBehaviour
     public float force = 0f;
     public float rotationAngle = 0f;
 
+    public ProjectileCreator projectileCreator;
+
+    public float startAmmunition = 50f;
+    private float currentAmmunition;
+
+    private string projectileType;
+
+    private bool isCorn;
+    private bool isPea;
+    private bool isMelon;
+    private bool isCoconut;
+
+    private bool smallCreatorSet;
+    private bool largeCreatorSet;
+
     public GameObject bullet;
     public float bulletSpeed = 10f;
 
@@ -17,9 +32,33 @@ public class ShipController : MonoBehaviour
 
     //public AudioClip shootSound;
 
+    private void Start()
+    {
+        projectileType = "Corn";
+        projectileCreator = new SmallProjectileCreator();
+        smallCreatorSet = true;
+        largeCreatorSet = false;
+        currentAmmunition = startAmmunition;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        ChangeGunType();
+
+        if((isCorn || isPea) && !smallCreatorSet)
+        {
+            projectileCreator = new SmallProjectileCreator();
+            smallCreatorSet = true;
+            largeCreatorSet = false;
+        }
+        else if((isMelon || isCoconut) && !largeCreatorSet)
+        {
+            projectileCreator = new LargeProjectileCreator();
+            largeCreatorSet = true;
+            smallCreatorSet = false;
+        }
+
         //Basic Ship Controls
         if (Input.GetKey(KeyCode.W))
         {
@@ -39,7 +78,7 @@ public class ShipController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
-            //ShootBullet();
+            ShootBullet(projectileType);
         }
 
         //Ship wraps if it moves off of the map
@@ -67,19 +106,79 @@ public class ShipController : MonoBehaviour
         }
     }
 
+    private void ChangeGunType()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            projectileType = "Corn";
+            isCorn = true;
+            isPea = false;
+            isMelon = false;
+            isCoconut = false;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            projectileType = "Pea";
+            isCorn = false;
+            isPea = true;
+            isMelon = false;
+            isCoconut = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            projectileType = "Melon";
+            isCorn = false;
+            isPea = false;
+            isMelon = true;
+            isCoconut = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            projectileType = "Coconut";
+            isCorn = false;
+            isPea = false;
+            isMelon = false;
+            isCoconut = true;
+        }
+    }
+
     //Shoots a bullet
-    void ShootBullet()
+    void ShootBullet(string projectileType)
     {
         //Limits fire rate of bullets
-        if (Time.time > fireRate + lastShot)
+        //if (Time.time > fireRate + lastShot)
+        //{
+        //    var bulletClone = (GameObject)Instantiate(bullet, transform.position, transform.rotation);
+        //    Vector2 direction = transform.up;
+        //    bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+
+        //    lastShot = Time.time;
+
+        //    //AudioSource.PlayClipAtPoint(shootSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
+        //}
+
+        
+
+        if(currentAmmunition > 0)
         {
-            var bulletClone = (GameObject)Instantiate(bullet, transform.position, transform.rotation);
-            Vector2 direction = transform.up;
-            bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+            if (Time.time > fireRate + lastShot)
+            {
+                GameObject projectile = null;
 
-            lastShot = Time.time;
+                projectile = projectileCreator.CreateProjectilePrefab(projectileType);
 
-            //AudioSource.PlayClipAtPoint(shootSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
+                var projectileClone = (GameObject)Instantiate(projectile, transform.position, transform.rotation);
+
+                projectileCreator.AddProjectileScript(projectileClone, projectileType);
+
+                Vector2 direction = transform.up;
+
+                projectileClone.GetComponent<Projectiles>().ProjectileMovement(direction);
+
+                lastShot = Time.time;
+
+                //AudioSource.PlayClipAtPoint(shootSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
+            }
         }
 
     }
