@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class CoconutProjectile : Projectiles
 {
+    public CoconutProjectile()
+    {
+        this.projectileSpeed = 6f;
+        this.damageOutput = 8f;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

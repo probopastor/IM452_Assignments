@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class CornProjectile : Projectiles
 {
+    public CornProjectile()
+    {
+        this.projectileSpeed = 15f;
+        this.damageOutput = 1f;
+    }
     // Start is called before the first frame update
     void Start()
     {

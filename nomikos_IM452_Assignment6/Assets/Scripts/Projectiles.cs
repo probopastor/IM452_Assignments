@@ -24,6 +24,7 @@ public class Projectiles : MonoBehaviour
     {
         GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Enemy"))

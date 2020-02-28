@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class MelonProjectile : Projectiles
 {
+    public MelonProjectile()
+    {
+        this.projectileSpeed = 3f;
+        this.damageOutput = 10f;
+    }
     // Start is called before the first frame update
     void Start()
     {
