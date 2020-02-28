@@ -29,10 +29,10 @@ public class SmallProjectileCreator : ProjectileCreator
             //smallProjectile = cornProjectile;
             smallProjectile = Resources.Load<GameObject>("CornPrefab");
         }
-        else if(projectileType.Equals("Pea"))
+        else if(projectileType.Equals("Strawberry"))
         {
             //smallProjectile = peaProjectile;
-            smallProjectile = Resources.Load<GameObject>("PeaPrefab");
+            smallProjectile = Resources.Load<GameObject>("StrawberryPrefab");
         }
 
         Debug.Log("Projectile created: " + smallProjectile.name);
@@ -48,11 +48,11 @@ public class SmallProjectileCreator : ProjectileCreator
                 thisObjectPrefab.AddComponent<CornProjectile>();
             }
         }
-        else if(projectileType.Equals("Pea"))
+        else if(projectileType.Equals("Strawberry"))
         {
-            if (thisObjectPrefab.GetComponent<PeaProjectile>() == null)
+            if (thisObjectPrefab.GetComponent<StrawberryProjectile>() == null)
             {
-                thisObjectPrefab.AddComponent<PeaProjectile>();
+                thisObjectPrefab.AddComponent<StrawberryProjectile>();
             }
         }
     }

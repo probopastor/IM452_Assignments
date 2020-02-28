@@ -15,10 +15,10 @@ public class ShootProjectile : MonoBehaviour
 
     private string projectileType;
 
-    private bool isCorn;
-    private bool isPea;
-    private bool isMelon;
-    private bool isCoconut;
+    public bool isCorn;
+    public bool isStrawberry;
+    public bool isMelon;
+    public bool isCoconut;
 
     private bool smallCreatorSet;
     private bool largeCreatorSet;
@@ -45,7 +45,7 @@ public class ShootProjectile : MonoBehaviour
     {
         ChangeGunType();
 
-        if ((isCorn || isPea) && !smallCreatorSet)
+        if ((isCorn || isStrawberry) && !smallCreatorSet)
         {
             projectileCreator = new SmallProjectileCreator();
             smallCreatorSet = true;
@@ -71,15 +71,15 @@ public class ShootProjectile : MonoBehaviour
         {
             projectileType = "Corn";
             isCorn = true;
-            isPea = false;
+            isStrawberry = false;
             isMelon = false;
             isCoconut = false;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            projectileType = "Pea";
+            projectileType = "Strawberry";
             isCorn = false;
-            isPea = true;
+            isStrawberry = true;
             isMelon = false;
             isCoconut = false;
         }
@@ -87,7 +87,7 @@ public class ShootProjectile : MonoBehaviour
         {
             projectileType = "Melon";
             isCorn = false;
-            isPea = false;
+            isStrawberry = false;
             isMelon = true;
             isCoconut = false;
         }
@@ -95,7 +95,7 @@ public class ShootProjectile : MonoBehaviour
         {
             projectileType = "Coconut";
             isCorn = false;
-            isPea = false;
+            isStrawberry = false;
             isMelon = false;
             isCoconut = true;
         }

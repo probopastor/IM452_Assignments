@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3405803753479840239}
   - component: {fileID: 7391892954239049430}
   m_Layer: 0
-  m_Name: PeaPrefab
-  m_TagString: Pea
+  m_Name: StrawberryPrefab
+  m_TagString: Strawberry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

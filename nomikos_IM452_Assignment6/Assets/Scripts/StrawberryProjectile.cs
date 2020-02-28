@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PeaProjectile : Projectiles
+public class StrawberryProjectile : Projectiles
 {
-    public PeaProjectile()
+    public StrawberryProjectile()
     {
         this.projectileSpeed = 25f;
         this.damageOutput = 0.25f;

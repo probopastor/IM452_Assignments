@@ -5,10 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Corn
-  - Pea
   - Melon
   - Coconut
   - Enemy
+  - Strawberry
   layers:
   - Default
   - TransparentFX
