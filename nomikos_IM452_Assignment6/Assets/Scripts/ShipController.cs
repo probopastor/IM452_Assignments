@@ -47,17 +47,13 @@ public class ShipController : MonoBehaviour
             gameObject.transform.position = new Vector2((-transform.position.x), transform.position.y);
             gameObject.transform.position = new Vector2(transform.position.x + 0.25f, transform.position.y);
         }
-        else if (transform.position.y > 18.3f)
+        else if (transform.position.y > 18.47f)
         {
-            gameObject.transform.position = new Vector2(transform.position.x, (-transform.position.y));
-            gameObject.transform.position = new Vector2(transform.position.x, transform.position.y + 0.25f);
-
+            gameObject.transform.position = new Vector2(transform.position.x, -13.69f);
         }
-        else if (transform.position.y < -18.3f)
+        else if (transform.position.y < -13.71f)
         {
-            gameObject.transform.position = new Vector2(transform.position.x, (-transform.position.y));
-            gameObject.transform.position = new Vector2(transform.position.x, transform.position.y - 0.25f);
-
+            gameObject.transform.position = new Vector2(transform.position.x, 18.45f);
         }
     }
 }
