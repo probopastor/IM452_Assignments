@@ -146,7 +146,7 @@ MonoBehaviour:
   health: 5
   damageOutput: 1
   maxVelocity: 20
-  isPontoon: 0
+  isPontoon: 1
   isYellow: 0
   isPink: 0
   isGreen: 0

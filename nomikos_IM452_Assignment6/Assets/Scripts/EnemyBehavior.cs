@@ -9,7 +9,7 @@ public class EnemyBehavior : MonoBehaviour
     public float speed = 1f;
     public float health = 10f;
     public float damageOutput = 1f;
-    public float maxVelocity = 20f;
+    public float maxVelocity = 360f;
 
     public bool isPontoon;
 
@@ -17,6 +17,8 @@ public class EnemyBehavior : MonoBehaviour
     public bool isPink;
     public bool isGreen;
     public bool isBrown;
+
+    private bool doOnce;
 
     // Start is called before the first frame update
     void Start()
@@ -33,10 +35,11 @@ public class EnemyBehavior : MonoBehaviour
         {
             gameObject.transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
-        else if(isPontoon)
+        else if(isPontoon && !doOnce)
         {
-            Vector2 randomDirection = new Vector2(Random.Range(0, 360), Random.Range(0, 360)).normalized;
-            gameObject.GetComponent<Rigidbody2D>().velocity = randomDirection;
+            doOnce = true;
+            Vector2 randomDirection = new Vector2(Random.Range(-maxVelocity, maxVelocity), Random.Range(-maxVelocity, maxVelocity)).normalized;
+            gameObject.GetComponent<Rigidbody2D>().velocity = randomDirection * speed;
         }
     }
 
