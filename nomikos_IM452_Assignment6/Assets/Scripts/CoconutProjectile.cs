@@ -19,6 +19,9 @@ public class CoconutProjectile : Projectiles
     // Update is called once per frame
     void Update()
     {
-        
+        if ((transform.position.x < -32.4f) || (transform.position.x > 32.4f) || (transform.position.y > 18.47f) || (transform.position.y < -13.71f))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

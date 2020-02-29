@@ -17,13 +17,14 @@ public class Projectiles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void ProjectileMovement(Vector2 direction)
     {
         GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

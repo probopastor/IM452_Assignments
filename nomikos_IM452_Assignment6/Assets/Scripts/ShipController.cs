@@ -9,10 +9,14 @@ public class ShipController : MonoBehaviour
     public float force = 0f;
     public float rotationAngle = 0f;
 
+    public float playerHealth = 5f;
+    private float currentPlayerHealth;
+
     //public AudioClip shootSound;
 
     private void Start()
     {
+        currentPlayerHealth = playerHealth;
     }
 
     // Update is called once per frame
@@ -54,6 +58,21 @@ public class ShipController : MonoBehaviour
         else if (transform.position.y < -13.71f)
         {
             gameObject.transform.position = new Vector2(transform.position.x, 18.45f);
+        }
+    }
+
+    public void DecreaseHealth(float healthAmount)
+    {
+        currentPlayerHealth -= healthAmount;
+
+        LoseCheck();
+    }
+
+    private void LoseCheck()
+    {
+        if(currentPlayerHealth <= 0)
+        {
+            //Lose Game
         }
     }
 }
