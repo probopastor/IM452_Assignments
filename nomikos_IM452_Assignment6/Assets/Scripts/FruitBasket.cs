@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* FruitBasket.cs
+* Assignment 6
+* Script handles the Fruit Basket item pickup, which gives the player more ammo.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,12 +21,6 @@ public class FruitBasket : MonoBehaviour
         {
             Destroy(gameObject, timeUntilDespawn);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

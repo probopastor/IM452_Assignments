@@ -1,9 +1,9 @@
 ﻿/*
 * William Nomikos
 * PauseManager.cs
-* Assignment 5
-* Handles pause in-game pause menu functionality and button functionality,
-* along with game music.
+* Assignment 6
+* Handles In-Game pause menu and functionality, including restarting, exiting
+* to main menu, button sound effects and game music.
 */
 
 using System.Collections;

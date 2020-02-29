@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ProjectileUI.cs
+* Assignment 6
+* Handles the bottom bar in-game UI for which fruit will be
+* used as a projectile in the cannon.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

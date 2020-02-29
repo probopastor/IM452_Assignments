@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ShipController.cs
+* Assignment 6
+* Handles movement functionality for the player ship, and 
+* win and loss conditions for the player.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,8 +33,6 @@ public class ShipController : MonoBehaviour
 
     public float playerHealth = 5f;
     private float currentPlayerHealth;
-
-    //public AudioClip shootSound;
 
     private void Start()
     {

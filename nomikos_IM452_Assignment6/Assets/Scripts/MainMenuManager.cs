@@ -1,8 +1,8 @@
 ﻿/*
 * William Nomikos
 * MainMenuManager.cs
-* Assignment 5
-* Handles main menu button functionality and sound effects.
+* Assignment 6
+* Handles main menu functionality, including button functions, sound effects, and music.
 */
 
 using System.Collections;

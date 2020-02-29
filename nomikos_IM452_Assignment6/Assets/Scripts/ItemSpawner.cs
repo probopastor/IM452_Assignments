@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ItemSpawner.cs
+* Assignment 6
+* Script spawns in item pickups at certain periods of time at Item Spawner objects in scene.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,12 +23,6 @@ public class ItemSpawner : MonoBehaviour
         doOnce = false;
         i = 0;
         StartCoroutine("SpawnItems");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private IEnumerator SpawnItems()

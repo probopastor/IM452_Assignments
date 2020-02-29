@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ShootProjectile.cs
+* Assignment 6
+* Script determines which creator should be used for projectiles
+* then spawns the appropriate projectile based on which fruit option is
+* selected by the player. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,8 +45,6 @@ public class ShootProjectile : MonoBehaviour
 
     public float fireRate;
     float lastShot;
-
-    //public AudioClip shootSound;
 
     private void Start()
     {

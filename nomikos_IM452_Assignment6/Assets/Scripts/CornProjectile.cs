@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* CornProjectile.cs
+* Assignment 6
+* Script handles the Corn projectile's (a concrete product from the SmallProjectileCreator concrete creator) 
+* behaviors after it is created via the factory.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

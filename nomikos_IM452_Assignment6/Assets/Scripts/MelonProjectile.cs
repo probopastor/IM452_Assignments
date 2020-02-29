@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* MelonProjectile.cs
+* Assignment 6
+* Script handles the Melon projectile's (a concrete product from the LargeProjectileCreator concrete creator) 
+* behaviors after it is created via the factory.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* LargeProjectileCreator.cs
+* Assignment 6
+* A concrete creator, handles the creation of large projectiles 
+* to be launched by the player, including Coconuts and Melons.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +25,6 @@ public class LargeProjectileCreator : ProjectileCreator
             largeProjectile = Resources.Load<GameObject>("CoconutPrefab");
         }
 
-        Debug.Log("Projectile created: " + largeProjectile.name);
         return largeProjectile;
     }
 

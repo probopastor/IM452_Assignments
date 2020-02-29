@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* EnemySpawner.cs
+* Assignment 6
+* Spawns in enemy ships after specific periods of time at Enemy Spawners in scene.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,12 +23,6 @@ public class EnemySpawner : MonoBehaviour
         doOnce = false;
         i = 0;
         StartCoroutine("SpawnEnemies");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private IEnumerator SpawnEnemies()

@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* SmallProjectileCreator.cs
+* Assignment 6
+* A concrete creator, handles the creation of small projectiles 
+* to be launched by the player, including Strawberries and Corn.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +25,6 @@ public class SmallProjectileCreator : ProjectileCreator
             smallProjectile = Resources.Load<GameObject>("StrawberryPrefab");
         }
 
-        Debug.Log("Projectile created: " + smallProjectile.name);
         return smallProjectile;
     }
 

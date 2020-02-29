@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* EnemyBehavior.cs
+* Assignment 6
+* Handles enemy ship movement, damage, and sound effects. Also distinguishes between fruits to
+* determine if ship should be damaged by the projectile or not.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
