@@ -8,6 +8,9 @@ public class ShipController : MonoBehaviour
     public Text healthText;
     public Text enemiesDefeatedText;
 
+    public GameObject losePanel;
+    public GameObject winPanel;
+
     public int enemiesToWin = 25;
 
     public int enemiesDefeated = 0;
@@ -23,6 +26,9 @@ public class ShipController : MonoBehaviour
 
     private void Start()
     {
+        losePanel.SetActive(false);
+        winPanel.SetActive(false);
+
         currentPlayerHealth = playerHealth;
         enemiesDefeated = 0;
     }
@@ -92,12 +98,19 @@ public class ShipController : MonoBehaviour
     {
         if(currentPlayerHealth <= 0)
         {
-            //Lose Game
+            currentPlayerHealth = 0;
+            losePanel.SetActive(true);
+            Time.timeScale = 0;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
     private void WinGame()
     {
-        //WinGame
+        winPanel.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

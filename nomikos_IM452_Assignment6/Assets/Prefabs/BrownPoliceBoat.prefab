@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  health: 1
+  health: 10
   damageOutput: 1
   maxVelocity: 20
   isPontoon: 0
