@@ -6,6 +6,12 @@ using UnityEngine.UI;
 public class ShipController : MonoBehaviour
 {
     public Text healthText;
+    public Text enemiesDefeatedText;
+
+    public int enemiesToWin = 25;
+
+    public int enemiesDefeated = 0;
+
     public Rigidbody2D ship;
     public float force = 0f;
     public float rotationAngle = 0f;
@@ -18,12 +24,14 @@ public class ShipController : MonoBehaviour
     private void Start()
     {
         currentPlayerHealth = playerHealth;
+        enemiesDefeated = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         healthText.text = "Health: " + currentPlayerHealth;
+        enemiesDefeatedText.text = "Enemies Defeated: " + enemiesDefeated + " / " + 25;
 
         //Basic Ship Controls
         if (Input.GetKey(KeyCode.W))
@@ -71,11 +79,25 @@ public class ShipController : MonoBehaviour
         LoseCheck();
     }
 
+    public void UpdateEnemiesDefeated()
+    {
+        enemiesDefeated++;
+        if(enemiesDefeated >= enemiesToWin)
+        {
+            WinGame();
+        }
+    }
+
     private void LoseCheck()
     {
         if(currentPlayerHealth <= 0)
         {
             //Lose Game
         }
+    }
+
+    private void WinGame()
+    {
+        //WinGame
     }
 }

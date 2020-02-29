@@ -46,6 +46,7 @@ public class EnemyBehavior : MonoBehaviour
 
         if(health <= 0)
         {
+            player.GetComponent<ShipController>().UpdateEnemiesDefeated();
             Destroy(gameObject);
         }
     }
