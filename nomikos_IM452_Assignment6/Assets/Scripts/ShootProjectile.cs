@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class ShootProjectile : MonoBehaviour
 {
+    public AudioSource SoundEffectSource;
+    public AudioClip shootSound;
+    public AudioClip noAmmoSound;
+    public AudioClip gainAmmoSound;
+
     public Text ammunitionText;
 
     public float xProjectileMod = 0f;
@@ -109,20 +114,6 @@ public class ShootProjectile : MonoBehaviour
     //Shoots a bullet
     void ShootBullet(string projectileType)
     {
-        //Limits fire rate of bullets
-        //if (Time.time > fireRate + lastShot)
-        //{
-        //    var bulletClone = (GameObject)Instantiate(bullet, transform.position, transform.rotation);
-        //    Vector2 direction = transform.up;
-        //    bulletClone.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
-
-        //    lastShot = Time.time;
-
-        //    //AudioSource.PlayClipAtPoint(shootSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
-        //}
-
-
-
         if (currentAmmunition > 0)
         {
             if (Time.time > fireRate + lastShot)
@@ -148,12 +139,14 @@ public class ShootProjectile : MonoBehaviour
 
                 lastShot = Time.time;
 
-                //AudioSource.PlayClipAtPoint(shootSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
+                SoundEffectSource.clip = shootSound;
+                SoundEffectSource.Play();
             }
         }
         else if(currentAmmunition == 0)
         {
-            //Play no ammo sound here
+            SoundEffectSource.clip = noAmmoSound;
+            SoundEffectSource.Play();
         }
 
     }
@@ -161,5 +154,7 @@ public class ShootProjectile : MonoBehaviour
     public void ChangeAmmunitionAmount(int ammunitionAmount)
     {
         currentAmmunition += ammunitionAmount;
+        SoundEffectSource.clip = gainAmmoSound;
+        SoundEffectSource.Play();
     }
 }

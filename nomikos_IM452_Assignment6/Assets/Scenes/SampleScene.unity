@@ -1940,6 +1940,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35df98e692a6c384bbcec712622bd4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundEffectSource: {fileID: 1282177148}
+  shootSound: {fileID: 8300000, guid: 31dfb16f31d14764fb910951e4edbae3, type: 3}
+  noAmmoSound: {fileID: 8300000, guid: 75c6aee105b79da44ae4200df1c04bca, type: 3}
+  gainAmmoSound: {fileID: 8300000, guid: 436019c644f757143a96649716045c11, type: 3}
   ammunitionText: {fileID: 1873280301}
   xProjectileMod: 0
   yProjectileMod: 0
