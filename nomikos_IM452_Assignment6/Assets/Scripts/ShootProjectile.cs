@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShootProjectile : MonoBehaviour
 {
+    public Text ammunitionText;
+
     public float xProjectileMod = 0f;
     public float yProjectileMod = 0f;
     public float zProjectileMod = 0f;
@@ -43,6 +46,8 @@ public class ShootProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ammunitionText.text = "Ammo: " + currentAmmunition;
+
         ChangeGunType();
 
         if ((isCorn || isStrawberry) && !smallCreatorSet)
@@ -134,11 +139,27 @@ public class ShootProjectile : MonoBehaviour
 
                 projectileClone.GetComponent<Projectiles>().ProjectileMovement(direction);
 
+                currentAmmunition--;
+
+                if(currentAmmunition < 0)
+                {
+                    currentAmmunition = 0;
+                }
+
                 lastShot = Time.time;
 
                 //AudioSource.PlayClipAtPoint(shootSound, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z));
             }
         }
+        else if(currentAmmunition == 0)
+        {
+            //Play no ammo sound here
+        }
 
+    }
+
+    public void ChangeAmmunitionAmount(int ammunitionAmount)
+    {
+        currentAmmunition += ammunitionAmount;
     }
 }

@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShipController : MonoBehaviour
 {
-    //enum ModeSwitching { Start, Acceleration }
+    public Text healthText;
     public Rigidbody2D ship;
     public float force = 0f;
     public float rotationAngle = 0f;
@@ -22,6 +23,8 @@ public class ShipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthText.text = "Health: " + currentPlayerHealth;
+
         //Basic Ship Controls
         if (Input.GetKey(KeyCode.W))
         {
