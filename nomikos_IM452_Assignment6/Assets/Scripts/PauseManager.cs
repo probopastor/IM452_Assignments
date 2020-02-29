@@ -18,11 +18,11 @@ public class PauseManager : MonoBehaviour
 
     public GameObject PauseCanvas;
 
-    //public AudioSource GameSource;
-    //public AudioClip gameMusic;
+    public AudioSource GameSource;
+    public AudioClip gameMusic;
 
-    //public AudioSource SoundEffectSource;
-    //public AudioClip buttonClick;
+    public AudioSource SoundEffectSource;
+    public AudioClip buttonClick;
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +32,8 @@ public class PauseManager : MonoBehaviour
         paused = false;
         PauseCanvas.SetActive(false);
 
-        //GameSource.clip = gameMusic;
-        //GameSource.Play();
+        GameSource.clip = gameMusic;
+        GameSource.Play();
     }
 
     // Update is called once per frame
@@ -81,8 +81,8 @@ public class PauseManager : MonoBehaviour
 
     public void ButtonClick()
     {
-        //SoundEffectSource.clip = buttonClick;
-        //SoundEffectSource.Play();
+        SoundEffectSource.clip = buttonClick;
+        SoundEffectSource.Play();
     }
 
 

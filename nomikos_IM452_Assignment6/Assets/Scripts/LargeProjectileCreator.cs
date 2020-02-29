@@ -5,18 +5,6 @@ using UnityEngine;
 public class LargeProjectileCreator : ProjectileCreator
 {
     private GameObject largeProjectile;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //CreateProjectilePrefab("Melon");
-        //CreateProjectilePrefab("Coconut");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public override GameObject CreateProjectilePrefab(string projectileType)
     {
