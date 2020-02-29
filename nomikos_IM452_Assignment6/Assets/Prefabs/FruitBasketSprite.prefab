@@ -95,8 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 607ce933be7e9c149825daf027fc3d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammunitionAmount: 1
-  timeUntilDespawn: 9
+  ammunitionAmount: 5
+  timeUntilDespawn: 6
 --- !u!50 &8376208344661477210
 Rigidbody2D:
   serializedVersion: 4

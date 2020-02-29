@@ -803,7 +803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &410247232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3173,8 +3173,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 13.8, y: 44}
-  m_SizeDelta: {x: 726.2, y: 251.4}
+  m_AnchoredPosition: {x: 13.8, y: 2}
+  m_SizeDelta: {x: 726.2, y: 379.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1618249067
 MonoBehaviour:
@@ -3207,7 +3207,16 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game created by William Nomikos
+  m_Text: "Game created by William Nomikos\n\nSound Effects:\nItem Pickup - acclivity:
+    https://freesound.org/people/acclivity/sounds/19988/\nItem Deflection - qubodop:
+    https://freesound.org/people/qubodup/sounds/60013/\nButton Click - Mellau: https://freesound.org/people/Mellau/sounds/506052/\nNo
+    Ammo Sound - waveplay.: https://freesound.org/people/waveplay./sounds/399934/\nTake
+    Damage - 0EV: https://freesound.org/people/0EV/sounds/501104/\nFruit Splatter
+    - yottasounds: https://freesound.org/people/yottasounds/sounds/232135/\n\nMusic:\nCaptain
+    Scurvy Kevin MacLeod (incompetech.com)\r\nLicensed under Creative Commons: By
+    Attribution 3.0 License\r\nhttp://creativecommons.org/licenses/by/3.0/\n\nSalty
+    Ditty Kevin MacLeod (incompetech.com)\r\nLicensed under Creative Commons: By Attribution
+    3.0 License\r\nhttp://creativecommons.org/licenses/by/3.0/\n"
 --- !u!222 &1618249068
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3488,7 +3497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -308, y: -134}
+  m_AnchoredPosition: {x: -308, y: -195}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1784427638
@@ -3620,7 +3629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1788374531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4287,7 +4296,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1923103601
 RectTransform:
   m_ObjectHideFlags: 0

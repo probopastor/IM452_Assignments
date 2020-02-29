@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class ShipController : MonoBehaviour
 {
+    public AudioSource SoundEffectSource;
+    public AudioClip pickUpHealthSound;
+    public AudioClip damageSound;
+
     public Text healthText;
     public Text enemiesDefeatedText;
 
@@ -80,6 +84,16 @@ public class ShipController : MonoBehaviour
 
     public void DecreaseHealth(float healthAmount)
     {
+        if(healthAmount < 0)
+        {
+            SoundEffectSource.clip = pickUpHealthSound;
+            SoundEffectSource.Play();
+        }
+        else if(healthAmount > 0)
+        {
+            SoundEffectSource.clip = damageSound;
+            SoundEffectSource.Play();
+        }
         currentPlayerHealth -= healthAmount;
 
         LoseCheck();

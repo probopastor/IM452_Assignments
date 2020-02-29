@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class CornProjectile : Projectiles
 {
+    private AudioSource SoundEffectSource;
+    private AudioClip splatSound;
+
     public CornProjectile()
     {
-        this.projectileSpeed = 15f;
-        this.damageOutput = 1f;
+        this.projectileSpeed = 30f;
+        this.damageOutput = 3.5f;
+
     }
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        
+        SoundEffectSource = GameObject.FindWithTag("Canvas").GetComponent<AudioSource>();
+        splatSound = Resources.Load<AudioClip>("SplatSound");
     }
 
     // Update is called once per frame
@@ -20,7 +25,18 @@ public class CornProjectile : Projectiles
     {
         if ((transform.position.x < -32.4f) || (transform.position.x > 32.4f) || (transform.position.y > 18.47f) || (transform.position.y < -13.71f))
         {
-            Destroy(this.gameObject);
+            DestroyProjectile(false);
         }
+    }
+
+    public void DestroyProjectile(bool useSound)
+    {
+        if (useSound)
+        {
+            SoundEffectSource.clip = splatSound;
+            SoundEffectSource.Play();
+        }
+
+        Destroy(this.gameObject);
     }
 }

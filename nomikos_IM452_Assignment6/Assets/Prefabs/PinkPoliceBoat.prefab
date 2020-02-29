@@ -116,13 +116,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d412d93a75b40404f8e6b7d14bc05a82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deflectionSound: {fileID: 0}
   speed: 1
-  health: 10
-  damageOutput: 1
+  health: 5
+  damageOutput: 2
   maxVelocity: 20
   isPontoon: 0
   isYellow: 0
-  isPink: 0
+  isPink: 1
   isGreen: 0
   isBrown: 0
 --- !u!61 &4455661102617276091

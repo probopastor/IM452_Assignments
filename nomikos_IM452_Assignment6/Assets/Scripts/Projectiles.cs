@@ -8,18 +8,6 @@ public class Projectiles : MonoBehaviour
 
     public float damageOutput = 1f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void ProjectileMovement(Vector2 direction)
     {
         GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;

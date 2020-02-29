@@ -195,5 +195,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56cfb23953f5364c875ee199caeaf43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthAmount: 1
-  timeUntilDespawn: 9
+  healthAmount: 5
+  timeUntilDespawn: 6

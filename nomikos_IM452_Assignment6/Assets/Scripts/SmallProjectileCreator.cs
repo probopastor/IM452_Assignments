@@ -10,12 +10,10 @@ public class SmallProjectileCreator : ProjectileCreator
     {
         if(projectileType.Equals("Corn"))
         {
-            //smallProjectile = cornProjectile;
             smallProjectile = Resources.Load<GameObject>("CornPrefab");
         }
         else if(projectileType.Equals("Strawberry"))
         {
-            //smallProjectile = peaProjectile;
             smallProjectile = Resources.Load<GameObject>("StrawberryPrefab");
         }
 

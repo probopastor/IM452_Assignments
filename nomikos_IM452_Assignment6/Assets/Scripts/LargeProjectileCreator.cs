@@ -10,12 +10,10 @@ public class LargeProjectileCreator : ProjectileCreator
     {
         if(projectileType.Equals("Melon"))
         {
-            //largeProjectile = melonProjectile;
             largeProjectile = Resources.Load<GameObject>("MelonPrefab");
         }
         else if(projectileType.Equals("Coconut"))
         {
-            //largeProjectile = coconutProjectile;
             largeProjectile = Resources.Load<GameObject>("CoconutPrefab");
         }
 

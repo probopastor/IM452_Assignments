@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    private AudioSource SoundEffectSource;
+    public AudioClip deflectionSound;
+
     private GameObject player;
 
     public float speed = 1f;
@@ -23,6 +26,8 @@ public class EnemyBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundEffectSource = GameObject.FindWithTag("Canvas").GetComponent<AudioSource>();
+        deflectionSound = Resources.Load<AudioClip>("DeflectionSound");
         player = GameObject.FindWithTag("Player");
     }
 
@@ -60,28 +65,56 @@ public class EnemyBehavior : MonoBehaviour
         {
             if (collision.CompareTag("Corn"))
             {
+                collision.GetComponent<CornProjectile>().DestroyProjectile(true);
                 DecreaseHealth(collision.GetComponent<CornProjectile>().damageOutput);
+            }
+            else
+            {
+                SoundEffectSource.clip = deflectionSound;
+                SoundEffectSource.Play();
+                Destroy(collision.GetComponent<GameObject>());
             }
         }
         else if(isPink)
         {
             if (collision.CompareTag("Strawberry"))
             {
+                collision.GetComponent<StrawberryProjectile>().DestroyProjectile(true);
                 DecreaseHealth(collision.GetComponent<StrawberryProjectile>().damageOutput);
+            }
+            else
+            {
+                SoundEffectSource.clip = deflectionSound;
+                SoundEffectSource.Play();
+                Destroy(collision.GetComponent<GameObject>());
             }
         }
         else if(isGreen)
         {
             if (collision.CompareTag("Melon"))
             {
+                collision.GetComponent<MelonProjectile>().DestroyProjectile(true);
                 DecreaseHealth(collision.GetComponent<MelonProjectile>().damageOutput);
+            }
+            else
+            {
+                SoundEffectSource.clip = deflectionSound;
+                SoundEffectSource.Play();
+                Destroy(collision.GetComponent<GameObject>());
             }
         }
         else if(isBrown)
         {
             if (collision.CompareTag("Coconut"))
             {
+                collision.GetComponent<CoconutProjectile>().DestroyProjectile(true);
                 DecreaseHealth(collision.GetComponent<CoconutProjectile>().damageOutput);
+            }
+            else
+            {
+                SoundEffectSource.clip = deflectionSound;
+                SoundEffectSource.Play();
+                Destroy(collision.GetComponent<GameObject>());
             }
         }
         

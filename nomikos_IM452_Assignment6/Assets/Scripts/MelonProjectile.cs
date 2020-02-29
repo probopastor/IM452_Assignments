@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class MelonProjectile : Projectiles
 {
+    private AudioSource SoundEffectSource;
+    private AudioClip splatSound;
+
     public MelonProjectile()
     {
         this.projectileSpeed = 3f;
-        this.damageOutput = 10f;
+        this.damageOutput = 20f;
     }
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        
+        SoundEffectSource = GameObject.FindWithTag("Canvas").GetComponent<AudioSource>();
+        splatSound = Resources.Load<AudioClip>("SplatSound");
     }
 
     // Update is called once per frame
@@ -20,7 +24,18 @@ public class MelonProjectile : Projectiles
     {
         if ((transform.position.x < -32.4f) || (transform.position.x > 32.4f) || (transform.position.y > 18.47f) || (transform.position.y < -13.71f))
         {
-            Destroy(this.gameObject);
+            DestroyProjectile(false);
         }
+    }
+
+    public void DestroyProjectile(bool useSound)
+    {
+        if (useSound)
+        {
+            SoundEffectSource.clip = splatSound;
+            SoundEffectSource.Play();
+        }
+
+        Destroy(this.gameObject);
     }
 }

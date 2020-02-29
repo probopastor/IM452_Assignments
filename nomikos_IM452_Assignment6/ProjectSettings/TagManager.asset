@@ -9,6 +9,7 @@ TagManager:
   - Coconut
   - Enemy
   - Strawberry
+  - Canvas
   layers:
   - Default
   - TransparentFX
