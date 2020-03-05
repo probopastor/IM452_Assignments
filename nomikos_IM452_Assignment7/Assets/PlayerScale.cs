@@ -26,6 +26,7 @@ public class PlayerScale : MonoBehaviour
     public void ChangeScale()
     {
         Vector3 objectLocalScale = gameObject.transform.localScale;
-        gameObject.transform.localScale = new Vector3(objectLocalScale.x + 0.5f, objectLocalScale.y + 0.5f, objectLocalScale.z + 0.5f);
+        gameObject.transform.localScale = new Vector3(objectLocalScale.x + 0.5f, objectLocalScale.y, objectLocalScale.z + 0.5f);
+        //objectLocalScale.y + 0.5f
     }
 }
