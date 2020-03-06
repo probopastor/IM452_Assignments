@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TornadoInputManagerInvoker : MonoBehaviour
+public class TornadoInputManagerInvoker
 {
     public PlayerScale playerScale;
     private ICommand changeSize;
@@ -10,41 +10,39 @@ public class TornadoInputManagerInvoker : MonoBehaviour
     Dictionary<string, ICommand> commands;
     private Stack<ICommand> commandStack;
 
-    // Start is called before the first frame update
-    void Start()
+    public TornadoInputManagerInvoker()
     {
         commandStack = new Stack<ICommand>();
 
         changeSize = new ChangeSize(playerScale);
     }
-
     // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            //changeSize.Execute();
-            AddCommand(changeSize);
-            InvokeCommand();
+    //void Update()
+    ////{
+    ////    if(Input.GetKeyDown(KeyCode.A))
+    ////    {
+    ////        //changeSize.Execute();
+    ////        AddCommand(changeSize);
+    ////        InvokeCommand();
 
-            DisplayCommands();
-        }
+    ////        DisplayCommands();
+    ////    }
 
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            //changeSize.Undo();
-            //AddCommand(changeSize);
-            InvokeUndoCommand();
-            commandStack.Pop();
-            DisplayCommands();
-        }
+    ////    if(Input.GetKeyDown(KeyCode.Q))
+    ////    {
+    ////        //changeSize.Undo();
+    ////        //AddCommand(changeSize);
+    ////        InvokeUndoCommand();
+    ////        commandStack.Pop();
+    ////        DisplayCommands();
+    ////    }
 
-        if(Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            //commandStack.Pop();
-            Debug.Log("Command popped: " + commandStack.Pop());
-        }
-    }
+    //    if(Input.GetKeyDown(KeyCode.Alpha0))
+    //    {
+    //        //commandStack.Pop();
+    //        Debug.Log("Command popped: " + commandStack.Pop());
+    //    }
+    //}
 
     public void AddCommand(ICommand command)
     {
