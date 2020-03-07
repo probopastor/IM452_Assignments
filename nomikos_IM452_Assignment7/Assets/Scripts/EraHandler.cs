@@ -36,9 +36,10 @@ public class EraHandler : MonoBehaviour
 
     void Update()
     {
+        float displayEra = era + 1;
         if (teleportCounter >= timeToTeleport / 0.02f)
         {
-            timeUntilTeleportText.text = "Time Travel Status: True";
+            timeUntilTeleportText.text = "Time Travel Status: True " + "                    Time Until New Era: " + counter + "/" + timePerEra / 0.02f + "                    Era: " + displayEra;
             if (Input.GetKeyDown(KeyCode.T))
             {
                 SoundEffectSource.clip = goBackSound;
@@ -52,7 +53,7 @@ public class EraHandler : MonoBehaviour
         }
         else
         {
-            timeUntilTeleportText.text = "Time Travel Status: False";
+            timeUntilTeleportText.text = "Time Travel Status: False " + "                    Time Until New Era: " + counter + "/" +  timePerEra/0.02f +"                    Era: " + displayEra;
             teleportCounter++;
         }
        

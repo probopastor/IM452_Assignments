@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameSource: {fileID: 1020620305}
-  gameMusic: {fileID: 0}
+  gameMusic: {fileID: 8300000, guid: 9c20aad63a1901e4bbfb8d9503e33d3c, type: 3}
   SoundEffectSource: {fileID: 387922160}
   buttonClick: {fileID: 8300000, guid: bd1137e4e73a0384fba6bf54f63dc82e, type: 3}
 --- !u!1 &398051719
