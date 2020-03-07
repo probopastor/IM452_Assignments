@@ -26,6 +26,13 @@ public class EraHandler : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            changeEra.Undo();
+            counter = 0;
+            doOnce = false;
+        }
+
         for (int i = 0; i < objects.Length; i++)
         {
             if (i == era && !doOnce)

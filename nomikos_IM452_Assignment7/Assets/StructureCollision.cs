@@ -11,9 +11,14 @@ public class StructureCollision : MonoBehaviour
     private ICommand changeSize;
     public PlayerScale playerScale;
 
+    public int damageTimer = 1;
+    private int counter = 0;
+    private bool takeDamage = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        takeDamage = true;
         invoker = new TornadoInputManagerInvoker();
         changeSize = new ChangeSize(playerScale);
     }
@@ -26,17 +31,33 @@ public class StructureCollision : MonoBehaviour
         gameObjectLocalScale = gameObject.transform.localScale;
     }
 
+    private void FixedUpdate()
+    {
+        if(counter == damageTimer/0.02f)
+        {
+            takeDamage = true;
+            counter = 0;
+        }
+
+        counter++;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Structure"))
+        if (other.CompareTag("Structure"))
         {
             Vector3 colliderLocalScale = other.transform.localScale;
 
-            if(colliderLocalScale.x <= gameObjectLocalScale.x + 0.5f)
+            if (colliderLocalScale.x <= gameObjectLocalScale.x + 0.5f)
             {
                 other.gameObject.SetActive(false);
                 invoker.AddCommand(changeSize);
                 invoker.InvokeCommand();
+            }
+            else if(takeDamage)
+            {
+                invoker.InvokeUndoCommand();
+                takeDamage = false;
             }
         }
     }
