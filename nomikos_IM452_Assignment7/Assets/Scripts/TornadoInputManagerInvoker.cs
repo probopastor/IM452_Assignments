@@ -22,16 +22,6 @@ public class TornadoInputManagerInvoker
         commandStack.Push(command);
     }
 
-    public void DisplayCommands()
-    {
-        Debug.Log("----- List of Commands in Remote Control -----\n");
-
-        foreach (ICommand command in commandStack)
-        {
-            Debug.Log("Command: " + command + "\n");
-        }
-    }
-
     public void InvokeCommand()
     {
         commandStack.Peek().Execute();
