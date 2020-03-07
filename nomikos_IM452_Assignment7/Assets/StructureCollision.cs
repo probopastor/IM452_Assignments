@@ -29,6 +29,7 @@ public class StructureCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Take Damage: " + takeDamage);
         //invoker.AddCommand(changeSize);
         //invoker.InvokeCommand();
         gameObjectLocalScale = gameObject.transform.localScale;
@@ -49,16 +50,28 @@ public class StructureCollision : MonoBehaviour
     {
         if (other.CompareTag("Structure"))
         {
-            Vector3 colliderLocalScale = other.transform.localScale;
+            //Vector3 colliderLocalScale = other.transform.localScale;
 
-            if (colliderLocalScale.x <= gameObjectLocalScale.x + 0.5f)
+            //if (colliderLocalScale.x <= gameObjectLocalScale.x + 0.5f)
+            //{
+            //    other.gameObject.SetActive(false);
+            //    invoker.AddCommand(changeSize);
+            //    invoker.InvokeCommand();
+            //}
+            if (other.GetComponent<Renderer>().bounds.size.x < gameObjectLocalScale.x + 15f)
             {
+                Debug.Log(other.GetComponent<Renderer>().bounds.size.x);
+                Debug.Log("my object scale: " + gameObjectLocalScale.x);
+
                 other.gameObject.SetActive(false);
                 invoker.AddCommand(changeSize);
                 invoker.InvokeCommand();
             }
             else if(takeDamage)
             {
+                Debug.Log(other.GetComponent<Renderer>().bounds.size.x);
+                Debug.Log("my object scale: " + gameObjectLocalScale.x);
+
                 invoker.InvokeUndoCommand();
                 takeDamage = false;
                 counter = 0;
