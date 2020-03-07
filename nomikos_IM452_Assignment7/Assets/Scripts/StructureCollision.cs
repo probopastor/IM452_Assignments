@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* StructureCollision.cs
+* Assignment 7
+* Responsible for adding ChangeSize commands to the invoker when the player collides with
+* objects, and handles player losing and winning.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -49,7 +57,6 @@ public class StructureCollision : MonoBehaviour
             {
                 if(lastEraObjects[i].activeSelf)
                 {
-                    Debug.Log("Last Era Active Objects " + lastEraObjects[i]);
                     enabledCheck++;
                 }
                 else

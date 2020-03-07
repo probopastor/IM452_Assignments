@@ -1,9 +1,8 @@
 ﻿/*
 * William Nomikos
 * PlayerMovement.cs
-* Assignment 5
-* Script handles player behavior, including first person movement, jumping, 
-* player gravity, and player health.
+* Assignment 7
+* Script handles player behavior, including third person movement, and player gravity.
 */
 
 using System.Collections;

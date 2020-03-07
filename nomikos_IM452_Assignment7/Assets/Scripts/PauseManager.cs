@@ -1,7 +1,7 @@
 ﻿/*
 * William Nomikos
 * PauseManager.cs
-* Assignment 6
+* Assignment 7
 * Handles In-Game pause menu and functionality, including restarting, exiting
 * to main menu, button sound effects and game music.
 */

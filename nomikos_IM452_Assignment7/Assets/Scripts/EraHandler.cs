@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* EraHandler.cs
+* Assignment 7
+* This is the receiver for the ChangeEra command. Also responsible for adding era based commands to the invoker command stack.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* TutorialText.cs
+* Assignment 7
+* Handles in-game tutorial text upon first playing the game.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

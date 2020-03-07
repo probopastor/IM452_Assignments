@@ -1,7 +1,7 @@
 ﻿/*
 * William Nomikos
 * MainMenuManager.cs
-* Assignment 6
+* Assignment 7
 * Handles main menu functionality, including button functions, sound effects, and music.
 */
 

@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ChangeEra.cs
+* Assignment 7
+* This is the command responsible for handling the era the game is in. 
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

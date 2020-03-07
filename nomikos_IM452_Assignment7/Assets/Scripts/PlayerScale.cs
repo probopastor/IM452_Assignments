@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PlayerScale.cs
+* Assignment 7
+* This is the receiver of the ChangeSize command. Responsible for rescaling the player.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* TornadoInputManagerInvoker.cs
+* Assignment 7
+* Invoker for all tornado commands, commands are stored here in a stack and invoked to
+* be executed or undone.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
