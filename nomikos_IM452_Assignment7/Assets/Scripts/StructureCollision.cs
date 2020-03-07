@@ -22,7 +22,10 @@ public class StructureCollision : MonoBehaviour
 
     private GameObject[] lastEraObjects;
     private int enabledCheck = 0;
-    //private int stillActiveCheck = 0;
+
+    public AudioSource SoundEffectSource;
+    public AudioClip suckSound;
+    public AudioClip damageSound;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +40,6 @@ public class StructureCollision : MonoBehaviour
     void Update()
     {
         gameObjectLocalScale = gameObject.transform.localScale;
-        //stillActiveCheck = lastEraObjects.Length;
 
         if (eraCheck.GetComponent<EraHandler>().era >= 3)
         {
@@ -67,11 +69,7 @@ public class StructureCollision : MonoBehaviour
             lastEraObjects = null;
 
             enabledCheck = 0;
-            //stillActiveCheck = 0;
         }
-
-
-        Debug.Log(enabledCheck);
     }
 
     private void FixedUpdate()
@@ -89,29 +87,21 @@ public class StructureCollision : MonoBehaviour
     {
         if (other.CompareTag("Structure"))
         {
-            //Vector3 colliderLocalScale = other.transform.localScale;
-
-            //if (colliderLocalScale.x <= gameObjectLocalScale.x + 0.5f)
-            //{
-            //    other.gameObject.SetActive(false);
-            //    invoker.AddCommand(changeSize);
-            //    invoker.InvokeCommand();
-            //}
             if (other.GetComponent<Renderer>().bounds.size.x < gameObjectLocalScale.x + 15f)
             {
-                Debug.Log(other.GetComponent<Renderer>().bounds.size.x);
-                Debug.Log("my object scale: " + gameObjectLocalScale.x);
-
                 other.gameObject.SetActive(false);
                 invoker.AddCommand(changeSize);
                 invoker.InvokeCommand();
+
+                SoundEffectSource.clip = suckSound;
+                SoundEffectSource.Play();
             }
             else if(takeDamage)
             {
-                Debug.Log(other.GetComponent<Renderer>().bounds.size.x);
-                Debug.Log("my object scale: " + gameObjectLocalScale.x);
-
                 invoker.InvokeUndoCommand();
+                SoundEffectSource.clip = damageSound;
+                SoundEffectSource.Play();
+
                 takeDamage = false;
                 counter = 0;
 

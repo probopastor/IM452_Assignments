@@ -23,7 +23,7 @@ public class ChangeEra : ICommand
 
     public void Undo()
     {
-        if(eraHistory != null)
+        if(eraHistory.Count != 0)
         {
             eraHandler.era = eraHistory.Pop();
         }
