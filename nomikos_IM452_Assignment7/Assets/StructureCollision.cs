@@ -15,9 +15,12 @@ public class StructureCollision : MonoBehaviour
     private int counter = 0;
     private bool takeDamage = false;
 
+    public GameObject loseScreen;
+
     // Start is called before the first frame update
     void Start()
     {
+        loseScreen.SetActive(false);
         takeDamage = true;
         invoker = new TornadoInputManagerInvoker();
         changeSize = new ChangeSize(playerScale);
@@ -33,7 +36,7 @@ public class StructureCollision : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(counter == damageTimer/0.02f)
+        if(counter >= damageTimer/0.02f)
         {
             takeDamage = true;
             counter = 0;
@@ -58,6 +61,15 @@ public class StructureCollision : MonoBehaviour
             {
                 invoker.InvokeUndoCommand();
                 takeDamage = false;
+                counter = 0;
+
+                if(invoker.IsGameLost())
+                {
+                    loseScreen.SetActive(true);
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                    Time.timeScale = 0;
+                }
             }
         }
     }

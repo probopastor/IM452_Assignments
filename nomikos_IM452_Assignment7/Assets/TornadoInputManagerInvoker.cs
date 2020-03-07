@@ -7,8 +7,9 @@ public class TornadoInputManagerInvoker
     public PlayerScale playerScale;
     private ICommand changeSize;
 
-    Dictionary<string, ICommand> commands;
     private Stack<ICommand> commandStack;
+
+    bool loseGame = false;
 
     public TornadoInputManagerInvoker()
     {
@@ -66,16 +67,25 @@ public class TornadoInputManagerInvoker
 
     public void InvokeUndoCommand()
     {
-        if (commandStack.Count != 0)
+        //if (commandStack.Count != 0)
+        //{
+        //    commandStack.Peek().Undo();
+
+        //}
+        if(commandStack.Count != 0)
         {
             commandStack.Peek().Undo();
-
+            commandStack.Pop();
         }
         else
         {
-            Debug.Log("You tried to undo, but there are no more commands to undo.");
+            loseGame = true;
         }
     }
 
+    public bool IsGameLost()
+    {
+        return loseGame;
+    }
 }
 
