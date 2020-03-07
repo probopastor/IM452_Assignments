@@ -10464,7 +10464,7 @@ MonoBehaviour:
   GameSource: {fileID: 963194229}
   gameMusic: {fileID: 0}
   SoundEffectSource: {fileID: 1512644245}
-  buttonClick: {fileID: 0}
+  buttonClick: {fileID: 8300000, guid: bd1137e4e73a0384fba6bf54f63dc82e, type: 3}
 --- !u!82 &1512644245
 AudioSource:
   m_ObjectHideFlags: 0
