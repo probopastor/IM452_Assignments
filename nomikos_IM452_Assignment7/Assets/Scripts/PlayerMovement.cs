@@ -29,11 +29,6 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded;
 
-    private void Start()
-    {
-       
-    }
-
     // Update is called once per frame
     void Update()
     {

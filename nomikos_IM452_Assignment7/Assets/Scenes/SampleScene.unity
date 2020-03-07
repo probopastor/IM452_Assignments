@@ -1357,6 +1357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 967406855}
   - {fileID: 89233139}
@@ -1365,6 +1366,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!1 &187539026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,6 +1618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 739172336}
   - {fileID: 217905523}
@@ -1622,6 +1627,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &198717434
 Transform:
   m_ObjectHideFlags: 0
@@ -2076,6 +2084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 1336634422074269343}
   - {fileID: 617870727820796530}
@@ -2084,6 +2093,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &248673055
 Transform:
   m_ObjectHideFlags: 0
@@ -2351,6 +2363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 1894808008}
   - {fileID: 1891766288}
@@ -2359,6 +2372,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &323452250
 Transform:
   m_ObjectHideFlags: 0
@@ -3860,6 +3876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 2016465952}
   - {fileID: 189696085}
@@ -3868,6 +3885,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &460323638
 Transform:
   m_ObjectHideFlags: 0
@@ -5075,6 +5095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 1445528545}
   - {fileID: 95347705}
@@ -5083,6 +5104,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &636978405
 Transform:
   m_ObjectHideFlags: 0
@@ -5930,6 +5954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 745116119}
   - {fileID: 1069834710}
@@ -5938,6 +5963,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!1 &839085307
 GameObject:
   m_ObjectHideFlags: 0
@@ -6095,6 +6123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 1692464075}
   - {fileID: 1417395531}
@@ -6103,6 +6132,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!1 &895162633
 GameObject:
   m_ObjectHideFlags: 0
@@ -7287,6 +7319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 202626308}
   - {fileID: 1312325403}
@@ -7295,6 +7328,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!1 &1075663191
 GameObject:
   m_ObjectHideFlags: 0
@@ -7401,6 +7437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 187539026}
   - {fileID: 552874425}
@@ -7409,6 +7446,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &1082863760
 Transform:
   m_ObjectHideFlags: 0
@@ -7474,6 +7514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 323632843}
   - {fileID: 656697746}
@@ -7482,6 +7523,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!1 &1091899711
 GameObject:
   m_ObjectHideFlags: 0
@@ -7731,6 +7775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 1091899711}
   - {fileID: 839085307}
@@ -7739,6 +7784,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &1122963852
 Transform:
   m_ObjectHideFlags: 0
@@ -8048,6 +8096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 1648697174}
   - {fileID: 1864202862}
@@ -8056,6 +8105,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &1150443991
 Transform:
   m_ObjectHideFlags: 0
@@ -8570,6 +8622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 211789953}
   - {fileID: 721490685}
@@ -8578,6 +8631,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &1264845537
 Transform:
   m_ObjectHideFlags: 0
@@ -8955,6 +9011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 1003302493}
   - {fileID: 1530670540}
@@ -8963,6 +9020,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &1303790921
 Transform:
   m_ObjectHideFlags: 0
@@ -9637,6 +9697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 353534935}
   - {fileID: 542285803}
@@ -9645,6 +9706,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &1382622969
 Transform:
   m_ObjectHideFlags: 0
@@ -9820,6 +9884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 1389185255}
   - {fileID: 406533593}
@@ -9828,6 +9893,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!1 &1415674227
 GameObject:
   m_ObjectHideFlags: 0
@@ -10440,6 +10508,7 @@ RectTransform:
   - {fileID: 174044344}
   - {fileID: 1144239191}
   - {fileID: 1133329515}
+  - {fileID: 1753548633}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10920,6 +10989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 1272700646}
   - {fileID: 493372929}
@@ -10928,6 +10998,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &1602239473
 Transform:
   m_ObjectHideFlags: 0
@@ -10975,6 +11048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 398636081}
   - {fileID: 1117521482}
@@ -10983,6 +11057,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &1613706210
 Transform:
   m_ObjectHideFlags: 0
@@ -11861,6 +11938,83 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1753548632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1753548633}
+  - component: {fileID: 1753548635}
+  - component: {fileID: 1753548634}
+  m_Layer: 5
+  m_Name: TeleportText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1753548633
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753548632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1512644243}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -217, y: 165}
+  m_SizeDelta: {x: 332, y: 101.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1753548634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753548632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5896226, g: 1, b: 0.9115908, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 18
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &1753548635
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1753548632}
+  m_CullTransparentMesh: 0
 --- !u!1 &1777961642
 GameObject:
   m_ObjectHideFlags: 0
@@ -11983,6 +12137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 4506141374770906862}
   - {fileID: 8366219793403409617}
@@ -11991,6 +12146,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &1784892338
 Transform:
   m_ObjectHideFlags: 0
@@ -12276,6 +12434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 1689893139168522}
   - {fileID: 4884461948369780560}
@@ -12284,6 +12443,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!1 &1808063414
 GameObject:
   m_ObjectHideFlags: 0
@@ -12453,6 +12615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 317637356}
   - {fileID: 1323033436}
@@ -12461,6 +12624,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!4 &1815411137
 Transform:
   m_ObjectHideFlags: 0
@@ -13618,6 +13784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 481b5499bb4e15248b86090bdc6195d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToTeleport: 10
   objects:
   - {fileID: 1258993777}
   - {fileID: 1291896026}
@@ -13626,6 +13793,9 @@ MonoBehaviour:
   timePerEra: 10
   era: 0
   maxEra: 3
+  timeUntilTeleportText: {fileID: 1753548634}
+  SoundEffectSource: {fileID: 1512644245}
+  goBackSound: {fileID: 8300000, guid: fc1469bbb44cf2142ac58ccb85f8ac3d, type: 3}
 --- !u!1 &1689893139168522
 GameObject:
   m_ObjectHideFlags: 0
