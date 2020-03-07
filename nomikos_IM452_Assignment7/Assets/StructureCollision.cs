@@ -16,6 +16,13 @@ public class StructureCollision : MonoBehaviour
     private bool takeDamage = false;
 
     public GameObject loseScreen;
+    public GameObject winScreen;
+
+    public GameObject eraCheck;
+
+    private GameObject[] lastEraObjects;
+    private int enabledCheck = 0;
+    //private int stillActiveCheck = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +36,42 @@ public class StructureCollision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Take Damage: " + takeDamage);
-        //invoker.AddCommand(changeSize);
-        //invoker.InvokeCommand();
         gameObjectLocalScale = gameObject.transform.localScale;
+        //stillActiveCheck = lastEraObjects.Length;
+
+        if (eraCheck.GetComponent<EraHandler>().era >= 3)
+        {
+            lastEraObjects = GameObject.FindGameObjectsWithTag("Structure");
+
+            for(int i = 0; i < lastEraObjects.Length; i++)
+            {
+                if(lastEraObjects[i].activeSelf)
+                {
+                    Debug.Log("Last Era Active Objects " + lastEraObjects[i]);
+                    enabledCheck++;
+                }
+                else
+                {
+                    enabledCheck = 0;
+                }
+            }
+            if (enabledCheck <= 0)
+            {
+                WinGame();
+            }
+
+            enabledCheck = 0;
+        }
+        else if(eraCheck.GetComponent<EraHandler>().era < 3)
+        {
+            lastEraObjects = null;
+
+            enabledCheck = 0;
+            //stillActiveCheck = 0;
+        }
+
+
+        Debug.Log(enabledCheck);
     }
 
     private void FixedUpdate()
@@ -85,5 +124,13 @@ public class StructureCollision : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void WinGame()
+    {
+        winScreen.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0;
     }
 }

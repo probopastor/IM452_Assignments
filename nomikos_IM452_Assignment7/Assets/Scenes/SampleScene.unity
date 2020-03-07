@@ -775,7 +775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2de3125f458b5b4a8575fd2f09d9512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleChangeValue: 0.1
+  scaleChangeValue: 0.5
 --- !u!23 &134361768
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -852,6 +852,8 @@ MonoBehaviour:
   playerScale: {fileID: 134361767}
   damageTimer: 1
   loseScreen: {fileID: 1144239190}
+  winScreen: {fileID: 1133329514}
+  eraCheck: {fileID: 1807444251}
 --- !u!54 &134361772
 Rigidbody:
   m_ObjectHideFlags: 0
