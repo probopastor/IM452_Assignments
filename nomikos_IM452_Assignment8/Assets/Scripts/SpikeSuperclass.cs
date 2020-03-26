@@ -16,11 +16,13 @@ public abstract class SpikeSuperclass : MonoBehaviour
 
     public void ShootSpike()
     {
+        Debug.Log("Spike Projectile Shot");
         //shoot spike projectile's here
     }
 
     public void HurtPlayer()
     {
+        Debug.Log("Player Hurt");
         //Lose Game Here
     }
 

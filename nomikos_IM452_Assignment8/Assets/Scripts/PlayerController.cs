@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private bool isDimension1;
+    public bool isDimension1;
     private float gravityDimension1 = 1f;
     private float gravityDimension2 = 1f;
     private bool canJump;
@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(canJump);
-
         if(Input.GetKeyDown(KeyCode.Return))
         {
             if(isDimension1)
