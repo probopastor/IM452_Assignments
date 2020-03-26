@@ -5,12 +5,21 @@ using UnityEngine;
 public class VerticalSpike : SpikeSuperclass
 {
     public float movementSpeed = 1f;
+    public float verticalSpeed = 1f;
+
     private PlayerController player;
+
+    public Transform currentPoint;
+    public Transform[] points;
+
+    private int pointSelection = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        pointSelection = 0;
+        currentPoint = points[pointSelection];
     }
 
     // Update is called once per frame
@@ -20,11 +29,20 @@ public class VerticalSpike : SpikeSuperclass
     }
     public override void MoveSpike()
     {
-        transform.position += new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
+        //transform.position += new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
 
-        if (transform.position.x <= -20.94)
+        transform.position = Vector3.MoveTowards(transform.position, currentPoint.position, Time.deltaTime * verticalSpeed);
+
+        if(transform.position == currentPoint.position)
         {
-            Destroy(gameObject);
+            pointSelection++;
+
+            if(pointSelection >= points.Length)
+            {
+                pointSelection = 0;
+            }
+
+            currentPoint = points[pointSelection];
         }
     }
 
