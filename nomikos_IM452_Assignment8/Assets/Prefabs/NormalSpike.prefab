@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5434445656085373914}
   - component: {fileID: 5434445656085373915}
   - component: {fileID: 5434445656085373908}
+  - component: {fileID: 532244090635068337}
   m_Layer: 0
   m_Name: NormalSpike
   m_TagString: Untagged
@@ -108,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.16, y: 15.28}
   m_EdgeRadius: 0
+--- !u!114 &532244090635068337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5434445656085373909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91a0dac6759f454fa3896596770d4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2917690450611929375}
   - component: {fileID: 2917690450611929374}
   - component: {fileID: 2917690450611929361}
+  - component: {fileID: -894201226359517655}
   m_Layer: 0
   m_Name: VerticalSpike
   m_TagString: Untagged
@@ -108,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.16, y: 15.28}
   m_EdgeRadius: 0
+--- !u!114 &-894201226359517655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2917690450611929360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72ce20c2a40a864cbdd0f821f9b6f8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
