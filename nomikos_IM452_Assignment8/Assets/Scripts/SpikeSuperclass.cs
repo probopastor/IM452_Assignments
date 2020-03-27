@@ -34,12 +34,12 @@ public abstract class SpikeSuperclass : MonoBehaviour
 
     protected void PulseSpike()
     {
-        float phi = (Time.time / 5) * 2 * Mathf.PI;
-        float amplitude = Mathf.Cos(phi) * 0.5f + 0.5f;
+        float phi = (Time.time / 2.5f) * 2 * Mathf.PI;
+        float amplitude = Mathf.Cos(phi);
         float newScale = amplitude;
 
         float maxScale = 0.06f;
-        float minScale = 0f;
+        float minScale = 0.006f;
 
         if (newScale > maxScale)
         {
