@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     public float jumpHeight = 1f;
     public float playerSpeed = 1f;
 
+    public int coinsToWin = 5;
+    private int coinsOwned = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +25,17 @@ public class PlayerController : MonoBehaviour
         gravityDimension2 = -rb.gravityScale;
 
         canJump = true;
+        coinsOwned = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(coinsOwned >= coinsToWin)
+        {
+            WinGame();
+        }
+
         if(Input.GetKeyDown(KeyCode.Return))
         {
             if(isDimension1)
@@ -81,11 +90,25 @@ public class PlayerController : MonoBehaviour
         jumpHeight = -jumpHeight;
     }
 
+    private void WinGame()
+    {
+        //Win The Game Here
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Ground")
         {
             canJump = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Coin"))
+        {
+            coinsOwned++;
+            Destroy(collision.gameObject);
         }
     }
 }
