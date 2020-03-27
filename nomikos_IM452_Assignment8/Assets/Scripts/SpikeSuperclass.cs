@@ -10,8 +10,8 @@ public abstract class SpikeSuperclass : MonoBehaviour
     protected void PreformAction()
     {
         MoveSpike();
-
-        if(!performOnce)
+        
+        if (!performOnce)
         {
             SetInitialScale();
             performOnce = true;
@@ -64,7 +64,7 @@ public abstract class SpikeSuperclass : MonoBehaviour
 
     protected virtual bool IsFirstDimension()
     {
-        return false;
+        return true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

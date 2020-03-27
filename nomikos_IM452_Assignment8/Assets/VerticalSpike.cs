@@ -48,13 +48,15 @@ public class VerticalSpike : SpikeSuperclass
 
     protected override bool IsFirstDimension()
     {
-        if (player.isDimension1)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        //if (player.isDimension1)
+        //{
+        //    return true;
+        //}
+        //else
+        //{
+        //    return false;
+        //}
+
+        return true;
     }
 }
