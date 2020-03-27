@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Spike
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: ThisLayer
+    uniqueID: 1272935523
     locked: 0
