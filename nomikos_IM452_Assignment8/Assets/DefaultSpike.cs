@@ -7,10 +7,13 @@ public class DefaultSpike : SpikeSuperclass
     public float movementSpeed = 1f;
     private PlayerController player;
 
+    public GameObject spikeIndicator;
+
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
+        Instantiate(spikeIndicator, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z + 0.25f), Quaternion.identity);
     }
 
     // Update is called once per frame
