@@ -294,7 +294,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614897939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24, y: 6.45, z: 0.64}
+  m_LocalPosition: {x: 24, y: 6.45, z: 118.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -629,7 +629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146943981}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.45, z: 0.64}
+  m_LocalPosition: {x: 0, y: 6.45, z: 118.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -725,7 +725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1339718154}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: -6.93, z: 0.64}
+  m_LocalPosition: {x: 0, y: -6.93, z: 118.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -835,7 +835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367771483}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 24, y: -6.93, z: 0.64}
+  m_LocalPosition: {x: 24, y: -6.93, z: 118.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -870,6 +870,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9505634de2d47734ab9ade6c8ef80d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  obstacleArray:
+  - {fileID: 5525342369915072224, guid: 6a5dc98ef8b479f448fe293a323542cf, type: 3}
+  - {fileID: 5455735645137229324, guid: 23fba4dda3577094eb065efa6a964a8e, type: 3}
+  - {fileID: 5793578086918202885, guid: 28d242050f407f445b0e1ecd2884d11c, type: 3}
+  - {fileID: 3256105490266480102, guid: f000ed652971eb24fa685b9d5160a324, type: 3}
+  - {fileID: 4484658974143426460, guid: e79c733ad9fce494a8d8c20465aefae7, type: 3}
+  spawnPos:
+  - {x: 0, y: 1.892977, z: -4.442454}
+  - {x: 0, y: 0.9141651, z: -36.12871}
+  - {x: 0, y: 2.960365, z: -86.61746}
+  - {x: 0, y: 8.481651, z: -211.5462}
+  - {x: 0, y: 0.5108725, z: -14.45963}
+  timeBetweenObstacleSpawnings: 12
 --- !u!4 &1541732637
 Transform:
   m_ObjectHideFlags: 0
@@ -878,7 +891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541732635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.31, y: 0.67, z: -3.1380303}
+  m_LocalPosition: {x: 12.31, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
