@@ -18,11 +18,18 @@ public class PlayerController : MonoBehaviour
 
     private PauseManager pauseManager;
 
+    public GameObject winPanel;
+
+    private bool gameWon = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         rb = GetComponent<Rigidbody2D>();
         pauseManager = FindObjectOfType<PauseManager>();
+        winPanel.SetActive(false);
+        gameWon = false;
         isDimension1 = true;
         gravityDimension1 = rb.gravityScale;
         gravityDimension2 = -rb.gravityScale;
@@ -39,7 +46,7 @@ public class PlayerController : MonoBehaviour
             WinGame();
         }
 
-        if(!pauseManager.paused)
+        if(!pauseManager.paused && !gameWon)
         {
             PlayerMovement();
         }
@@ -108,7 +115,11 @@ public class PlayerController : MonoBehaviour
 
     private void WinGame()
     {
-        //Win The Game Here
+        Time.timeScale = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        gameWon = true;
+        winPanel.SetActive(true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
