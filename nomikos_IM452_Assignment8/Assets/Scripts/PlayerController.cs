@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private bool canJump;
 
     public float jumpHeight = 1f;
+    public float playerSpeed = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +50,20 @@ public class PlayerController : MonoBehaviour
                 canJump = false;
             }
         }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Translate(Vector3.right * Time.deltaTime * playerSpeed, Space.World);
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(-Vector3.right * Time.deltaTime * playerSpeed, Space.World);
+        }
+
+        Vector3 playerPos = Camera.main.WorldToViewportPoint(transform.position);
+        playerPos.x = Mathf.Clamp01(playerPos.x);
+        playerPos.y = Mathf.Clamp01(playerPos.y);
+        transform.position = Camera.main.ViewportToWorldPoint(playerPos);
     }
 
     private void CheckDimension()
