@@ -6,8 +6,7 @@ public class ObstacleSpawning : MonoBehaviour
 {
     public GameObject[] obstacleArray;
     public Vector3[] spawnPos;
-
-    public float timeBetweenObstacleSpawnings = 12f;
+    public float[] obstacleSpawningTime;
 
     private int index = 0;
 
@@ -29,7 +28,7 @@ public class ObstacleSpawning : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         Instantiate(obstacleArray[index], new Vector3(gameObject.transform.position.x, spawnPos[index].y, spawnPos[index].z), Quaternion.identity);
-        yield return new WaitForSeconds(timeBetweenObstacleSpawnings);
+        yield return new WaitForSeconds(obstacleSpawningTime[index]);
         StartCoroutine("SpawnObstaclePatterns");
     }
 }

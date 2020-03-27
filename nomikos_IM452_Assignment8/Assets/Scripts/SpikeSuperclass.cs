@@ -39,7 +39,7 @@ public abstract class SpikeSuperclass : MonoBehaviour
         float newScale = amplitude;
 
         float maxScale = 0.06f;
-        float minScale = 0.006f;
+        float minScale = 0f;
 
         if (newScale > maxScale)
         {
