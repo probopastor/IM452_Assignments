@@ -6,6 +6,7 @@ public abstract class SpikeSuperclass : MonoBehaviour
 {
     private Vector2 initialScale;
     private bool performOnce = false;
+    private PauseManager pauseManager;
 
     protected void PreformAction()
     {
@@ -56,8 +57,8 @@ public abstract class SpikeSuperclass : MonoBehaviour
 
     protected void HurtPlayer()
     {
-        Debug.Log("Player Hurt");
-        //Lose Game Here
+        pauseManager = FindObjectOfType<PauseManager>();
+        pauseManager.LoseGame();
     }
 
     protected abstract void MoveSpike();
