@@ -16,10 +16,13 @@ public class PlayerController : MonoBehaviour
     public int coinsToWin = 5;
     private int coinsOwned = 0;
 
+    private PauseManager pauseManager;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        pauseManager = FindObjectOfType<PauseManager>();
         isDimension1 = true;
         gravityDimension1 = rb.gravityScale;
         gravityDimension2 = -rb.gravityScale;
@@ -36,13 +39,23 @@ public class PlayerController : MonoBehaviour
             WinGame();
         }
 
-        if(Input.GetKeyDown(KeyCode.Return))
+        if(!pauseManager.paused)
         {
-            if(isDimension1)
+            PlayerMovement();
+        }
+
+        ClampPlayerPos();
+    }
+
+    private void PlayerMovement()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (isDimension1)
             {
                 isDimension1 = false;
             }
-            else if(!isDimension1)
+            else if (!isDimension1)
             {
                 isDimension1 = true;
             }
@@ -50,9 +63,9 @@ public class PlayerController : MonoBehaviour
             CheckDimension();
         }
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(canJump)
+            if (canJump)
             {
                 //rb.AddForce(Vector2.up * jumpHeight);
                 rb.velocity = Vector2.up * jumpHeight;
@@ -68,7 +81,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(-Vector3.right * Time.deltaTime * playerSpeed, Space.World);
         }
+    }
 
+    private void ClampPlayerPos()
+    {
         Vector3 playerPos = Camera.main.WorldToViewportPoint(transform.position);
         playerPos.x = Mathf.Clamp01(playerPos.x);
         playerPos.y = Mathf.Clamp01(playerPos.y);
