@@ -4,31 +4,65 @@ using UnityEngine;
 
 public abstract class SpikeSuperclass : MonoBehaviour
 {
-    public void PreformAction()
+    private Vector2 initialScale;
+    private bool performOnce = false;
+
+    protected void PreformAction()
     {
         MoveSpike();
 
-        if(!IsFirstDimension())
+        if(!performOnce)
         {
-            ShootSpike();
+            SetInitialScale();
+            performOnce = true;
+        }
+
+        if (!IsFirstDimension())
+        {
+            PulseSpike();
+        }
+        else if(IsFirstDimension())
+        {
+            gameObject.transform.localScale = initialScale;
         }
     }
 
-    public void ShootSpike()
+    protected void SetInitialScale()
     {
-        Debug.Log("Spike Projectile Shot");
-        //shoot spike projectile's here
+        initialScale = gameObject.transform.localScale;
     }
 
-    public void HurtPlayer()
+    protected void PulseSpike()
+    {
+        float phi = (Time.time / 5) * 2 * Mathf.PI;
+        float amplitude = Mathf.Cos(phi) * 0.5f + 0.5f;
+        float newScale = amplitude;
+
+        float maxScale = 0.06f;
+        float minScale = 0f;
+
+        if (newScale > maxScale)
+        {
+            newScale = maxScale;
+        }
+
+        if (newScale < minScale)
+        {
+            newScale = minScale;
+        }
+
+        gameObject.transform.localScale = new Vector3(newScale, newScale, gameObject.transform.localScale.z);
+    }
+
+    protected void HurtPlayer()
     {
         Debug.Log("Player Hurt");
         //Lose Game Here
     }
 
-    public abstract void MoveSpike();
+    protected abstract void MoveSpike();
 
-    public virtual bool IsFirstDimension()
+    protected virtual bool IsFirstDimension()
     {
         return false;
     }

@@ -19,7 +19,7 @@ public class DefaultSpike : SpikeSuperclass
         PreformAction();
     }
 
-    public override void MoveSpike()
+    protected override void MoveSpike()
     {
         transform.position += new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
 
@@ -29,7 +29,7 @@ public class DefaultSpike : SpikeSuperclass
         }
     }
 
-    public override bool IsFirstDimension()
+    protected override bool IsFirstDimension()
     {
         if(player.isDimension1)
         {
