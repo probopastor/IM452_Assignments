@@ -9,35 +9,39 @@ public class ObstacleSpawning : MonoBehaviour
     public Vector3[] spawnPos;
     public float[] obstacleSpawningTime;
 
+    public GameObject controlPanel;
+
     public Text tutorialText;
     public GameObject spaceIcon;
     public GameObject dIcon;
     public GameObject aIcon;
-    public GameObject rightArrowIcon;
-    public GameObject leftArrowIcon;
-
 
     public GameObject enterIcon;
     public GameObject escapeIcon;
 
     public GameObject spikeIcon;
+    public GameObject transparentSpikeIcon;
     public GameObject coinIcon;
 
     private int index = 0;
 
+    private bool controlPanelActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
+        controlPanel.SetActive(true);
+        controlPanelActive = true;
+
         spaceIcon.SetActive(false);
 
         dIcon.SetActive(false);
         aIcon.SetActive(false);
 
-        rightArrowIcon.SetActive(false);
-        leftArrowIcon.SetActive(false);
-
         spikeIcon.SetActive(false);
         coinIcon.SetActive(false);
+
+        transparentSpikeIcon.SetActive(false);
 
         tutorialText.text = " ";
 
@@ -47,7 +51,27 @@ public class ObstacleSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            StopCoroutine("Tutorial");
+
+            tutorialText.text = " ";
+            StartCoroutine("SpawnObstaclePatterns");
+        }
+
+        if(Input.GetKeyDown(KeyCode.H))
+        {
+            if(controlPanelActive)
+            {
+                controlPanel.SetActive(false);
+                controlPanelActive = false;
+            }
+            else if(!controlPanelActive)
+            {
+                controlPanel.SetActive(true);
+                controlPanelActive = true;
+            }
+        }
     }
 
     private IEnumerator SpawnObstaclePatterns()
@@ -65,6 +89,13 @@ public class ObstacleSpawning : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         tutorialText.text = "Welcome to Multidimensional Cube the Fourth! ";
         yield return new WaitForSeconds(3f);
+
+        tutorialText.text = "Press 1 to Skip the Tutorial! ";
+        yield return new WaitForSeconds(3f);
+
+        tutorialText.text = "Press H to toggle the control panel on and off ";
+        yield return new WaitForSeconds(3f);
+
         tutorialText.text = "Press SPACE to jump ";
         spaceIcon.SetActive(true);
         yield return new WaitForSeconds(3f);
@@ -84,21 +115,23 @@ public class ObstacleSpawning : MonoBehaviour
         enterIcon.SetActive(false);
         spikeIcon.SetActive(true);
         tutorialText.text = "If you hit a spike, you will die. Don't hit spikes. ";
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
         tutorialText.text = "In the upsidown dimension, spikes will pulse between existing and not existing... ";
-        yield return new WaitForSeconds(3f);
-
-        tutorialText.text = "Luckily, they leave behind a transparent shadow of where they will reappear at! You can touch this, it is simply an indicator of where the spike is. ";
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
         spikeIcon.SetActive(false);
+        transparentSpikeIcon.SetActive(true);
+        tutorialText.text = "Luckily, they leave behind a transparent shadow of where they will reappear at! You can touch this, it is simply an indicator of where the spike is. ";
+        yield return new WaitForSeconds(5f);
+
+        transparentSpikeIcon.SetActive(false);
         coinIcon.SetActive(true);
         tutorialText.text = "To win, collect 5 coins. Coins may not always appear in easy to reach places, so good luck! ";
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
         coinIcon.SetActive(false);
-        //SET CONTROL PANEL ACTIVE HERE
+
         //SET SCORE COUNTER ACTIVE HERE
         tutorialText.text = "Ready? ";
         yield return new WaitForSeconds(3f);
