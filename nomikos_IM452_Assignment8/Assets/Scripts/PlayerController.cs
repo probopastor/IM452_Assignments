@@ -22,6 +22,12 @@ public class PlayerController : MonoBehaviour
 
     private bool gameWon = false;
 
+    public AudioSource SoundEffectSource;
+    public AudioClip coinClip;
+
+    public AudioSource SoundEffectSource2;
+    public AudioClip jumpClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,7 +80,9 @@ public class PlayerController : MonoBehaviour
         {
             if (canJump)
             {
-                //rb.AddForce(Vector2.up * jumpHeight);
+                SoundEffectSource2.clip = jumpClip;
+                SoundEffectSource2.Play();
+
                 rb.velocity = Vector2.up * jumpHeight;
                 canJump = false;
             }
@@ -134,6 +142,9 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.CompareTag("Coin"))
         {
+            SoundEffectSource.clip = coinClip;
+            SoundEffectSource.Play();
+
             coinsOwned++;
             Destroy(collision.gameObject);
         }

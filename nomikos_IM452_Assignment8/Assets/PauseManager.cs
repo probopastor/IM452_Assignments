@@ -15,6 +15,7 @@ public class PauseManager : MonoBehaviour
 {
 
     public bool paused;
+    private bool gameLost;
 
     public GameObject PauseCanvas;
     public GameObject losePanel;
@@ -23,6 +24,7 @@ public class PauseManager : MonoBehaviour
     public AudioClip gameMusic;
 
     public AudioSource SoundEffectSource;
+    public AudioClip loseClip;
     public AudioClip buttonClick;
 
     // Start is called before the first frame update
@@ -30,6 +32,7 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1;
         Cursor.visible = false;
+        gameLost = false;
 
         paused = false;
         PauseCanvas.SetActive(false);
@@ -44,7 +47,10 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseGame();
+            if(!gameLost)
+            {
+                PauseGame();
+            }
         }
     }
 
@@ -91,6 +97,11 @@ public class PauseManager : MonoBehaviour
     public void LoseGame()
     {
         paused = true;
+        gameLost = true;
+
+        SoundEffectSource.clip = loseClip;
+        SoundEffectSource.Play();
+
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         losePanel.SetActive(true);
