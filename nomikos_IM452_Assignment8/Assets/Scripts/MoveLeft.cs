@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* MoveLeft.cs
+* Assignment 8
+* Moves gameobjects left across the screen, and destroys them when they
+* are off the screen. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

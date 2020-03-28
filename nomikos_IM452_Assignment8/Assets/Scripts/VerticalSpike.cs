@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* VerticalSpike.cs
+* Assignment 8
+* Subclass of SpikeSuperclass, handles behaviors of the vertical spike, which
+* moves up and down. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -29,8 +37,6 @@ public class VerticalSpike : SpikeSuperclass
     }
     protected override void MoveSpike()
     {
-        //transform.position += new Vector3(-movementSpeed * Time.deltaTime, 0, 0);
-
         transform.position = Vector3.MoveTowards(transform.position, currentPoint.position, Time.deltaTime * verticalSpeed);
 
         if(transform.position == currentPoint.position)

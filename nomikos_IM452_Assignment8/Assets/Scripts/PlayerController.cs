@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PlayerController.cs
+* Assignment 8
+* Handles player behavior, including jumping, horizontal movement, and dimension switching. 
+* Also handles player sound effects, coin management, and the game's win condition. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

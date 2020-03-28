@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* BackgroundMovement.cs
+* Assignment 8
+* Handles the movement of the backgrounds. Move the background back to the right
+* of the screen after it moves off the left of the screen to create the illusion of an 
+* infinitely scrolling background. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

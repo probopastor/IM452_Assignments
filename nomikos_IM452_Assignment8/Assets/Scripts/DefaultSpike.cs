@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* DefaultSpike.cs
+* Assignment 8
+* Subclass of SpikeSuperclass, handles behaviors of normal, non-moving spike. 
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

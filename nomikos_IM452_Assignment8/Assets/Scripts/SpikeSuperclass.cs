@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* SpikeSuperclass.cs
+* Assignment 8
+* The spike super class, which holds a template method, concrete spike methods, abstract spike methods, and 
+* the hook that alters spike behavior.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +16,10 @@ public abstract class SpikeSuperclass : MonoBehaviour
     private bool performOnce = false;
     private PauseManager pauseManager;
 
+
+    /// <summary>
+    /// Template method, responsible for determining which methods a spike should run through.
+    /// </summary>
     protected void PreformAction()
     {
         MoveSpike();
@@ -28,11 +40,20 @@ public abstract class SpikeSuperclass : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the initial scale of the spikes back to their original scale.
+    /// </summary>
     protected void SetInitialScale()
     {
         initialScale = gameObject.transform.localScale;
     }
 
+
+
+    /// <summary>
+    /// Method is activated depending on the conditional output of the hook, IsFirstDimension. Handles pulsing the spike
+    /// in and out of existence. 
+    /// </summary>
     protected void PulseSpike()
     {
         float phi = (Time.time / 2.5f) * 2 * Mathf.PI;
@@ -55,14 +76,24 @@ public abstract class SpikeSuperclass : MonoBehaviour
         gameObject.transform.localScale = new Vector3(newScale, newScale, gameObject.transform.localScale.z);
     }
 
+    //Concrete method responsible for losing the game upon the player interacting with a spike.
     protected void HurtPlayer()
     {
         pauseManager = FindObjectOfType<PauseManager>();
         pauseManager.LoseGame();
     }
 
+    /// <summary>
+    /// Abstract method to be implemented differently depending on the spike. Handles spike movement.
+    /// </summary>
     protected abstract void MoveSpike();
 
+
+    /// <summary>
+    /// Hook, if output is false, spikes will pulsate in and out of existence due to the PulseSpike method. 
+    /// Returns true by default to prevent unwanted behavior.
+    /// </summary>
+    /// <returns></returns>
     protected virtual bool IsFirstDimension()
     {
         return true;

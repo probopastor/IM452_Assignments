@@ -3,7 +3,8 @@
 * PauseManager.cs
 * Assignment 8
 * Handles In-Game pause menu and functionality, including restarting, exiting
-* to main menu, button sound effects and game music.
+* to main menu, button sound effects and game music. Also handles the lose panel
+* activation for when the player loses. 
 */
 
 using System.Collections;

@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ObstacleSpawning.cs
+* Assignment 8
+* Spawns in obstacle patterns after periods of time. Also handles the
+* sequence of tutorial text and UI images at the start of the game. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
