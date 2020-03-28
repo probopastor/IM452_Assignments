@@ -3769,7 +3769,7 @@ MonoBehaviour:
   PauseCanvas: {fileID: 1163430948}
   losePanel: {fileID: 1359329400}
   GameSource: {fileID: 212577214}
-  gameMusic: {fileID: 0}
+  gameMusic: {fileID: 8300000, guid: 22efdf3d5f502aa4a97aeca5e0ab7449, type: 3}
   SoundEffectSource: {fileID: 1931294311}
   loseClip: {fileID: 8300000, guid: 303f3dce0a792d640b73ae38a80891d9, type: 3}
   buttonClick: {fileID: 8300000, guid: fda52b6994de6c54f962275cba23b871, type: 3}
