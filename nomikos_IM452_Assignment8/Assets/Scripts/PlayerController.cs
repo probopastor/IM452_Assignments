@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
     public AudioSource SoundEffectSource2;
     public AudioClip jumpClip;
 
+    public AudioSource SoundEffectSource3;
+    public AudioClip teleportClip;
+
     public Text CoinText;
 
     private bool coinTextActive = false;
@@ -91,6 +94,9 @@ public class PlayerController : MonoBehaviour
             }
 
             CheckDimension();
+            SoundEffectSource3.clip = teleportClip;
+            SoundEffectSource3.Play();
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

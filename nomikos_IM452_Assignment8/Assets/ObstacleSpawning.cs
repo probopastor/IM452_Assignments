@@ -30,6 +30,12 @@ public class ObstacleSpawning : MonoBehaviour
     private bool controlPanelActive = false;
     private bool doOnce = false;
 
+    public AudioSource SoundEffectSource;
+    public AudioClip textSwitchClip;
+    public AudioClip startGameClip;
+
+    private bool inTutorial = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,23 +64,31 @@ public class ObstacleSpawning : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
         {
-            StopCoroutine("Tutorial");
+            if(inTutorial)
+            {
+                inTutorial = false;
 
-            tutorialText.text = " ";
+                StopCoroutine("Tutorial");
 
-            controlPanelActive = true;
+                tutorialText.text = " ";
 
-            spaceIcon.SetActive(false);
+                controlPanelActive = true;
 
-            dIcon.SetActive(false);
-            aIcon.SetActive(false);
+                spaceIcon.SetActive(false);
 
-            spikeIcon.SetActive(false);
-            coinIcon.SetActive(false);
+                dIcon.SetActive(false);
+                aIcon.SetActive(false);
 
-            transparentSpikeIcon.SetActive(false);
+                spikeIcon.SetActive(false);
+                coinIcon.SetActive(false);
 
-            StartCoroutine("SpawnObstaclePatterns");
+                transparentSpikeIcon.SetActive(false);
+
+                SoundEffectSource.clip = startGameClip;
+                SoundEffectSource.Play();
+
+                StartCoroutine("SpawnObstaclePatterns");
+            }
         }
 
         if(Input.GetKeyDown(KeyCode.H))
@@ -115,21 +129,30 @@ public class ObstacleSpawning : MonoBehaviour
 
     private IEnumerator Tutorial()
     {
+        inTutorial = true;
+
+        SoundEffectSource.clip = textSwitchClip;
+
         yield return new WaitForSeconds(0.5f);
+        SoundEffectSource.Play();
         tutorialText.text = "Welcome to Multidimensional Cube the Fourth! ";
         yield return new WaitForSeconds(3f);
 
+        SoundEffectSource.Play();
         tutorialText.text = "Press 1 to Skip the Tutorial! ";
         yield return new WaitForSeconds(3f);
 
+        SoundEffectSource.Play();
         tutorialText.text = "Press H to toggle the control panel on and off ";
         yield return new WaitForSeconds(3f);
 
+        SoundEffectSource.Play();
         tutorialText.text = "Press SPACE to jump ";
         spaceIcon.SetActive(true);
         yield return new WaitForSeconds(3f);
 
         spaceIcon.SetActive(false);
+        SoundEffectSource.Play();
         tutorialText.text = "Use D to move right and A to move left ";
         aIcon.SetActive(true);
         dIcon.SetActive(true);
@@ -137,25 +160,30 @@ public class ObstacleSpawning : MonoBehaviour
 
         aIcon.SetActive(false);
         dIcon.SetActive(false);
+        SoundEffectSource.Play();
         tutorialText.text = "Press Enter to switch between dimensions! ";
         enterIcon.SetActive(true);
         yield return new WaitForSeconds(3f);
 
         enterIcon.SetActive(false);
         spikeIcon.SetActive(true);
+        SoundEffectSource.Play();
         tutorialText.text = "If you hit a spike, you will die. Don't hit spikes. ";
         yield return new WaitForSeconds(5f);
 
+        SoundEffectSource.Play();
         tutorialText.text = "In the upsidown dimension, spikes will pulse between existing and not existing... ";
         yield return new WaitForSeconds(5f);
 
         spikeIcon.SetActive(false);
         transparentSpikeIcon.SetActive(true);
+        SoundEffectSource.Play();
         tutorialText.text = "Luckily, they leave behind a transparent shadow of where they will reappear at! You can touch this, it is simply an indicator of where the spike is. ";
         yield return new WaitForSeconds(5f);
 
         transparentSpikeIcon.SetActive(false);
         coinIcon.SetActive(true);
+        SoundEffectSource.Play();
         tutorialText.text = "To win, collect 5 coins. Coins may not always appear in easy to reach places, so good luck! ";
         yield return new WaitForSeconds(5f);
 
@@ -163,10 +191,14 @@ public class ObstacleSpawning : MonoBehaviour
 
         EnableCoinText();
 
+        SoundEffectSource.Play();
         tutorialText.text = "Ready? ";
         yield return new WaitForSeconds(3f);
 
+        SoundEffectSource.clip = startGameClip;
+        SoundEffectSource.Play();
         tutorialText.text = "Go! ";
+        inTutorial = false;
         yield return new WaitForSeconds(3f);
 
         tutorialText.text = " ";
