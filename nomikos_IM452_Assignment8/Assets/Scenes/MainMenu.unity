@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 216734314}
   - component: {fileID: 216734313}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: CreditsList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -360,8 +360,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -30.3}
-  m_SizeDelta: {x: 749.1, y: 239.6}
+  m_AnchoredPosition: {x: 0, y: -15.4}
+  m_SizeDelta: {x: 749.1, y: 269.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216734313
 MonoBehaviour:
@@ -399,12 +399,32 @@ MonoBehaviour:
 
     Music:
 
+    Chiptronical by Patrick
+    De Arteaga
+
+    Intergalactic Odyssey by Patrick De Arteaga
 
 
     Sound Effects:
 
+    Game
+    Start -https://freesound.org/people/Soundholder/sounds/425353/
 
-'
+    Tutorial
+    Text Change - https://freesound.org/people/JarredGibb/sounds/219478/
+
+    Button
+    Click - https://freesound.org/people/moogy73/sounds/425725/
+
+    Death  - https://freesound.org/people/cabled_mess/sounds/350986/
+
+    Jump
+    - https://freesound.org/people/Bastianhallo/sounds/462958/
+
+    Coin Pickup -
+    https://freesound.org/people/Davidsraba/sounds/347174/
+
+    Teleport - https://freesound.org/people/Sergenious/sounds/55853/'
 --- !u!222 &216734314
 CanvasRenderer:
   m_ObjectHideFlags: 0
