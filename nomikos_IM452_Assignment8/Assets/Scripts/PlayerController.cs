@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -28,10 +29,17 @@ public class PlayerController : MonoBehaviour
     public AudioSource SoundEffectSource2;
     public AudioClip jumpClip;
 
+    public Text CoinText;
+
+    private bool coinTextActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
+
+        coinTextActive = false;
+
         rb = GetComponent<Rigidbody2D>();
         pauseManager = FindObjectOfType<PauseManager>();
         winPanel.SetActive(false);
@@ -58,6 +66,15 @@ public class PlayerController : MonoBehaviour
         }
 
         ClampPlayerPos();
+
+        if(coinTextActive)
+        {
+            CoinText.text = coinsOwned + " / " + coinsToWin + " Coins";
+        }
+        else if(!coinTextActive)
+        {
+            CoinText.text = " ";
+        }
     }
 
     private void PlayerMovement()
@@ -148,5 +165,10 @@ public class PlayerController : MonoBehaviour
             coinsOwned++;
             Destroy(collision.gameObject);
         }
+    }
+
+    public void SetCoinTextActive()
+    {
+        coinTextActive = true;
     }
 }

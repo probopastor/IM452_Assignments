@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ObstacleSpawning : MonoBehaviour
 {
+    private PlayerController playerController;
+
     public GameObject[] obstacleArray;
     public Vector3[] spawnPos;
     public float[] obstacleSpawningTime;
@@ -26,10 +28,13 @@ public class ObstacleSpawning : MonoBehaviour
     private int index = 0;
 
     private bool controlPanelActive = false;
+    private bool doOnce = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerController = FindObjectOfType<PlayerController>();
+
         controlPanel.SetActive(true);
         controlPanelActive = true;
 
@@ -56,6 +61,19 @@ public class ObstacleSpawning : MonoBehaviour
             StopCoroutine("Tutorial");
 
             tutorialText.text = " ";
+
+            controlPanelActive = true;
+
+            spaceIcon.SetActive(false);
+
+            dIcon.SetActive(false);
+            aIcon.SetActive(false);
+
+            spikeIcon.SetActive(false);
+            coinIcon.SetActive(false);
+
+            transparentSpikeIcon.SetActive(false);
+
             StartCoroutine("SpawnObstaclePatterns");
         }
 
@@ -74,8 +92,19 @@ public class ObstacleSpawning : MonoBehaviour
         }
     }
 
+    private void EnableCoinText()
+    {
+        if (!doOnce)
+        {
+            playerController.SetCoinTextActive();
+            doOnce = true;
+        }
+    }
+
     private IEnumerator SpawnObstaclePatterns()
     {
+        EnableCoinText();
+
         index = Random.Range(0, obstacleArray.Length);
 
         yield return new WaitForSeconds(1f);
@@ -132,7 +161,8 @@ public class ObstacleSpawning : MonoBehaviour
 
         coinIcon.SetActive(false);
 
-        //SET SCORE COUNTER ACTIVE HERE
+        EnableCoinText();
+
         tutorialText.text = "Ready? ";
         yield return new WaitForSeconds(3f);
 
