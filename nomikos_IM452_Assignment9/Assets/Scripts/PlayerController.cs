@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,11 +12,17 @@ public class PlayerController : MonoBehaviour
     public int swordStunDamageAmount = 2;
     public SpriteRenderer swordRend;
     public Color[] swordColors;
+
+    public Color defaultUIColor;
+    public Color selectedUIColor;
+    public Image[] swordBackgroundImages;
+    
     // Start is called before the first frame update
     void Start()
     {
         swordRend.color = swordColors[0];
         swordPowerNumber = 1;
+        UIImageSelectedColor();
     }
 
     // Update is called once per frame
@@ -76,6 +83,31 @@ public class PlayerController : MonoBehaviour
         {
             swordPowerNumber = 3;
             swordRend.color = swordColors[2];
+        }
+
+        UIImageSelectedColor();
+    }
+
+    private void UIImageSelectedColor()
+    {
+        if(swordPowerNumber == 1)
+        {
+            swordBackgroundImages[0].color = selectedUIColor;
+            swordBackgroundImages[1].color = defaultUIColor;
+            swordBackgroundImages[2].color = defaultUIColor;
+
+        }
+        else if(swordPowerNumber == 2)
+        {
+            swordBackgroundImages[0].color = defaultUIColor;
+            swordBackgroundImages[1].color = selectedUIColor;
+            swordBackgroundImages[2].color = defaultUIColor;
+        }
+        else if(swordPowerNumber == 3)
+        {
+            swordBackgroundImages[0].color = defaultUIColor;
+            swordBackgroundImages[1].color = defaultUIColor;
+            swordBackgroundImages[2].color = selectedUIColor;
         }
     }
 
