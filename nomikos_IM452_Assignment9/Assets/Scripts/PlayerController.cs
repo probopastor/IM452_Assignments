@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private PauseManager pauseManager;
     private WinManager winManager;
 
+    public Text healthText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthText.text = "Life: " + currentHealth;
+
         CheckHealth();
         CheckSwordPower();
 
