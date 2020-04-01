@@ -13,5 +13,7 @@ public interface IEnemyState
     void CatchFire();
     void BecomeStunned();
     void Recover();
+    void BurnBehavior();
+    void StunBehavior();
 
 }

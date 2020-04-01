@@ -17,6 +17,11 @@ public class ChaseState : IEnemyState
         enemyClient.currentState = enemyClient.stunState;
     }
 
+    public void BurnBehavior()
+    {
+        Debug.Log(" ");
+    }
+
     public void CatchFire()
     {
         Debug.Log("Enemy is on fire ");
@@ -32,5 +37,10 @@ public class ChaseState : IEnemyState
     {
         Debug.Log("Enemy chasing player ");
         enemyClient.currentState = enemyClient.chaseState;
+    }
+
+    public void StunBehavior()
+    {
+        Debug.Log(" ");
     }
 }

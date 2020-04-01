@@ -245,6 +245,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 1
   health: 10
+  stunRecoverTime: 2
+  burnRecoverTime: 2
+  burnDamageRate: 1
 --- !u!50 &255115518
 Rigidbody2D:
   serializedVersion: 4
@@ -711,7 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 10
-  swordDamageAmount: 1
+  swordDamageAmount: 3
   swordBurnDamageAmount: 1
   swordStunDamageAmount: 2
 --- !u!114 &1236520283
@@ -733,7 +736,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 343825958}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1588476092
+--- !u!61 &1588476094
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

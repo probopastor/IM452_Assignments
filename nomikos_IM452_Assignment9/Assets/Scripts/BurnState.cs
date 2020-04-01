@@ -16,6 +16,11 @@ public class BurnState : IEnemyState
         Debug.Log(" ");
     }
 
+    public void BurnBehavior()
+    {
+        //
+    }
+
     public void CatchFire()
     {
         Debug.Log(" ");
@@ -30,5 +35,10 @@ public class BurnState : IEnemyState
     public void StartChasing()
     {
         throw new System.NotImplementedException();
+    }
+
+    public void StunBehavior()
+    {
+        Debug.Log(" ");
     }
 }

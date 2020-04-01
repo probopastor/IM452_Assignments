@@ -11,7 +11,12 @@ public class EnemyClient : MonoBehaviour
 
     public int damageAmount = 1;
     public int health = 10;
-    public float recoverTime = 2f;
+
+    public float stunRecoverTime = 2f;
+    public float burnRecoverTime = 4f;
+    private float burnCounter = 0f;
+
+    public float burnDamageRate = 1f;
 
     private PlayerController player;
 
@@ -24,6 +29,8 @@ public class EnemyClient : MonoBehaviour
         currentState = chaseState;
 
         player = FindObjectOfType<PlayerController>();
+
+        burnCounter = 0f;
 
         ChasePlayer();
     }
@@ -42,19 +49,43 @@ public class EnemyClient : MonoBehaviour
     public void Burn()
     {
         currentState.CatchFire();
-        StartCoroutine(RecoverFromAilment());
+        currentState.BurnBehavior();
+        StartCoroutine(BurnTime());
     }
 
     public void Stun()
     {
         currentState.BecomeStunned();
-        StartCoroutine(RecoverFromAilment());
+        currentState.StunBehavior();
+        StartCoroutine(StunTime());
+    }
+    private IEnumerator BurnTime()
+    {
+        yield return new WaitForSeconds(burnDamageRate);
+        burnCounter++;
+        DecreaseHealth(1);
+        
+        if(burnCounter > burnRecoverTime)
+        {
+            burnCounter = 0;
+            StartCoroutine(Recover());
+        }
+        else
+        {
+            StartCoroutine(BurnTime());
+        }
     }
 
-    private IEnumerator RecoverFromAilment()
+    private IEnumerator StunTime()
     {
-        yield return new WaitForSeconds(recoverTime);
+        yield return new WaitForSeconds(stunRecoverTime);
+        StartCoroutine(Recover());
+    }
+
+    private IEnumerator Recover()
+    {
         currentState.Recover();
+        yield return new WaitForEndOfFrame();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
