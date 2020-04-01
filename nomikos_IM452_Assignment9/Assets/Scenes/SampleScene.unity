@@ -249,6 +249,16 @@ MonoBehaviour:
   burnRecoverTime: 2
   burnDamageRate: 1
   movementSpeed: 0.5
+  burnParticles: {fileID: 2282289344619129882, guid: d955a7709c6c34b4398127818aede865,
+    type: 3}
+  burnYModifier: -1
+  burnXModifier: 0
+  burnZModifier: -1
+  stunParticles: {fileID: 1744236641387940075, guid: 2333c2e6a63f68e408379f3949dd2554,
+    type: 3}
+  stunYModifier: -1
+  stunXModifier: 0
+  stunZModifier: -1
 --- !u!50 &255115518
 Rigidbody2D:
   serializedVersion: 4

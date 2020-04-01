@@ -22,6 +22,23 @@ public class EnemyClient : MonoBehaviour
 
     private PlayerController player;
 
+    public ParticleSystem burnParticles;
+    private GameObject burnParticlesObj;
+
+    private bool burnParticlesInstantiated = false;
+    public float burnYModifier = 0f;
+    public float burnXModifier = 0f;
+    public float burnZModifier = 0f;
+
+    public ParticleSystem stunParticles;
+    private GameObject stunParticleObj;
+
+    private bool stunParticlesInstantiated = false;
+    public float stunYModifier = 0f;
+    public float stunXModifier = 0f;
+    public float stunZModifier = 0f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +78,15 @@ public class EnemyClient : MonoBehaviour
     }
     private IEnumerator BurnTime()
     {
+        if(!burnParticlesInstantiated)
+        {
+            burnParticlesInstantiated = true;
+            Vector3 burnParticleLocation = new Vector3(gameObject.transform.position.x + burnXModifier, gameObject.transform.position.y + burnYModifier, gameObject.transform.position.z + burnZModifier);
+            burnParticlesObj = Instantiate(burnParticles.gameObject, burnParticleLocation, Quaternion.Euler(-90f, 0f, 0f));
+            burnParticlesObj.transform.parent = gameObject.transform;
+            burnParticles.Play();
+        }
+
         yield return new WaitForSeconds(burnDamageRate);
         burnCounter++;
         DecreaseHealth(1);
@@ -68,6 +94,8 @@ public class EnemyClient : MonoBehaviour
         if(burnCounter > burnRecoverTime)
         {
             burnCounter = 0;
+            Destroy(burnParticlesObj);
+            burnParticlesInstantiated = false;
             StartCoroutine(Recover());
         }
         else
@@ -78,7 +106,19 @@ public class EnemyClient : MonoBehaviour
 
     private IEnumerator StunTime()
     {
+        if (!stunParticlesInstantiated)
+        {
+            stunParticlesInstantiated = true;
+            Vector3 stunParticleLocation = new Vector3(gameObject.transform.position.x + stunXModifier, gameObject.transform.position.y + stunYModifier, gameObject.transform.position.z + stunZModifier);
+            stunParticleObj = Instantiate(stunParticles.gameObject, stunParticleLocation, Quaternion.Euler(0f, 0f, 0f));
+            stunParticleObj.transform.parent = gameObject.transform;
+            stunParticles.Play();
+        }
+
         yield return new WaitForSeconds(stunRecoverTime);
+
+        Destroy(stunParticleObj);
+        stunParticlesInstantiated = false;
         StartCoroutine(Recover());
     }
 
