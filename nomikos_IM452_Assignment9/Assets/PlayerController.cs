@@ -30,5 +30,4 @@ public class PlayerController : MonoBehaviour
     {
         return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
     }
-
 }
