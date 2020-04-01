@@ -16,11 +16,6 @@ public class StunState : IEnemyState
         Debug.Log(" ");
     }
 
-    public void BurnBehavior()
-    {
-        Debug.Log(" ");
-    }
-
     public void CatchFire()
     {
         Debug.Log(" ");
@@ -35,10 +30,5 @@ public class StunState : IEnemyState
     public void StartChasing()
     {
         Debug.Log(" ");
-    }
-
-    public void StunBehavior()
-    {
-      //   
     }
 }

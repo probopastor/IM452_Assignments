@@ -38,7 +38,7 @@ public class EnemyClient : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ChasePlayer();
     }
 
     public void ChasePlayer()
@@ -49,14 +49,12 @@ public class EnemyClient : MonoBehaviour
     public void Burn()
     {
         currentState.CatchFire();
-        currentState.BurnBehavior();
         StartCoroutine(BurnTime());
     }
 
     public void Stun()
     {
         currentState.BecomeStunned();
-        currentState.StunBehavior();
         StartCoroutine(StunTime());
     }
     private IEnumerator BurnTime()
@@ -98,7 +96,6 @@ public class EnemyClient : MonoBehaviour
             {
                 Debug.Log("hit with 1 ");
                 DecreaseHealth(player.GetSwordDamageAmount());
-                ChasePlayer();
             }
             else if (player.GetSwordPowerNumber() == 2)
             {

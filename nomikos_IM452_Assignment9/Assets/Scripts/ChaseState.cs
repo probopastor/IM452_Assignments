@@ -5,21 +5,18 @@ using UnityEngine;
 public class ChaseState : IEnemyState
 {
     EnemyClient enemyClient;
+    PlayerController playerObject;
 
     public ChaseState(EnemyClient client)
     {
         this.enemyClient = client;
+        playerObject = GameObject.FindObjectOfType<PlayerController>();
     }
 
     public void BecomeStunned()
     {
         Debug.Log("Enemy is stunned ");
         enemyClient.currentState = enemyClient.stunState;
-    }
-
-    public void BurnBehavior()
-    {
-        Debug.Log(" ");
     }
 
     public void CatchFire()
@@ -36,11 +33,8 @@ public class ChaseState : IEnemyState
     public void StartChasing()
     {
         Debug.Log("Enemy chasing player ");
-        enemyClient.currentState = enemyClient.chaseState;
-    }
 
-    public void StunBehavior()
-    {
-        Debug.Log(" ");
+        enemyClient.transform.position = Vector3.MoveTowards(enemyClient.transform.position, playerObject.transform.position, 0.001f);
+        enemyClient.currentState = enemyClient.chaseState;
     }
 }
