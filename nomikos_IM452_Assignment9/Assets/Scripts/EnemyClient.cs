@@ -39,6 +39,8 @@ public class EnemyClient : MonoBehaviour
     public float stunZModifier = 0f;
 
 
+    private WinManager winManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,7 @@ public class EnemyClient : MonoBehaviour
         currentState = chaseState;
 
         player = FindObjectOfType<PlayerController>();
+        winManager = FindObjectOfType<WinManager>();
 
         burnCounter = 0f;
 
@@ -170,6 +173,7 @@ public class EnemyClient : MonoBehaviour
 
     private void KillEnemy()
     {
+        winManager.UpdateScore();
         Destroy(gameObject);
     }
 }

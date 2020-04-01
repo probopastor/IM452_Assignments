@@ -16,11 +16,15 @@ public class PauseManager : MonoBehaviour
     public AudioSource SoundEffectSource;
     public AudioClip buttonClick;
 
+    private WinManager winManager;
+
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
         gameLost = false;
+
+        winManager = FindObjectOfType<WinManager>();
 
         paused = false;
         PauseCanvas.SetActive(false);
@@ -34,7 +38,7 @@ public class PauseManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!gameLost)
+            if (!gameLost && !winManager.gameWon)
             {
                 PauseGame();
             }

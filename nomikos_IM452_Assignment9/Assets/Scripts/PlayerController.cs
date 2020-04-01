@@ -19,12 +19,14 @@ public class PlayerController : MonoBehaviour
 
     public GameObject losePanel;
     private PauseManager pauseManager;
-    
+    private WinManager winManager;
+
     // Start is called before the first frame update
     void Start()
     {
         losePanel.SetActive(false);
         pauseManager = FindObjectOfType<PauseManager>();
+        winManager = FindObjectOfType<WinManager>();
         swordRend.color = swordColors[0];
         swordPowerNumber = 1;
         UIImageSelectedColor();
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("Sword power number " + GetSwordPowerNumber());
 
-        if(!pauseManager.gameLost)
+        if(!pauseManager.gameLost && !winManager.gameWon)
         {
             //Rotation of player towards mouse pos taken from https://answers.unity.com/questions/855976/make-a-player-model-rotate-towards-mouse-location.html
             //From user BenZed
@@ -79,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private void CheckSwordPower()
     {
-        if(!pauseManager.gameLost)
+        if(!pauseManager.gameLost && !winManager.gameWon)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
