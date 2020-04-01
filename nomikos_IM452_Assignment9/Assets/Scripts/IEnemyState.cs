@@ -4,12 +4,7 @@ using UnityEngine;
 
 public interface IEnemyState
 {
-    //void ChasePlayer();
-    //void OnFire();
-    //void Stunned();
-    //void OriginalState();
-
-    void StartChasing();
+    void StartChasing(float movementSpeed);
     void CatchFire();
     void BecomeStunned();
     void Recover();

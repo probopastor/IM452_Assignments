@@ -27,7 +27,7 @@ public class StunState : IEnemyState
         enemyClient.currentState = enemyClient.chaseState;
     }
 
-    public void StartChasing()
+    public void StartChasing(float movementSpeed)
     {
         Debug.Log(" ");
     }

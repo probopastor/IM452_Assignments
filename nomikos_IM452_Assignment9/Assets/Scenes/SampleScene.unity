@@ -248,6 +248,7 @@ MonoBehaviour:
   stunRecoverTime: 2
   burnRecoverTime: 2
   burnDamageRate: 1
+  movementSpeed: 0.5
 --- !u!50 &255115518
 Rigidbody2D:
   serializedVersion: 4

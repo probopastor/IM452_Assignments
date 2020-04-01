@@ -30,11 +30,9 @@ public class ChaseState : IEnemyState
         Debug.Log(" ");
     }
 
-    public void StartChasing()
+    public void StartChasing(float movementSpeed)
     {
-        Debug.Log("Enemy chasing player ");
-
-        enemyClient.transform.position = Vector3.MoveTowards(enemyClient.transform.position, playerObject.transform.position, 0.001f);
+        enemyClient.transform.position = Vector3.MoveTowards(enemyClient.transform.position, playerObject.transform.position, movementSpeed);
         enemyClient.currentState = enemyClient.chaseState;
     }
 }

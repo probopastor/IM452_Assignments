@@ -18,6 +18,8 @@ public class EnemyClient : MonoBehaviour
 
     public float burnDamageRate = 1f;
 
+    public float movementSpeed = 5f;
+
     private PlayerController player;
 
     // Start is called before the first frame update
@@ -43,7 +45,7 @@ public class EnemyClient : MonoBehaviour
 
     public void ChasePlayer()
     {
-        currentState.StartChasing();
+        currentState.StartChasing(movementSpeed * Time.deltaTime);
     }
 
     public void Burn()

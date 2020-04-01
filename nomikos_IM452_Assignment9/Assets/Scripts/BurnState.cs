@@ -5,10 +5,12 @@ using UnityEngine;
 public class BurnState : IEnemyState
 {
     EnemyClient enemyClient;
+    PlayerController playerObject;
 
     public BurnState(EnemyClient client)
     {
         this.enemyClient = client;
+        playerObject = GameObject.FindObjectOfType<PlayerController>();
     }
 
     public void BecomeStunned()
@@ -27,8 +29,9 @@ public class BurnState : IEnemyState
         enemyClient.currentState = enemyClient.chaseState;
     }
 
-    public void StartChasing()
+    public void StartChasing(float movementSpeed)
     {
-        Debug.Log(" ");
+        enemyClient.transform.position = Vector3.MoveTowards(enemyClient.transform.position, playerObject.transform.position, movementSpeed);
+        enemyClient.currentState = enemyClient.chaseState;
     }
 }
