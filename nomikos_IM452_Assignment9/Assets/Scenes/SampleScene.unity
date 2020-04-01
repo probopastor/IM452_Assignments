@@ -829,6 +829,8 @@ MonoBehaviour:
   stunYModifier: -1
   stunXModifier: 0
   stunZModifier: -1
+  SoundEffectSource: {fileID: 56690103}
+  damageSound: {fileID: 8300000, guid: 2a58f8014130dcb449c91ab5030f6bc6, type: 3}
 --- !u!50 &255115518
 Rigidbody2D:
   serializedVersion: 4
@@ -1357,6 +1359,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.14150941
       objectReference: {fileID: 0}
+    - target: {fileID: 3679299508569440958, guid: 476c9e9d3adc5df4a87a14264433faa5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4037144390908679420, guid: 476c9e9d3adc5df4a87a14264433faa5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4418605490440481501, guid: 476c9e9d3adc5df4a87a14264433faa5,
         type: 3}
       propertyPath: m_Name
@@ -1570,6 +1582,8 @@ MonoBehaviour:
   stunYModifier: -1
   stunXModifier: 0
   stunZModifier: -1
+  SoundEffectSource: {fileID: 56690103}
+  damageSound: {fileID: 8300000, guid: 2a58f8014130dcb449c91ab5030f6bc6, type: 3}
 --- !u!61 &369429171
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2653,7 +2667,7 @@ MonoBehaviour:
   tutorialText: {fileID: 1527625067}
   tutorialSkipText: {fileID: 1776707571}
   SoundEffectSource: {fileID: 1876980055}
-  clickSound: {fileID: 0}
+  clickSound: {fileID: 8300000, guid: 11be249b15ca56448acecd82aab0ada3, type: 3}
   swordPanel: {fileID: 1956867747}
   controlPanel: {fileID: 1034661866}
   enemiesLeft: {fileID: 335614052}

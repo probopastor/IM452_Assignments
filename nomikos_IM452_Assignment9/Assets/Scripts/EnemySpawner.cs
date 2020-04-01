@@ -17,9 +17,16 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemiesLeft;
     public GameObject healthText;
 
+    private bool doOnce = false;
+
+    private IEnumerator coroutine;
+
     // Start is called before the first frame update
     void Start()
     {
+        coroutine = TutorialText();
+
+        doOnce = false;
         tutorialText.text = " ";
         tutorialSkipText.text = " ";
 
@@ -28,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
         enemiesLeft.SetActive(false);
         healthText.SetActive(false);
 
-        StartCoroutine(TutorialText());
+        StartCoroutine(coroutine);
     }
 
     // Update is called once per frame
@@ -36,16 +43,21 @@ public class EnemySpawner : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.X))
         {
-            StopCoroutine("TutorialText");
-            tutorialText.text = " ";
-            tutorialSkipText.text = " ";
+            if (!doOnce)
+            {
+                doOnce = true;
 
-            swordPanel.SetActive(true);
-            controlPanel.SetActive(true);
-            enemiesLeft.SetActive(true);
-            healthText.SetActive(true);
+                StopCoroutine(coroutine);
+                tutorialText.text = " ";
+                tutorialSkipText.text = " ";
 
-            StartCoroutine(SpawnEnemy());
+                swordPanel.SetActive(true);
+                controlPanel.SetActive(true);
+                enemiesLeft.SetActive(true);
+                healthText.SetActive(true);
+
+                StartCoroutine(SpawnEnemy());
+            }
         }
     }
 

@@ -38,6 +38,8 @@ public class EnemyClient : MonoBehaviour
     public float stunXModifier = 0f;
     public float stunZModifier = 0f;
 
+    public AudioSource SoundEffectSource;
+    public AudioClip damageSound;
 
     private WinManager winManager;
 
@@ -137,7 +139,10 @@ public class EnemyClient : MonoBehaviour
 
         if(collision.CompareTag("Sword"))
         {
-            if(player.GetSwordPowerNumber() == 1)
+            SoundEffectSource.clip = damageSound;
+            SoundEffectSource.Play();
+
+            if (player.GetSwordPowerNumber() == 1)
             {
                 Debug.Log("hit with 1 ");
                 DecreaseHealth(player.GetSwordDamageAmount());
@@ -163,7 +168,6 @@ public class EnemyClient : MonoBehaviour
 
     private void DecreaseHealth(int amount)
     {
-        Debug.Log("Damage Taken"); 
         health -= amount;
         if(health <= 0)
         {
