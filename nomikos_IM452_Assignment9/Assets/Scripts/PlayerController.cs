@@ -16,10 +16,15 @@ public class PlayerController : MonoBehaviour
     public Color defaultUIColor;
     public Color selectedUIColor;
     public Image[] swordBackgroundImages;
+
+    public GameObject losePanel;
+    private PauseManager pauseManager;
     
     // Start is called before the first frame update
     void Start()
     {
+        losePanel.SetActive(false);
+        pauseManager = FindObjectOfType<PauseManager>();
         swordRend.color = swordColors[0];
         swordPowerNumber = 1;
         UIImageSelectedColor();
@@ -33,12 +38,15 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("Sword power number " + GetSwordPowerNumber());
 
-        //Rotation of player towards mouse pos taken from https://answers.unity.com/questions/855976/make-a-player-model-rotate-towards-mouse-location.html
-        //From user BenZed
-        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
-        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
-        float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
-        transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 90));
+        if(!pauseManager.gameLost)
+        {
+            //Rotation of player towards mouse pos taken from https://answers.unity.com/questions/855976/make-a-player-model-rotate-towards-mouse-location.html
+            //From user BenZed
+            Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+            Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
+            float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
+            transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle + 90));
+        }
     }
 
     //Rotation of player towards mouse pos taken from https://answers.unity.com/questions/855976/make-a-player-model-rotate-towards-mouse-location.html
@@ -64,28 +72,33 @@ public class PlayerController : MonoBehaviour
 
     private void LoseGame()
     {
-        //Lose Game Here
+        pauseManager.gameLost = true;
+        losePanel.SetActive(true);
+        Time.timeScale = 0;
     }
 
     private void CheckSwordPower()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(!pauseManager.gameLost)
         {
-            swordPowerNumber = 1;
-            swordRend.color = swordColors[0];
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            swordPowerNumber = 2;
-            swordRend.color = swordColors[1];
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            swordPowerNumber = 3;
-            swordRend.color = swordColors[2];
-        }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                swordPowerNumber = 1;
+                swordRend.color = swordColors[0];
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                swordPowerNumber = 2;
+                swordRend.color = swordColors[1];
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                swordPowerNumber = 3;
+                swordRend.color = swordColors[2];
+            }
 
-        UIImageSelectedColor();
+            UIImageSelectedColor();
+        }
     }
 
     private void UIImageSelectedColor()
