@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     public int swordDamageAmount = 3;
     public int swordBurnDamageAmount = 1;
     public int swordStunDamageAmount = 2;
-
+    public SpriteRenderer swordRend;
+    public Color[] swordColors;
     // Start is called before the first frame update
     void Start()
     {
+        swordRend.color = swordColors[0];
         swordPowerNumber = 1;
     }
 
@@ -63,14 +65,17 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
             swordPowerNumber = 1;
+            swordRend.color = swordColors[0];
         }
         else if(Input.GetKeyDown(KeyCode.Alpha2))
         {
             swordPowerNumber = 2;
+            swordRend.color = swordColors[1];
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             swordPowerNumber = 3;
+            swordRend.color = swordColors[2];
         }
     }
 
