@@ -135,8 +135,6 @@ public class EnemyClient : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger Occured ");
-
         if(collision.CompareTag("Sword"))
         {
             SoundEffectSource.clip = damageSound;
@@ -144,18 +142,15 @@ public class EnemyClient : MonoBehaviour
 
             if (player.GetSwordPowerNumber() == 1)
             {
-                Debug.Log("hit with 1 ");
                 DecreaseHealth(player.GetSwordDamageAmount());
             }
             else if (player.GetSwordPowerNumber() == 2)
             {
-                Debug.Log("hit with 2 ");
                 DecreaseHealth(player.GetSwordBurnDamageAmount());
                 Burn();
             }
             else if (player.GetSwordPowerNumber() == 3)
             {
-                Debug.Log("hit with 3 ");
                 DecreaseHealth(player.GetSwordStunDamageAmount());
                 Stun();
             }

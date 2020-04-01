@@ -42,8 +42,6 @@ public class PlayerController : MonoBehaviour
         CheckHealth();
         CheckSwordPower();
 
-        Debug.Log("Sword power number " + GetSwordPowerNumber());
-
         if(!pauseManager.gameLost && !winManager.gameWon)
         {
             //Rotation of player towards mouse pos taken from https://answers.unity.com/questions/855976/make-a-player-model-rotate-towards-mouse-location.html
@@ -71,7 +69,6 @@ public class PlayerController : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
-            Debug.Log("Game Over");
             LoseGame();
         }
     }

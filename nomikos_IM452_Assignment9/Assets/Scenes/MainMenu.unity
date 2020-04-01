@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.72703385, b: 0, a: 0.392}
+  m_Color: {r: 0.874705, g: 0.8726415, b: 1, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -593,9 +593,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameSource: {fileID: 77905693}
-  gameMusic: {fileID: 0}
+  gameMusic: {fileID: 8300000, guid: 90eafc0050237a34c8b83add1104d27a, type: 3}
   SoundEffectSource: {fileID: 1216641956}
-  buttonClick: {fileID: 0}
+  buttonClick: {fileID: 8300000, guid: ecf7b4b9c8fbbfd4fb4afa71aaec2b66, type: 3}
 --- !u!1 &172015367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1686,7 +1686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.72703385, b: 0, a: 0.392}
+  m_Color: {r: 0.8745098, g: 0.8745098, b: 1, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

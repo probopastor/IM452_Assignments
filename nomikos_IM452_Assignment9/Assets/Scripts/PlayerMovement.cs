@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void MovePlayer()
     {
-        //Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.up * Time.deltaTime * playerSpeed, Space.World);
