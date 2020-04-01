@@ -2,30 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StunState : MonoBehaviour, IEnemyState
+public class StunState : IEnemyState
 {
-    // Start is called before the first frame update
-    void Start()
+    EnemyClient enemyClient;
+
+    public StunState(EnemyClient client)
     {
-        
+        this.enemyClient = client;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void ChasePlayer()
+    public void BecomeStunned()
     {
         throw new System.NotImplementedException();
     }
 
-    public void OnFire()
+    public void CatchFire()
     {
         throw new System.NotImplementedException();
     }
 
-    public void Stunned()
+    public void Recover()
+    {
+        Debug.Log("Enemy recovers ");
+        enemyClient.currentState = enemyClient.chaseState;
+    }
+
+    public void StartChasing()
     {
         throw new System.NotImplementedException();
     }

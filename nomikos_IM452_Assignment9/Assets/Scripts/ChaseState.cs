@@ -2,32 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChaseState : MonoBehaviour, IEnemyState
+public class ChaseState : IEnemyState
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    EnemyClient enemyClient;
 
+    public ChaseState(EnemyClient client)
+    {
+        this.enemyClient = client;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BecomeStunned()
     {
-
+        Debug.Log("Enemy is stunned ");
+        enemyClient.currentState = enemyClient.stunState;
     }
 
-    public void ChasePlayer()
+    public void CatchFire()
+    {
+        Debug.Log("Enemy is on fire ");
+        enemyClient.currentState = enemyClient.burnState;
+    }
+
+    public void Recover()
     {
         throw new System.NotImplementedException();
     }
 
-    public void OnFire()
+    public void StartChasing()
     {
-        throw new System.NotImplementedException();
-    }
-
-    public void Stunned()
-    {
-        throw new System.NotImplementedException();
+        Debug.Log("Enemy chasing player ");
+        enemyClient.currentState = enemyClient.chaseState;
     }
 }
