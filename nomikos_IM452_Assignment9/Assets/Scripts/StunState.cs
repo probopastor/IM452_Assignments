@@ -13,12 +13,12 @@ public class StunState : IEnemyState
 
     public void BecomeStunned()
     {
-        throw new System.NotImplementedException();
+        Debug.Log(" ");
     }
 
     public void CatchFire()
     {
-        throw new System.NotImplementedException();
+        Debug.Log(" ");
     }
 
     public void Recover()
@@ -29,6 +29,6 @@ public class StunState : IEnemyState
 
     public void StartChasing()
     {
-        throw new System.NotImplementedException();
+        Debug.Log(" ");
     }
 }

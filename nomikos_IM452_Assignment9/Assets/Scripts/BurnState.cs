@@ -13,12 +13,12 @@ public class BurnState : IEnemyState
 
     public void BecomeStunned()
     {
-        throw new System.NotImplementedException();
+        Debug.Log(" ");
     }
 
     public void CatchFire()
     {
-        throw new System.NotImplementedException();
+        Debug.Log(" ");
     }
 
     public void Recover()

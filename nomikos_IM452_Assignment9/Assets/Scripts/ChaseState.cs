@@ -25,7 +25,7 @@ public class ChaseState : IEnemyState
 
     public void Recover()
     {
-        throw new System.NotImplementedException();
+        Debug.Log(" ");
     }
 
     public void StartChasing()

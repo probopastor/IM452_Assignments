@@ -11,6 +11,7 @@ public class EnemyClient : MonoBehaviour
 
     public int damageAmount = 1;
     public int health = 10;
+    public float recoverTime = 2f;
 
     private PlayerController player;
 
@@ -41,11 +42,19 @@ public class EnemyClient : MonoBehaviour
     public void Burn()
     {
         currentState.CatchFire();
+        StartCoroutine(RecoverFromAilment());
     }
 
     public void Stun()
     {
         currentState.BecomeStunned();
+        StartCoroutine(RecoverFromAilment());
+    }
+
+    private IEnumerator RecoverFromAilment()
+    {
+        yield return new WaitForSeconds(recoverTime);
+        currentState.Recover();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
