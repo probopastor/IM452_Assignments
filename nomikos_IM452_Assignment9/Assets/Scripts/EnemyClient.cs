@@ -38,7 +38,7 @@ public class EnemyClient : MonoBehaviour
     public float stunXModifier = 0f;
     public float stunZModifier = 0f;
 
-    public AudioSource SoundEffectSource;
+    private AudioSource SoundEffectSource;
     public AudioClip damageSound;
 
     private WinManager winManager;
@@ -46,6 +46,8 @@ public class EnemyClient : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundEffectSource = GameObject.Find("SoundEffect Source  2").GetComponent<AudioSource>();
+
         stunState = new StunState(this);
         burnState = new BurnState(this);
         chaseState = new ChaseState(this);

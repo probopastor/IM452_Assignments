@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject enemy;
+    public GameObject[] enemies;
+    public GameObject[] spawnLocations;
+
     public Text tutorialText;
     public Text tutorialSkipText;
 
@@ -17,14 +19,25 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemiesLeft;
     public GameObject healthText;
 
+    public GameObject strongEnemyIcon;
+    public GameObject mediumEnemyIcon;
+    public GameObject weakEnemyIcon;
+
+
     private bool doOnce = false;
 
     private IEnumerator coroutine;
+
+    private int index;
+    private int locationIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         coroutine = TutorialText();
+
+        index = 0;
+        locationIndex = 0;
 
         doOnce = false;
         tutorialText.text = " ";
@@ -34,6 +47,9 @@ public class EnemySpawner : MonoBehaviour
         controlPanel.SetActive(false);
         enemiesLeft.SetActive(false);
         healthText.SetActive(false);
+        strongEnemyIcon.SetActive(false);
+        mediumEnemyIcon.SetActive(false);
+        weakEnemyIcon.SetActive(false);
 
         StartCoroutine(coroutine);
     }
@@ -55,6 +71,9 @@ public class EnemySpawner : MonoBehaviour
                 controlPanel.SetActive(true);
                 enemiesLeft.SetActive(true);
                 healthText.SetActive(true);
+                strongEnemyIcon.SetActive(false);
+                mediumEnemyIcon.SetActive(false);
+                weakEnemyIcon.SetActive(false);
 
                 StartCoroutine(SpawnEnemy());
             }
@@ -125,6 +144,24 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         SoundEffectSource.Play();
+        weakEnemyIcon.SetActive(true);
+        tutorialText.text = "Weak enemies are fast but do little damage. Weak enemies do not have much health. They take long time to recover from a stun. ";
+        yield return new WaitForSeconds(5f);
+
+        SoundEffectSource.Play();
+        weakEnemyIcon.SetActive(false);
+        mediumEnemyIcon.SetActive(true);
+        tutorialText.text = "Medium enemies are slightly slower than weak enemies but they deal more damage. They have a medium amount of health. They recover from stuns faster than weak enemies as well. ";
+        yield return new WaitForSeconds(7f);
+
+        SoundEffectSource.Play();
+        mediumEnemyIcon.SetActive(false);
+        strongEnemyIcon.SetActive(true);
+        tutorialText.text = "Strong enemies are very slow but deal lots of damage. They recover from stuns almost instantly and have lots of health. ";
+        yield return new WaitForSeconds(7f);
+
+        SoundEffectSource.Play();
+        strongEnemyIcon.SetActive(false);
         enemiesLeft.SetActive(true);
         tutorialText.text = "Kill 20 enemies to win! ";
         yield return new WaitForSeconds(4f);
@@ -146,5 +183,18 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnEnemy()
     {
         yield return new WaitForSeconds(1f);
+
+        int randomEnemySpawnNumber = Random.Range(0, 3);
+
+        for(int i = 0; i <= randomEnemySpawnNumber; i++)
+        {
+            index = Random.Range(0, enemies.Length);
+            locationIndex = Random.Range(0, spawnLocations.Length);
+            Instantiate(enemies[index], spawnLocations[locationIndex].transform.position, Quaternion.identity);
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        StartCoroutine(SpawnEnemy());
     }
 }
