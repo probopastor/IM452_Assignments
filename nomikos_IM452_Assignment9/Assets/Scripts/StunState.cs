@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* StunState.cs
+* Assignment 9
+* Concrete state for stunned enemies. Is the set state when an enemy is stunned by the player's sword.
+* Enemies in this state cannot move. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

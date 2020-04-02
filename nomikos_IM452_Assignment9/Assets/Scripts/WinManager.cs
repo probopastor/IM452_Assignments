@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* WinManager.cs
+* Assignment 9
+* Handles the game's win state and updating the text UI for 
+* the amount of enemies the player has defeated. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

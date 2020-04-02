@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PlayerController.cs
+* Assignment 9
+* Handles rotating the player's sword, the power the player 
+* sword is set to, player health, and player damage. Also handles 
+* the game's lose state.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* IEnemyState.cs
+* Assignment 9
+* Interface for state methods that is implemented by concrete states
+* an enemy may be in. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

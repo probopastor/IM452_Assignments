@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* MainMenuManager.cs
+* Assignment 9
+* Handles Main Menu button and sound functionality, including starting
+* the game and quitting the game. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

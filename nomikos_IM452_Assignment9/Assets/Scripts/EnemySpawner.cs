@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* EnemySpawner.cs
+* Assignment 9
+* Handles the spawning of enemies at spawn points and the 
+* tutorial at the start of the game. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;

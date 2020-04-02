@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PauseManager.cs
+* Assignment 9
+* Handles pause menu functionality, including pausing the game,
+* unpausing the game, restarting the game, and quitting to the 
+* main menu. Also handles game music and button sound effects.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;

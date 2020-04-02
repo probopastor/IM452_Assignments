@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PlayerMovement.cs
+* Assignment 9
+* Handles linear movement for the player.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

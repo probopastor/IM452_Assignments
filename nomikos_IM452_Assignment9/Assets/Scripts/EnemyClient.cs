@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* EnemyClient.cs
+* Assignment 9
+* The enemy client handles transitioning between enemy states. This script
+* also handles the enemy's health, their death, enemy particles, and the 
+* sword's sound effects.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

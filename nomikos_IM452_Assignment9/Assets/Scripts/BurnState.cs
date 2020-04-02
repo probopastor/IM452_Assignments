@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* BurnState.cs
+* Assignment 9
+* Concrete state for burning. Is the set state when an enemy is set on fire by the player's sword.
+* Enemies in this state chase the player while burning, and may recover from the burn.
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
