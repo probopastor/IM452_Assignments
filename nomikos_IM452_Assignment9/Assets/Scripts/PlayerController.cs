@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
 
     public Text healthText;
 
+    public AudioSource SoundEffectSource;
+    public AudioClip damageClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +65,8 @@ public class PlayerController : MonoBehaviour
 
     public void DecreaseHealth(int amount)
     {
+        SoundEffectSource.clip = damageClip;
+        SoundEffectSource.Play();
         currentHealth -= amount;
     }
 

@@ -192,7 +192,8 @@ MonoBehaviour:
   m_Text: "Game created by William Nomikos\n\nMusic: \n\nGreat Little Challenge\r
     by Patrick De Arteaga\nDreaming by Patrick De Arteaga\n\nSound Effects:\nTutorial
     Click: https://freesound.org/people/moogy73/sounds/425725/\nButton Click: https://freesound.org/people/Mellau/sounds/506054/\nSword
-    Swing: https://freesound.org/people/MissCellany/sounds/240640/\n\n"
+    Swing: https://freesound.org/people/MissCellany/sounds/240640/\nPlayer Damage:
+    https://freesound.org/people/EVRetro/sounds/501104/\n\n"
 --- !u!222 &76400939
 CanvasRenderer:
   m_ObjectHideFlags: 0
