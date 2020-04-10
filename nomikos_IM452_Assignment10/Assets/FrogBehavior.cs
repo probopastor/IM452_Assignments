@@ -6,10 +6,6 @@ public class FrogBehavior : MonoBehaviour
 {
     private ObjectPooler objectPooler;
 
-    public GameObject slowProjectiles;
-    public GameObject fastProjectiles;
-    public GameObject flamethrowerProjectile;
-
     public int firstAttackSize = 10;
     public int secondAttackSize = 10;
     public int thirdAttackSize = 10;
@@ -50,22 +46,22 @@ public class FrogBehavior : MonoBehaviour
 
         if(attackIndex == 0)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(1f);
             StartCoroutine(FirstAttack());
         }
         else if(attackIndex == 1)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(1f);
             StartCoroutine(SecondAttack());
         }
         else if(attackIndex == 2)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(1f);
             StartCoroutine(ThirdAttack());
         }
         else if(attackIndex == 3)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(1f);
             StartCoroutine(FourthAttack());
         }
 
@@ -123,7 +119,7 @@ public class FrogBehavior : MonoBehaviour
 
         for (int i = 0; i < FlameProjectiles.Length; i++)
         {
-            objectPooler.ReturnObjectToPool("NormalProjectile", FlameProjectiles[i].gameObject);
+            objectPooler.ReturnObjectToPool("FlameProjectile", FlameProjectiles[i].gameObject);
         }
 
         StartCoroutine(AttackChooser());
@@ -149,7 +145,7 @@ public class FrogBehavior : MonoBehaviour
 
         for (int i = 0; i < fastProjectiles.Length; i++)
         {
-            objectPooler.ReturnObjectToPool("NormalProjectile", normalProjectiles[i].gameObject);
+            objectPooler.ReturnObjectToPool("FastProjectile", fastProjectiles[i].gameObject);
         }
 
         StartCoroutine(AttackChooser());
