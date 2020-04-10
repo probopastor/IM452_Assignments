@@ -15,14 +15,33 @@ public class FrogBehavior : MonoBehaviour
     public int thirdAttackSize = 10;
     public int fourthAttackSize = 10;
 
+    public float rotationSpeed = 1f;
+
+    private GameObject player;
+
     public int attackIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         objectPooler = ObjectPooler.instance;
+        player = FindObjectOfType<PlayerMovement>().gameObject;
 
         StartCoroutine(AttackChooser());
+    }
+
+    void Update()
+    {
+        Vector3 direction = player.transform.position - gameObject.transform.position;
+        Quaternion rot = Quaternion.LookRotation(-direction);
+        Quaternion newRot = new Quaternion(0, rot.y, 0, rot.w);
+        gameObject.transform.rotation = Quaternion.Lerp(transform.rotation, newRot, rotationSpeed * Time.deltaTime);
+
+        ////Vector3 targetPosition = new Vector3(0, 0, player.transform.position.z);
+        ////transform.LookAt(targetPosition);
+        ///
+
+        // gameObject.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), rotationSpeed * Time.deltaTime);
     }
 
     private IEnumerator AttackChooser()
@@ -52,7 +71,7 @@ public class FrogBehavior : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
     }
-
+     
     private IEnumerator FirstAttack()
     {
         for (int i = 0; i < firstAttackSize; i++)
