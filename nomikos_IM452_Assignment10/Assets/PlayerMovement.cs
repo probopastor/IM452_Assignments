@@ -85,4 +85,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("yes");
+
+        if(other.CompareTag("FrogWeakSpot"))
+        {
+            Debug.Log("YES");
+        }
+    }
 }
