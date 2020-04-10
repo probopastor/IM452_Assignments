@@ -486,7 +486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208301474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.21, y: 1.66, z: 3.61}
+  m_LocalPosition: {x: 1.03, y: 1.66, z: 13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1172,6 +1172,7 @@ GameObject:
   - component: {fileID: 1115095814}
   - component: {fileID: 1115095813}
   - component: {fileID: 1115095812}
+  - component: {fileID: 1115095817}
   m_Layer: 8
   m_Name: Frog
   m_TagString: Frog
@@ -1262,9 +1263,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115095811}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3, y: 3.1, z: 17.2}
-  m_LocalScale: {x: 8, y: 4, z: 8}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1833282631}
   - {fileID: 1384744065}
@@ -1275,9 +1276,29 @@ Transform:
   - {fileID: 1253979171}
   - {fileID: 2110668905}
   - {fileID: 192642928}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1204449055}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1115095817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115095811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611356a015b31d54483ae4ca63e678eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowProjectiles: {fileID: 0}
+  fastProjectiles: {fileID: 0}
+  flamethrowerProjectile: {fileID: 0}
+  firstAttackSize: 10
+  secondAttackSize: 10
+  thirdAttackSize: 10
+  fourthAttackSize: 10
+  attackIndex: 0
 --- !u!1 &1151130761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,6 +1392,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151130761}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1204449053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1204449055}
+  - component: {fileID: 1204449054}
+  m_Layer: 0
+  m_Name: FrogRot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1204449054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204449053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a8d8edb4cda134eb5a24fdcfa658a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1204449055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204449053}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.3, y: 3.1, z: 17.2}
+  m_LocalScale: {x: 8, y: 4, z: 8}
+  m_Children:
+  - {fileID: 1115095816}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1243261395
 GameObject:
   m_ObjectHideFlags: 0
