@@ -42,7 +42,7 @@ public class FrogBehavior : MonoBehaviour
 
     private IEnumerator AttackChooser()
     {
-        attackIndex = Random.Range(0, 4);
+        attackIndex = Random.Range(0, 2);
 
         if(attackIndex == 0)
         {
@@ -58,11 +58,6 @@ public class FrogBehavior : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             StartCoroutine(ThirdAttack());
-        }
-        else if(attackIndex == 3)
-        {
-            yield return new WaitForSeconds(1f);
-            StartCoroutine(FourthAttack());
         }
 
         yield return new WaitForEndOfFrame();
@@ -95,12 +90,12 @@ public class FrogBehavior : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
 
-        FastProjectile[] fastProjectiles = FindObjectsOfType<FastProjectile>();
+        NormalProjectile[] normalProjectiles = FindObjectsOfType<NormalProjectile>();
 
 
-        for (int i = 0; i < fastProjectiles.Length; i++)
+        for (int i = 0; i < normalProjectiles.Length; i++)
         {
-            objectPooler.ReturnObjectToPool("FastProjectile", fastProjectiles[i].gameObject);
+            objectPooler.ReturnObjectToPool("FastProjectile", normalProjectiles[i].gameObject);
         }
 
         StartCoroutine(AttackChooser());
@@ -108,44 +103,18 @@ public class FrogBehavior : MonoBehaviour
 
     private IEnumerator ThirdAttack()
     {
-        for (int i = 0; i < thirdAttackSize; i++)
+        for (int i = 0; i < secondAttackSize; i++)
         {
             objectPooler.SpawnFromPool("FlameProjectile", new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             yield return new WaitForSeconds(0.25f);
         }
 
-        FlamethrowerProjectile[] FlameProjectiles = FindObjectsOfType<FlamethrowerProjectile>();
-
-
-        for (int i = 0; i < FlameProjectiles.Length; i++)
-        {
-            objectPooler.ReturnObjectToPool("FlameProjectile", FlameProjectiles[i].gameObject);
-        }
-
-        StartCoroutine(AttackChooser());
-    }
-
-    private IEnumerator FourthAttack()
-    {
-        for (int i = 0; i < fourthAttackSize; i++)
-        {
-            objectPooler.SpawnFromPool("NormalProjectile", new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            objectPooler.SpawnFromPool("FastProjectile", new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            yield return new WaitForSeconds(0.25f);
-        }
-
         NormalProjectile[] normalProjectiles = FindObjectsOfType<NormalProjectile>();
-        FastProjectile[] fastProjectiles = FindObjectsOfType<FastProjectile>();
 
 
         for (int i = 0; i < normalProjectiles.Length; i++)
         {
-            objectPooler.ReturnObjectToPool("NormalProjectile", normalProjectiles[i].gameObject);
-        }
-
-        for (int i = 0; i < fastProjectiles.Length; i++)
-        {
-            objectPooler.ReturnObjectToPool("FastProjectile", fastProjectiles[i].gameObject);
+            objectPooler.ReturnObjectToPool("FlameProjectile", normalProjectiles[i].gameObject);
         }
 
         StartCoroutine(AttackChooser());

@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 5404036159978041803}
   - component: {fileID: 2117457872925408747}
   - component: {fileID: 5450280852113669144}
+  - component: {fileID: 4014337896272525697}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: NormalProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 58718be2f9a18034588fc4b92ce339e7, type: 2}
+  - {fileID: 2100000, guid: d19952eb0cf2b8e4e9c9765f46fdc384, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,3 +94,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4014337896272525697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9061099943539101144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8eaae5d6c55e5d4fa4fb5ea1bc2b990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

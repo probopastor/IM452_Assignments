@@ -23,12 +23,18 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public GameObject spawnCube;
+
     private bool isGrounded;
+    private GameObject player;
 
     private void Start()
     {
+        player = this.gameObject;
         //losePanel.SetActive(false);
         currentPlayerHealth = playerHealth;
+        PlacePlayerOnSpawnCube();
+
         //healthText.text = "Health: " + currentPlayerHealth;
     }
 
@@ -86,13 +92,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void PlacePlayerOnSpawnCube()
+    {
+        gameObject.transform.position = spawnCube.transform.position;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("yes");
 
         if(other.CompareTag("FrogWeakSpot"))
         {
-            Debug.Log("YES");
+            PlacePlayerOnSpawnCube();
         }
     }
 }
