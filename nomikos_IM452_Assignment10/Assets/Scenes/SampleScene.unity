@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 173224748}
   - component: {fileID: 173224747}
   - component: {fileID: 173224746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: FrogWeakSpot
   m_Icon: {fileID: 0}
@@ -454,7 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 208301476}
   - component: {fileID: 208301475}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ObjectPooler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208301474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.019, y: 0, z: -0.7057}
+  m_LocalPosition: {x: 0.019, y: 0.36, z: -1.162}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1115095816}
@@ -1370,7 +1370,7 @@ GameObject:
   - component: {fileID: 1182038472}
   - component: {fileID: 1182038471}
   - component: {fileID: 1182038470}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StartPosCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

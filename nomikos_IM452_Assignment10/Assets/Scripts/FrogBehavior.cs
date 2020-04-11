@@ -42,9 +42,9 @@ public class FrogBehavior : MonoBehaviour
 
     private IEnumerator AttackChooser()
     {
-        attackIndex = Random.Range(0, 2);
+        attackIndex = Random.Range(0, 3);
 
-        if(attackIndex == 0)
+        if (attackIndex == 0)
         {
             yield return new WaitForSeconds(1f);
             StartCoroutine(FirstAttack());
@@ -59,6 +59,11 @@ public class FrogBehavior : MonoBehaviour
             yield return new WaitForSeconds(1f);
             StartCoroutine(ThirdAttack());
         }
+        else
+        {
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(AttackChooser());
+        }
 
         yield return new WaitForEndOfFrame();
     }
@@ -71,9 +76,9 @@ public class FrogBehavior : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
 
+        yield return new WaitForSeconds(2f);
+
         NormalProjectile[] normalProjectiles = FindObjectsOfType<NormalProjectile>();
-
-
         for (int i = 0; i < normalProjectiles.Length; i++)
         {
             objectPooler.ReturnObjectToPool("NormalProjectile", normalProjectiles[i].gameObject);
@@ -90,9 +95,9 @@ public class FrogBehavior : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
 
+        yield return new WaitForSeconds(2f);
+
         NormalProjectile[] normalProjectiles = FindObjectsOfType<NormalProjectile>();
-
-
         for (int i = 0; i < normalProjectiles.Length; i++)
         {
             objectPooler.ReturnObjectToPool("FastProjectile", normalProjectiles[i].gameObject);
@@ -109,9 +114,9 @@ public class FrogBehavior : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
         }
 
+        yield return new WaitForSeconds(2f);
+
         NormalProjectile[] normalProjectiles = FindObjectsOfType<NormalProjectile>();
-
-
         for (int i = 0; i < normalProjectiles.Length; i++)
         {
             objectPooler.ReturnObjectToPool("FlameProjectile", normalProjectiles[i].gameObject);
