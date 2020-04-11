@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8eaae5d6c55e5d4fa4fb5ea1bc2b990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMultiplier: 1
+  forceMultiplier: 30
   targetPlayerDirectly: 1
 --- !u!54 &-502859531007546169
 Rigidbody:

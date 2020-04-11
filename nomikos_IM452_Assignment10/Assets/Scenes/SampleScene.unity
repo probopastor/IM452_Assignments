@@ -2763,7 +2763,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 14
+  m_Constraints: 12
   m_CollisionDetection: 0
 --- !u!65 &1115095813
 BoxCollider:
@@ -2862,10 +2862,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611356a015b31d54483ae4ca63e678eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstAttackSize: 10
-  secondAttackSize: 50
+  firstAttackSize: 30
+  secondAttackSize: 40
   thirdAttackSize: 100
-  fourthAttackSize: 10
   rotationSpeed: 1
   attackIndex: 0
 --- !u!1 &1140029229

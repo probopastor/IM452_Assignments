@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* FrogBehavior.cs
+* Assignment 10
+* Controls the behavior for the frog boss, including its attacks and its movements.
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +17,6 @@ public class FrogBehavior : MonoBehaviour
     public int firstAttackSize = 10;
     public int secondAttackSize = 10;
     public int thirdAttackSize = 10;
-    public int fourthAttackSize = 10;
 
     public float rotationSpeed = 1f;
 

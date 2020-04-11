@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* NormalProjectile.cs
+* Assignment 10
+* Handles the projectile behavior after it is enabled from the object pool
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,23 +17,13 @@ public class NormalProjectile : MonoBehaviour
 
     public bool targetPlayerDirectly;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnEnable()
     {
         if(targetPlayerDirectly)
         {
             player = FindObjectOfType<PlayerMovement>().gameObject;
             Vector3 direction = player.transform.position - gameObject.transform.position;
+            direction.Normalize();
             Vector3 force = new Vector3(direction.x * forceMultiplier, 0, direction.z * forceMultiplier);
             GetComponent<Rigidbody>().velocity = force;
         }
@@ -36,6 +33,7 @@ public class NormalProjectile : MonoBehaviour
 
             player = FindObjectOfType<PlayerMovement>().gameObject;
             Vector3 direction = Random.onUnitSphere;
+            direction.Normalize();
             Vector3 force = new Vector3(direction.x * randomForce, 0, direction.z * randomForce);
             GetComponent<Rigidbody>().velocity = force;
         }

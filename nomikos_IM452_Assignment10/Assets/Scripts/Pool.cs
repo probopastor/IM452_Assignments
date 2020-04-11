@@ -1,11 +1,17 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* Pool.cs
+* Assignment 10
+* Interface creates parameters for each object pool.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
 public class Pool
 {
-    //All of these need to be set in the inspector for each pool
     public string tag;
     public GameObject prefab;
     public int size;

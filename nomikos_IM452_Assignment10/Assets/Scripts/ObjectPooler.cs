@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ObjectPooler.cs
+* Assignment 10
+* Creates object pools, adds objects to the object pools, and returns objects to their respective pools.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,7 +53,6 @@ public class ObjectPooler : MonoBehaviour
     {
         if (!poolDictionary.ContainsKey(tag))
         {
-            Debug.LogWarning("Pool with tag " + tag + " doesn't exist.");
             return null;
         }
 
@@ -55,8 +61,6 @@ public class ObjectPooler : MonoBehaviour
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
-
-        poolDictionary[tag].Enqueue(objectToSpawn);
 
         return objectToSpawn;
     }

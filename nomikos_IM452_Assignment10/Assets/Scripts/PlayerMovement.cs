@@ -1,4 +1,11 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PlayerMovement.cs
+* Assignment 10
+* Handles the player's behavior, including movement, health, lose status and win status. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
