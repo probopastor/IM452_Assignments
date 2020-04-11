@@ -16,6 +16,7 @@ public class FrogBehavior : MonoBehaviour
     private GameObject player;
 
     public int attackIndex = 0;
+    private bool doOnce;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class FrogBehavior : MonoBehaviour
         objectPooler = ObjectPooler.instance;
         player = FindObjectOfType<PlayerMovement>().gameObject;
 
+        doOnce = false;
         StartCoroutine(AttackChooser());
     }
 
@@ -36,6 +38,12 @@ public class FrogBehavior : MonoBehaviour
 
     private IEnumerator AttackChooser()
     {
+        if(!doOnce)
+        {
+            yield return new WaitForSeconds(1f);
+            doOnce = true;
+        }
+
         attackIndex = Random.Range(0, 3);
 
         if (attackIndex == 0)
