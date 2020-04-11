@@ -17,6 +17,8 @@ public class PauseManager : MonoBehaviour
     public bool paused;
     public bool gameLost;
 
+    public string thisScene;
+
     public GameObject PauseCanvas;
 
     public AudioSource GameSource;
@@ -69,7 +71,7 @@ public class PauseManager : MonoBehaviour
     public void RestartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(thisScene);
     }
 
     public void ToMainMenu()
