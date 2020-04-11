@@ -94,7 +94,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void PlacePlayerOnSpawnCube()
     {
+        controller.enabled = false;
         gameObject.transform.position = spawnCube.transform.position;
+        controller.enabled = true;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceMultiplier: 1
+  targetPlayerDirectly: 1
+  mostlyTargetPlayer: 0
 --- !u!54 &-502859531007546169
 Rigidbody:
   m_ObjectHideFlags: 0

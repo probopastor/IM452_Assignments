@@ -32,12 +32,6 @@ public class FrogBehavior : MonoBehaviour
         Quaternion rot = Quaternion.LookRotation(-direction);
         Quaternion newRot = new Quaternion(0, rot.y, 0, rot.w);
         gameObject.transform.rotation = Quaternion.Lerp(transform.rotation, newRot, rotationSpeed * Time.deltaTime);
-
-        ////Vector3 targetPosition = new Vector3(0, 0, player.transform.position.z);
-        ////transform.LookAt(targetPosition);
-        ///
-
-        // gameObject.transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(player.transform.position - transform.position), rotationSpeed * Time.deltaTime);
     }
 
     private IEnumerator AttackChooser()
@@ -108,15 +102,16 @@ public class FrogBehavior : MonoBehaviour
 
     private IEnumerator ThirdAttack()
     {
-        for (int i = 0; i < secondAttackSize; i++)
+        for (int i = 0; i < thirdAttackSize; i++)
         {
             objectPooler.SpawnFromPool("FlameProjectile", new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.001f);
         }
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(10f);
 
         NormalProjectile[] normalProjectiles = FindObjectsOfType<NormalProjectile>();
+
         for (int i = 0; i < normalProjectiles.Length; i++)
         {
             objectPooler.ReturnObjectToPool("FlameProjectile", normalProjectiles[i].gameObject);
