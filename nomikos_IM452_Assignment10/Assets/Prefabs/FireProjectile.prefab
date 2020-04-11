@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2244894791781638312}
   m_Layer: 9
   m_Name: FireProjectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceMultiplier: 5
   targetPlayerDirectly: 0
-  mostlyTargetPlayer: 0
 --- !u!54 &-2244894791781638312
 Rigidbody:
   m_ObjectHideFlags: 0

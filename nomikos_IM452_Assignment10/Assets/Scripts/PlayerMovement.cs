@@ -6,8 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    public int playerHealth = 1;
-    public static int currentPlayerHealth = 0;
+    public int playerHealth = 5;
+    private int currentPlayerHealth = 0;
     //public Text healthText;
 
     //public GameObject losePanel;
@@ -43,6 +43,8 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
+        Debug.Log("Player health " + currentPlayerHealth);
+
         //healthText.text = "Health: " + currentPlayerHealth;
 
         if (isGrounded && velocity.y < 0)
@@ -77,18 +79,7 @@ public class PlayerMovement : MonoBehaviour
         {
             currentPlayerHealth = playerHealth;
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
-            //losePanel.SetActive(true);
-
-            Time.timeScale = 0;
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Time.timeScale = 1;
-                //SceneManager.LoadScene("MainMenu");
-            }
+            LoseGame();
         }
     }
 
@@ -99,13 +90,25 @@ public class PlayerMovement : MonoBehaviour
         controller.enabled = true;
     }
 
+    private void LoseGame()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        Time.timeScale = 0;
+
+        //LOSE THE FUCKING GAME
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("yes");
-
         if(other.CompareTag("FrogWeakSpot"))
         {
             PlacePlayerOnSpawnCube();
+        }
+        else if(other.CompareTag("Projectile"))
+        {
+            DecreaseHealth(2);
         }
     }
 }

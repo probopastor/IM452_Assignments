@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4167103805948760844}
   m_Layer: 9
   m_Name: NormalProjectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceMultiplier: 1
   targetPlayerDirectly: 1
-  mostlyTargetPlayer: 0
 --- !u!54 &4167103805948760844
 Rigidbody:
   m_ObjectHideFlags: 0
