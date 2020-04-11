@@ -2541,9 +2541,9 @@ MonoBehaviour:
   thisScene: SampleScene
   PauseCanvas: {fileID: 1436115677}
   GameSource: {fileID: 1438050034}
-  gameMusic: {fileID: 0}
+  gameMusic: {fileID: 8300000, guid: 8d7d613bd2e1bfe4a8e6b7ecbeddbf60, type: 3}
   SoundEffectSource: {fileID: 1643840211}
-  buttonClick: {fileID: 0}
+  buttonClick: {fileID: 8300000, guid: e68c33cf520249b4ea37294e3c7bc21a, type: 3}
 --- !u!1 &1076812862
 GameObject:
   m_ObjectHideFlags: 0
@@ -4349,7 +4349,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.203
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0

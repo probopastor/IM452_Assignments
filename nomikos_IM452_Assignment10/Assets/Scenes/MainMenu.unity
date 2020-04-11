@@ -485,9 +485,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: TutorialScene
   GameSource: {fileID: 2126998623}
-  gameMusic: {fileID: 0}
+  gameMusic: {fileID: 8300000, guid: 13f768f083f8d8a4cbab8875c8f6af09, type: 3}
   SoundEffectSource: {fileID: 1591898113}
-  buttonClick: {fileID: 0}
+  buttonClick: {fileID: 8300000, guid: e68c33cf520249b4ea37294e3c7bc21a, type: 3}
 --- !u!1 &533409693
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +876,25 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Game created by William Nomikos
+  m_Text: 'Game created by William Nomikos
+
+
+    Music:
+
+    Boss Fight by Patrick
+    De Arteaga
+
+    Dancing Pumpkins by Patrick De Arteaga
+
+    https://patrickdearteaga.com/
+
+
+    Sound
+    Effects:
+
+    Button Click: https://freesound.org/people/bubaproducer/sounds/107136/
+
+'
 --- !u!222 &1211169761
 CanvasRenderer:
   m_ObjectHideFlags: 0
