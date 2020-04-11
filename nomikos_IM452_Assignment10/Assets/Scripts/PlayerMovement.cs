@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,9 +9,11 @@ public class PlayerMovement : MonoBehaviour
 
     public int playerHealth = 5;
     private int currentPlayerHealth = 0;
-    //public Text healthText;
+    public Text healthText;
+    public Text headBopText;
 
-    //public GameObject losePanel;
+    public GameObject losePanel;
+    public GameObject winPanel;
 
     public float speed = 12f;
     public float jumpHeight = 1f;
@@ -25,17 +28,28 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject spawnCube;
 
+    public int scoreToWin = 3;
+    private int currentScore = 0;
+
     private bool isGrounded;
     private GameObject player;
+
+    private PauseManager pauseManager;
 
     private void Start()
     {
         player = this.gameObject;
-        //losePanel.SetActive(false);
+        pauseManager = FindObjectOfType<PauseManager>();
+        losePanel.SetActive(false);
+        winPanel.SetActive(false);
+
         currentPlayerHealth = playerHealth;
+
+        currentScore = 0;
         PlacePlayerOnSpawnCube();
 
-        //healthText.text = "Health: " + currentPlayerHealth;
+        healthText.text = "Health: " + currentPlayerHealth;
+        headBopText.text = "Head Bops: " + currentScore + " / " + scoreToWin;
     }
 
     // Update is called once per frame
@@ -43,9 +57,8 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        Debug.Log("Player health " + currentPlayerHealth);
-
-        //healthText.text = "Health: " + currentPlayerHealth;
+        healthText.text = "Health: " + currentPlayerHealth;
+        headBopText.text = "Head Bops: " + currentScore + " / " + scoreToWin;
 
         if (isGrounded && velocity.y < 0)
         {
@@ -92,18 +105,39 @@ public class PlayerMovement : MonoBehaviour
 
     private void LoseGame()
     {
+        pauseManager.gameLost = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        Time.timeScale = 0;
+        losePanel.SetActive(true);
+        Time.timeScale = 0;        
+    }
 
-        //LOSE THE FUCKING GAME
+    private void WinGame()
+    {
+        pauseManager.gameLost = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        winPanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    private void IncreaseScore()
+    {
+        currentScore++;
+
+        if(currentScore >= scoreToWin)
+        {
+            WinGame();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("FrogWeakSpot"))
         {
+            IncreaseScore();
             PlacePlayerOnSpawnCube();
         }
         else if(other.CompareTag("Projectile"))
