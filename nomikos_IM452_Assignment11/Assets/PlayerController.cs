@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> tracks = new List<GameObject>();
     private int currentIndex = 0;
 
+    private Queue<GameObject> objects = new Queue<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +36,10 @@ public class PlayerController : MonoBehaviour
                 transform.position = new Vector3(tracks[currentIndex].transform.position.x, transform.position.y, transform.position.z);
             }
         }
+    }
+
+    public void ObjectsToTouch(Queue<GameObject> objectOrder)
+    {
+        objects = objectOrder;
     }
 }
