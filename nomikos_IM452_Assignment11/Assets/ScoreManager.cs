@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
 
     public void ResetScore()
     {
-        currentScore = 6;
+        currentScore = 0;
         scoreText.text = "Level: " + currentScore;
     }
 

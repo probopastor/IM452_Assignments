@@ -7,14 +7,14 @@ public class SimonManager : MonoBehaviour
     private PlayerController playerObject;
     private ScoreManager scoreManager;
 
-    private Queue<GameObject> objectOrder = new Queue<GameObject>();
-
     public List<GameObject> tracks = new List<GameObject>();
     private int currentIndex = 0;
 
     public float secondsBetweenMovements = 1f;
     private int amountOfMoves = 0;
-    private float timeToWait = 1f;
+    private float timeToWait = 4f;
+
+    private bool currentlyPerformingAction = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,22 +23,25 @@ public class SimonManager : MonoBehaviour
         scoreManager = FindObjectOfType<ScoreManager>();
 
         scoreManager.ResetScore();
-
-        StartCoroutine(PerformAction());
     }
 
     // Update is called once per frame
     void Update()
-    {
-        //playerObject.ObjectsToTouch(objectOrder);
-        
+    {        
         MovementAmount();
 
+        if(!currentlyPerformingAction)
+        {
+            Debug.Log("Action starting");
+            scoreManager.IncreaseLevel();
+            currentlyPerformingAction = true;
+            StartCoroutine(TimeBeforeNextWave());
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        objectOrder.Enqueue(collision.gameObject);
+
     }
 
     private void MovementAmount()
@@ -46,54 +49,52 @@ public class SimonManager : MonoBehaviour
         if(scoreManager.GetLevel() == 1)
         {
             amountOfMoves = 2;
-            timeToWait = 1f;
         }
         else if(scoreManager.GetLevel() == 2)
         {
             amountOfMoves = 3;
-            timeToWait = 1f;
         }
         else if (scoreManager.GetLevel() == 3)
         {
             amountOfMoves = 4;
-            timeToWait = 1f;
         }
         else if (scoreManager.GetLevel() == 4)
         {
             amountOfMoves = 5;
-            timeToWait = 1f;
         }
         else if (scoreManager.GetLevel() == 5)
         {
             amountOfMoves = 6;
-            timeToWait = 1f;
         }
         else if (scoreManager.GetLevel() == 6)
         {
             amountOfMoves = 7;
-            timeToWait = 1f;
         }
         else if (scoreManager.GetLevel() == 7)
         {
             amountOfMoves = 8;
-            timeToWait = 1f;
         }
     }
 
-    private IEnumerator PerformAction()
+    private IEnumerator TimeBeforeNextWave()
     {
-        scoreManager.IncreaseLevel();
+        Debug.Log("Waiting");
+        yield return new WaitForSeconds(timeToWait);
+        StartCoroutine(PerformAction(amountOfMoves));
+    }
 
-        for (int i = 0; i <= amountOfMoves; i++)
+    private IEnumerator PerformAction(int timesToPerform)
+    {
+        Debug.Log("Performing: " + timesToPerform + " many times");
+        int randomInt = 0;
+
+        for(int i = 0; i <= timesToPerform; i++)
         {
-            int randomInt = Random.Range(0, 3);
+            randomInt = Random.Range(1, 3);     
+
             yield return new WaitForSeconds(secondsBetweenMovements);
 
-            if (randomInt == 0)
-            {
-                transform.position = new Vector3(tracks[currentIndex].transform.position.x, transform.position.y, transform.position.z);
-            }
-            else if (randomInt == 1)
+            if (randomInt == 1)
             {
                 if (currentIndex + 1 <= tracks.Count - 1)
                 {
@@ -121,8 +122,6 @@ public class SimonManager : MonoBehaviour
             }
         }
 
-        playerObject.ObjectsToTouch(objectOrder);
-        yield return new WaitForSeconds(timeToWait);
-        //StartCoroutine(PerformAction());
+        currentlyPerformingAction = false;
     }
 }
