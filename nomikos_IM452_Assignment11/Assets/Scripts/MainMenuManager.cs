@@ -1,9 +1,8 @@
 ﻿/*
 * William Nomikos
 * MainMenuManager.cs
-* Assignment 10
-* Handles Main Menu button and sound functionality, including starting
-* the game and quitting the game. 
+* Assignment 11
+* Handles Main Menu functionality, including starting and quitting the game.
 */
 
 using System.Collections;

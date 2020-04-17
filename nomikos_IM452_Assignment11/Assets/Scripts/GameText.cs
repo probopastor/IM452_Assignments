@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* GameText.cs
+* Assignment 11
+* Handles turn order text.
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

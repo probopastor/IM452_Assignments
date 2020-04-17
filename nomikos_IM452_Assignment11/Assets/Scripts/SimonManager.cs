@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* SimonManager.cs
+* Assignment 11
+* Handles Simon's actions on his turn. Also acts as the facade driver, 
+* determining which methods in object references need to be called.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

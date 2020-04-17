@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* PlayerController.cs
+* Assignment 11
+* Handles player movement, and handles determining if the player successfully copied 
+* Simon's movements. 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+* William Nomikos
+* ObjectColor.cs
+* Assignment 11
+* Handles setting the objects Simon triggers to be a different
+* color while Simon is on them.
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

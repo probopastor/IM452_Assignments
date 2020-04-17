@@ -1,10 +1,10 @@
 ﻿/*
 * William Nomikos
 * PauseManager.cs
-* Assignment 10
+* Assignment 11
 * Handles pause menu functionality, including pausing the game,
 * unpausing the game, restarting the game, and quitting to the 
-* main menu. Also handles game music and button sound effects.
+* main menu. Also handles enabling win and lose panels.
 */
 
 using System.Collections;
