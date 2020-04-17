@@ -7,9 +7,10 @@ public class PlayerController : MonoBehaviour
     public List<GameObject> tracks = new List<GameObject>();
     private int currentIndex = 0;
 
-    private List<GameObject> objects = new List<GameObject>();
-
+    public List<string> objectsEncountered = new List<string>();
     private int index = 0;
+
+    private bool roundComplete;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(objectsEncountered.Count);
         if(Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             if(currentIndex + 1 <= tracks.Count - 1)
@@ -41,44 +43,47 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public bool CheckWaveCompletion()
+    public bool PlayerFinished()
     {
-        if(objects.Count == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return roundComplete;
     }
 
-    public void ObjectsToTouch(List<GameObject> objectOrder)
+    public void ResetIndex()
     {
-        objects = objectOrder;
+        index = 0;
+        roundComplete = false;
+    }
+
+    public void ObjectsToTouch(List<string> objectOrder)
+    {
+        if(objectsEncountered.Count > 0)
+        {
+            //objectsEncountered.Clear();
+            objectsEncountered = new List<string>();
+        }
+
+        objectsEncountered = objectOrder;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(objects.Count != 0)
+        if(objectsEncountered.Count > 0)
         {
-            if (objects[index] != null)
+            if (collision.gameObject.tag == objectsEncountered[index])
             {
-                if (collision.gameObject.tag == objects[index].tag)
+                
+
+                if (index >= objectsEncountered.Count - 1)
                 {
-                    objects.Remove(objects[index]);
+                    roundComplete = true;
+                    Debug.Log("Round Over");
+                }
+                else
+                {
+                    roundComplete = false;
                     index++;
                 }
-                else if (collision.gameObject.tag != objects[index].tag)
-                {
-                    Debug.Log("GameLost");
-                    Time.timeScale = 0;
-                }
             }
-        }
-        else
-        {
-            Debug.Log("Wait For Simon! ");
         }
     }
 }

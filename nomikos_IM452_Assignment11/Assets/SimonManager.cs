@@ -16,6 +16,11 @@ public class SimonManager : MonoBehaviour
 
     private bool currentlyPerformingAction = false;
 
+    public List<string> objectOrder = new List<string>();
+
+    private bool firstRound;
+    private bool firstObjectEncountered;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,25 +28,47 @@ public class SimonManager : MonoBehaviour
         scoreManager = FindObjectOfType<ScoreManager>();
 
         scoreManager.ResetScore();
+        firstRound = true;
     }
 
     // Update is called once per frame
     void Update()
-    {        
+    {
         MovementAmount();
 
-        if(!currentlyPerformingAction)
+        if(firstRound)
         {
+            firstRound = false;
             Debug.Log("Action starting");
             scoreManager.IncreaseLevel();
             currentlyPerformingAction = true;
+            StartCoroutine(TimeBeforeNextWave());
+        }
+        else if(!currentlyPerformingAction && playerObject.PlayerFinished())
+        {
+            currentlyPerformingAction = true;
+            //objectOrder.Clear();
+            objectOrder = new List<string>();
+            playerObject.ResetIndex();
+            Debug.Log("Action starting");
+            scoreManager.IncreaseLevel();
             StartCoroutine(TimeBeforeNextWave());
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if(!firstObjectEncountered)
+        {
+            firstObjectEncountered = true;
+        }
+        else
+        {
+            if(collision.gameObject.CompareTag("Circle") || collision.gameObject.CompareTag("Square") || collision.gameObject.CompareTag("Polygon"))
+            {
+                objectOrder.Add(collision.gameObject.tag);
+            }
+        }
     }
 
     private void MovementAmount()
@@ -78,7 +105,6 @@ public class SimonManager : MonoBehaviour
 
     private IEnumerator TimeBeforeNextWave()
     {
-        Debug.Log("Waiting");
         yield return new WaitForSeconds(timeToWait);
         StartCoroutine(PerformAction(amountOfMoves));
     }
@@ -122,6 +148,7 @@ public class SimonManager : MonoBehaviour
             }
         }
 
+        playerObject.ObjectsToTouch(objectOrder);
         currentlyPerformingAction = false;
     }
 }
