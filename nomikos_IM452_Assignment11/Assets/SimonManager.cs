@@ -6,6 +6,7 @@ public class SimonManager : MonoBehaviour
 {
     private PlayerController playerObject;
     private ScoreManager scoreManager;
+    private GameText gameText;
 
     public List<GameObject> tracks = new List<GameObject>();
     private int currentIndex = 0;
@@ -21,11 +22,17 @@ public class SimonManager : MonoBehaviour
     private bool firstRound;
     private bool firstObjectEncountered;
 
+    public Color activeObjectColor;
+
     // Start is called before the first frame update
     void Start()
     {
         playerObject = FindObjectOfType<PlayerController>();
         scoreManager = FindObjectOfType<ScoreManager>();
+        gameText = FindObjectOfType<GameText>();
+
+        gameText.EnableText(true);
+        playerObject.CanPlayerMove(false);
 
         scoreManager.ResetScore();
         firstRound = true;
@@ -47,7 +54,6 @@ public class SimonManager : MonoBehaviour
         else if(!currentlyPerformingAction && playerObject.PlayerFinished())
         {
             currentlyPerformingAction = true;
-            //objectOrder.Clear();
             objectOrder = new List<string>();
             playerObject.ResetIndex();
             Debug.Log("Action starting");
@@ -61,14 +67,21 @@ public class SimonManager : MonoBehaviour
         if(!firstObjectEncountered)
         {
             firstObjectEncountered = true;
+            collision.gameObject.GetComponent<ObjectColor>().SetActiveColor(activeObjectColor);
         }
         else
         {
             if(collision.gameObject.CompareTag("Circle") || collision.gameObject.CompareTag("Square") || collision.gameObject.CompareTag("Polygon"))
             {
                 objectOrder.Add(collision.gameObject.tag);
+                collision.gameObject.GetComponent<ObjectColor>().SetActiveColor(activeObjectColor);
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        collision.gameObject.GetComponent<ObjectColor>().SetDeactiveColor();
     }
 
     private void MovementAmount()
@@ -112,6 +125,8 @@ public class SimonManager : MonoBehaviour
     private IEnumerator PerformAction(int timesToPerform)
     {
         Debug.Log("Performing: " + timesToPerform + " many times");
+        gameText.EnableText(true);
+        playerObject.CanPlayerMove(false);
         int randomInt = 0;
 
         for(int i = 0; i <= timesToPerform; i++)
@@ -149,6 +164,8 @@ public class SimonManager : MonoBehaviour
         }
 
         playerObject.ObjectsToTouch(objectOrder);
+        gameText.EnableText(false);
+        playerObject.CanPlayerMove(true);
         currentlyPerformingAction = false;
     }
 }
