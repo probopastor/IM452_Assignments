@@ -20,6 +20,8 @@ public class PauseManager : MonoBehaviour
     public string thisScene;
 
     public GameObject PauseCanvas;
+    public GameObject LoseCanvas;
+    public GameObject WinCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,8 @@ public class PauseManager : MonoBehaviour
 
         paused = false;
         PauseCanvas.SetActive(false);
+        LoseCanvas.SetActive(false);
+        WinCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -69,5 +73,18 @@ public class PauseManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void SetGameLost()
+    {
+        gameLost = true;
+        LoseCanvas.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void SetGameWin()
+    {
+        WinCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
 }

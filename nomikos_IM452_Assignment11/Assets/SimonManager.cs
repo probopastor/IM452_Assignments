@@ -23,6 +23,7 @@ public class SimonManager : MonoBehaviour
     private bool firstObjectEncountered;
 
     public Color activeObjectColor;
+    private PauseManager pauseManager;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class SimonManager : MonoBehaviour
         playerObject = FindObjectOfType<PlayerController>();
         scoreManager = FindObjectOfType<ScoreManager>();
         gameText = FindObjectOfType<GameText>();
+        pauseManager = FindObjectOfType<PauseManager>();
 
         gameText.EnableText(true);
         playerObject.CanPlayerMove(false);
@@ -46,7 +48,6 @@ public class SimonManager : MonoBehaviour
         if(firstRound)
         {
             firstRound = false;
-            Debug.Log("Action starting");
             scoreManager.IncreaseLevel();
             currentlyPerformingAction = true;
             StartCoroutine(TimeBeforeNextWave());
@@ -56,7 +57,6 @@ public class SimonManager : MonoBehaviour
             currentlyPerformingAction = true;
             objectOrder = new List<string>();
             playerObject.ResetIndex();
-            Debug.Log("Action starting");
             scoreManager.IncreaseLevel();
             StartCoroutine(TimeBeforeNextWave());
         }
@@ -114,6 +114,10 @@ public class SimonManager : MonoBehaviour
         {
             amountOfMoves = 8;
         }
+        else if (scoreManager.GetLevel() > 7)
+        {
+            pauseManager.SetGameWin();
+        }
     }
 
     private IEnumerator TimeBeforeNextWave()
@@ -124,7 +128,6 @@ public class SimonManager : MonoBehaviour
 
     private IEnumerator PerformAction(int timesToPerform)
     {
-        Debug.Log("Performing: " + timesToPerform + " many times");
         gameText.EnableText(true);
         playerObject.CanPlayerMove(false);
         int randomInt = 0;

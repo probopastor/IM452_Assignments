@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     public Color normalColor;
     public Color deactiveColor;
 
+    private PauseManager pauseManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +33,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(objectsEncountered.Count);
-
         if(canMove)
         {
             rend.color = normalColor;
@@ -95,13 +95,17 @@ public class PlayerController : MonoBehaviour
                 if (index >= objectsEncountered.Count - 1)
                 {
                     roundComplete = true;
-                    Debug.Log("Round Over");
                 }
                 else
                 {
                     roundComplete = false;
                     index++;
                 }
+            }
+            else
+            {
+                pauseManager = FindObjectOfType<PauseManager>();
+                pauseManager.SetGameLost();
             }
         }
     }
